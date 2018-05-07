@@ -1,0 +1,22 @@
+<?php
+/**
+ * Content single template.
+ *
+ * @package Syopajatyo
+ */
+
+?>
+<main id="main" class="app-main px-2 py-4">
+	<?php
+	if ( have_posts() ) :
+		while ( have_posts() ) :
+			the_post();
+
+			Hybrid\render_view( 'entry/single', Hybrid\get_post_hierarchy() );
+		endwhile;
+
+		comments_template();
+
+	endif;
+	?>
+</main>
