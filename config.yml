@@ -6,4 +6,4 @@ production:
   url: https://syopajatyo.fi.seravo.com
 development:
   domains:
-  - syopajatyo.local
+  - syopajatyo.test
