@@ -1,0 +1,9 @@
+---
+name: syopajatyo
+production:
+  domain: syopajatyo.fi.seravo.com
+  ssh_port: 10990
+  url: https://syopajatyo.fi.seravo.com
+development:
+  domains:
+  - syopajatyo.local
