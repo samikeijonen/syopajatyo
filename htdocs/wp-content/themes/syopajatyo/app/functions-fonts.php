@@ -17,20 +17,11 @@ function fonts_url() {
 
 	/*
 	 * Translators: If there are characters in your language that are not
-	 * supported by Lora, translate this to 'off'. Do not translate
+	 * supported by Titillium Web, translate this to 'off'. Do not translate
 	 * into your own language.
 	 */
-	if ( 'off' !== esc_attr_x( 'on', 'Lora font: on or off', 'syopajatyo' ) ) {
-		$fonts[] = 'Lora:400,700,400i,700i';
-	}
-
-	/*
-	 * Translators: If there are characters in your language that are not
-	 * supported by Karla, translate this to 'off'. Do not translate
-	 * into your own language.
-	 */
-	if ( 'off' !== esc_attr_x( 'on', 'Karla font: on or off', 'syopajatyo' ) ) {
-		$fonts[] = 'Karla:400,700,400i,700i';
+	if ( 'off' !== esc_attr_x( 'on', 'Titillium Web font: on or off', 'syopajatyo' ) ) {
+		$fonts[] = 'Titillium Web:200,300,400,600,400i,600i';
 	}
 
 	if ( $fonts ) {

@@ -1,0 +1,24 @@
+.site-logo {
+	display: block;
+	max-width: 40px;
+}
+
+@media screen and (min-width: $breakpoint-1) {
+	.app-header__branding {
+		width: 50%;
+	}
+
+	.site-logo {
+		display: inline-block;
+		margin-right: $global-spacing-unit-1 * 2;
+		margin-top: -0.25em;
+		max-width: 60px;
+	}
+}
+
+.title-header {
+	background-color: var(--color-base);
+	color: var(--color-white);
+	padding-bottom: $global-spacing-unit-1;
+	padding-top: $global-spacing-unit-1 * 6;
+}

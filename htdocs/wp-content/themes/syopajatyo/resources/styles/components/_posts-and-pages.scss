@@ -11,6 +11,7 @@
 }
 
 .entry__header,
+.entry__content,
 .entry__summary,
 .entry__footer,
 .comments-template {
@@ -19,7 +20,7 @@
 }
 
 .entry__byline {
-	font-size: var(--font-size-88);
+	font-size: var(--font-size-875);
 }
 
 .entry__footer {
@@ -40,8 +41,8 @@
 
 	a {
 		color: var(--color-grey-60);
-		font-size: var(--font-size-88);
-		font-weight: 700;
+		font-size: var(--font-size-875);
+		font-weight: 600;
 		text-decoration: none;
 		text-transform: capitalize;
 

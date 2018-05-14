@@ -5,7 +5,7 @@
  * navigation support for dropdown menus.
  */
 ( function() {
-	var container, button, menu, links, i, len, focusableElements, firstFocusableElement, lastFocusableElement;
+	var container, button, menu, menuSocial, links, i, len;
 
 	container = document.getElementById( 'js-menu--primary' );
 
@@ -19,7 +19,8 @@
 		return;
 	}
 
-	menu = container.getElementsByTagName( 'ul' )[0];
+	menu       = container.getElementsByTagName( 'ul' )[0];
+	menuSocial = document.getElementById( 'menu__items--social' );
 
 	// Hide menu toggle button if menu is empty and return early.
 	if ( 'undefined' === typeof menu ) {
@@ -27,15 +28,12 @@
 		return;
 	}
 
-	menu.setAttribute( 'aria-expanded', 'false' );
 	if ( ! menu.classList.contains( 'js-nav-menu' ) ) {
 		menu.classList.add( 'js-nav-menu' );
 	}
 
 	button.addEventListener( 'click', function() {
 		toggleMenu();
-
-		setFocus();
 	} );
 
 	// Close menu using Esc key.
@@ -65,50 +63,11 @@
 	 */
 	function toggleMenu() {
 		container.classList.toggle( 'is-toggled' );
+		menu.classList.toggle( 'is-opened' );
+		menuSocial.classList.toggle( 'is-opened' );
 
 		let expanded = ( 'false' === button.getAttribute( 'aria-expanded' ) ) ? 'true' : 'false';
 		button.setAttribute( 'aria-expanded', expanded );
-		menu.setAttribute( 'aria-expanded', expanded );
-	}
-
-	/**
-	 * Set focus when nav is open.
-	 */
-	function setFocus() {
-
-		// Bail if menu is not open.
-		if ( ! isMenuOpen() ) {
-			return;
-		}
-
-		// Set focusable elements inside main navigation.
-		focusableElements     = container.querySelectorAll( [ 'a[href]', 'area[href]', 'input:not([disabled])', 'select:not([disabled])', 'textarea:not([disabled])', 'button:not([disabled])', 'iframe', 'object', 'embed', '[contenteditable]', '[tabindex]:not([tabindex^="-"])' ] );
-		firstFocusableElement = focusableElements[0];
-		lastFocusableElement  = focusableElements[focusableElements.length - 1];
-
-		// Redirect last Tab to first focusable element.
-		lastFocusableElement.addEventListener( 'keydown', function( e ) {
-			if ( ( 9 === e.keyCode && ! e.shiftKey ) ) {
-				e.preventDefault();
-				button.focus(); // Set focus on first element - that's actually close menu button.
-			}
-		} );
-
-		// Redirect first Shift+Tab to toggle button element.
-		firstFocusableElement.addEventListener( 'keydown', function( e ) {
-			if ( ( 9 === e.keyCode && e.shiftKey ) ) {
-				e.preventDefault();
-				button.focus(); // Set focus on first element.
-			}
-		} );
-
-		// Redirect Shift+Tab from the toggle button to last focusable element.
-		button.addEventListener( 'keydown', function( e ) {
-			if ( ( 9 === e.keyCode && e.shiftKey ) ) {
-				e.preventDefault();
-				lastFocusableElement.focus(); // Set focus on last element.
-			}
-		} );
 	}
 
 	/**
@@ -129,7 +88,8 @@
 		// If menu toggle button have display: none css rule, we're on desktop.
 		if ( 'none' === window.getComputedStyle( button, null ).getPropertyValue( 'display' ) ) {
 			button.setAttribute( 'aria-expanded', 'false' );
-			menu.setAttribute( 'aria-expanded', 'false' );
+			menu.classList.remove( 'is-opened' );
+			menuSocial.classList.remove( 'is-opened' );
 		}
 	}
 

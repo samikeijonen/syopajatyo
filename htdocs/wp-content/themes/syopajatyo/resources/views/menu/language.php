@@ -1,6 +1,6 @@
 <?php
 /**
- * Displays social links navigation.
+ * Displays language navigation.
  *
  * @package Syopajatyo
  */
@@ -10,15 +10,12 @@ if ( ! has_nav_menu( $data->name ) ) :
 endif
 ?>
 
-<nav class="menu menu--<?= esc_attr( $data->name ) ?> pb-2">
+<nav class="menu menu--<?= esc_attr( $data->name ) ?> pb-1 font-size-88">
 	<?php
 	wp_nav_menu( [
 		'theme_location' => $data->name,
 		'container'      => '',
-		'menu_id'        => '',
 		'menu_class'     => 'menu__items menu__items--' . esc_attr( $data->name ),
-		'link_before'    => '<span class="screen-reader-text">',
-		'link_after'     => '</span>' . Syopajatyo\get_svg( [ 'icon' => 'chain' ] ),
 		'item_spacing'   => 'discard',
 		'depth'          => 1,
 	] );

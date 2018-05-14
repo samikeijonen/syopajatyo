@@ -21,12 +21,13 @@ input[type="datetime-local"],
 input[type="color"],
 textarea,
 select {
-	background-color: var(--color-white);
-	border: 2px solid var(--color-base);
+	background-color: rgba(var(--color-base-rgb), 0.2);
+	border: 2px solid var(--color-white);
 	padding: calc(#{ $global-spacing-unit-1 } - 2px);
 	width: 100%;
 
 	&:focus {
+		border-color: var(--color-base);
 		box-shadow: 0 0 4px rgba(var(--color-base-rgb), 0.75);
 		// Use transparent outline for Windows high contrast mode.
 		outline: 2px solid transparent;
@@ -35,5 +36,13 @@ select {
 
 label {
 	display: block;
-	font-weight: 700;
+	font-weight: 600;
+}
+
+::placeholder {
+	color: var(--color-dark);
+}
+
+::-moz-placeholder {
+	opacity: 1;
 }

@@ -6,17 +6,26 @@
  */
 
 ?>
-<main id="main" class="app-main px-2 py-4">
-	<?php
-	if ( have_posts() ) :
-		while ( have_posts() ) :
-			the_post();
+<div class="px-2 py-8">
+	<div class="grid mx-auto max-width-1">
+		<main id="main" class="app-main grid__span-2">
+			<?php
+			if ( have_posts() ) :
+				while ( have_posts() ) :
+					the_post();
 
-			Hybrid\render_view( 'entry/single', Hybrid\get_post_hierarchy() );
-		endwhile;
+					Hybrid\render_view( 'entry/single', Hybrid\get_post_hierarchy() );
+				endwhile;
 
-		comments_template();
+				comments_template();
 
-	endif;
-	?>
-</main>
+			endif;
+			?>
+		</main>
+
+		<?php
+		// Load sidebar/* template.
+		Hybrid\render_view( 'sidebar', 'primary', [ 'name' => 'primary' ] );
+		?>
+	</div>
+</div>

@@ -40,9 +40,9 @@ function get_meta_sep( $sep = '' ) {
  */
 function site_title() {
 	if ( is_front_page() && is_home() ) : ?>
-		<h1 class="app-header__title mb-0 h3 font-main fw-700"><a class="decoration-none color-dark" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+		<h1 class="app-header__title mb-0 font-size-cta fw-200"><a class="decoration-none color-dark block" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php echo get_svg_img( [ 'icon' => 'logo', 'class' => 'site-logo' ] ); bloginfo( 'name' ); ?></a></h1>
 	<?php else : ?>
-		<p class="app-header__title mb-0 h3 font-main fw-700"><a class="decoration-none color-dark" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+		<p class="app-header__title mb-0 font-size-cta fw-200"><a class="decoration-none color-dark block" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php echo get_svg_img( [ 'icon' => 'logo', 'class' => 'site-logo' ] ); bloginfo( 'name' ); ?></a></p>
 	<?php
 	endif;
 }

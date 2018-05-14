@@ -6,6 +6,10 @@
 	justify-content: space-between;
 }
 
+.justify-center {
+	justify-content: center;
+}
+
 .items-center {
 	align-items: center;
 }
@@ -17,23 +21,16 @@
 		.grid {
 			display: grid;
 			grid-gap: $global-spacing-unit-4;
-			grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+			grid-template-columns: repeat(3, 1fr);
 
-			&--blog {
-				grid-template-columns: repeat(6, 1fr);
+			&__span-2 {
+				grid-column: span 2;
+			}
 
-				> .entry {
-					grid-column: span 2;
-
-					&:first-child,
-					&:nth-child(2) {
-						grid-column: span 3;
-					}
-				}
-
-				> .pagination {
-					grid-column: 1/ -1;
-				}
+			&__span-1 {
+				border-left: 1px solid;
+				grid-column: span 1;
+				padding-left: $global-spacing-unit-1 * 2;
 			}
 		}
 

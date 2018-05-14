@@ -1,0 +1,12 @@
+.search-form {
+	position: relative;
+
+	&__submit {
+		background-color: transparent;
+		color: var(--color-dark);
+		padding: calc(#{ $global-spacing-unit-1 } - 2px) $global-spacing-unit-2;
+		position: absolute;
+		right: 2px;
+		top: 2px;
+	}
+}

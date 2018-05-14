@@ -44,7 +44,46 @@ function get_svg( $args = [] ) {
 	// Get SVG markup. Classes and other markup is added in build process.
 	$svg = file_get_contents( get_theme_file_path( '/dist/svg/' . esc_attr( $args['icon'] ) . '.svg' ) );
 
-	// Return emppty if there is no icon.
+	// Return empty if there is no icon.
+	return $svg ? $svg : '';
+}
+
+/**
+ * Return SVG image markup.
+ *
+ * @param array $args {
+ *     Parameters needed to display an SVG.
+ *
+ *     @type string $icon  Required SVG icon filename.
+ * }
+ * @return string SVG image markup.
+ */
+function get_svg_img( $args = [] ) {
+	// Make sure $args are an array.
+	if ( empty( $args ) ) {
+		return esc_html__( 'Please define default parameters in the form of an array.', 'syopajatyo' );
+	}
+
+	// Define an icon.
+	if ( false === array_key_exists( 'icon', $args ) ) {
+		return esc_html__( 'Please define an SVG icon filename.', 'syopajatyo' );
+	}
+
+	// Set defaults.
+	$defaults = [
+		'alt'      => '',
+		'class'    => '',
+		'fallback' => false,
+		'icon'     => '',
+	];
+
+	// Parse args.
+	$args = wp_parse_args( $args, $defaults );
+
+	// Get SVG markup. Classes and other markup is added in build process.
+	$svg = '<img src="' . get_theme_file_uri( '/dist/svg/' . esc_attr( $args['icon'] ) . '.svg' ) . '" alt="' . esc_attr( $args['alt'] ) . '" class="' . esc_attr( $args['class'] ) . '">';
+
+	// Return empty if there is no icon.
 	return $svg ? $svg : '';
 }
 
@@ -104,10 +143,10 @@ add_filter( 'nav_menu_item_title', __NAMESPACE__ . '\dropdown_icon_to_menu_link'
 function social_links_icons() {
 	// Supported social links icons.
 	$social_links_icons = [
-		'facebook.com'  => 'facebook',
+		'facebook.com'  => 'facebook-square',
 		'instagram.com' => 'instagram',
 		'linkedin.com'  => 'linkedin',
-		'twitter.com'   => 'twitter',
+		'twitter.com'   => 'twitter-square',
 		'youtube.com'   => 'youtube',
 	];
 

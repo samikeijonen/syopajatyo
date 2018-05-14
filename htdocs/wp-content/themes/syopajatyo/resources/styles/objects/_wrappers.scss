@@ -6,11 +6,6 @@
 	max-width: $max-width-2;
 }
 
-.entry__content > * {
-	@include center;
-	max-width: $max-width-2;
-}
-
 .mx-auto {
 	margin-left: auto;
 	margin-right: auto;
@@ -26,9 +21,19 @@
 	padding-right: $global-spacing-unit-3;
 }
 
+.py-2 {
+	padding-bottom: $global-spacing-unit-2;
+	padding-top: $global-spacing-unit-2;
+}
+
 .py-4 {
 	padding-bottom: $global-spacing-unit-4;
 	padding-top: $global-spacing-unit-4;
+}
+
+.py-8 {
+	padding-bottom: $global-spacing-unit-1 * 8;
+	padding-top: $global-spacing-unit-1 * 8;
 }
 
 .pb-2 {

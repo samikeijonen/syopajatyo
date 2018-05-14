@@ -5,13 +5,9 @@
 @mixin typography {
 	color: var(--color-dark);
 	font-family: $font-main;
-	font-size: ($global-font-size / 1rem) * 112.5%;
+	font-size: 100%;
 	line-height: $global-line-height;
 	word-wrap: break-word;
-
-	@media (min-width: $breakpoint-1) {
-		font-size: ($global-font-size / 1rem) * 125%;
-	}
 }
 
 /// Center any element.

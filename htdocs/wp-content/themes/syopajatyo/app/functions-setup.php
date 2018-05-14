@@ -96,8 +96,9 @@ add_action( 'after_setup_theme', function() {
 add_action( 'init', function() {
 
 	register_nav_menus( [
-		'primary' => esc_html_x( 'Primary', 'nav menu location', 'syopajatyo' ),
-		'social'  => esc_html_x( 'Social Links', 'nav menu location', 'syopajatyo' ),
+		'primary'  => esc_html_x( 'Primary', 'nav menu location', 'syopajatyo' ),
+		'social'   => esc_html_x( 'Social Links', 'nav menu location', 'syopajatyo' ),
+		'language' => esc_html_x( 'Language', 'nav menu location', 'syopajatyo' ),
 	] );
 
 }, 5 );

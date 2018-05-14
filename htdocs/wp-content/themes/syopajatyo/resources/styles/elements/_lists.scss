@@ -1,6 +1,6 @@
 ul,
 ol {
-	margin: 0 0 $global-spacing-unit-4 $global-spacing-unit-2;
+	margin: 0 0 $global-spacing-unit-4 0;
 	padding: 0 0 0 $global-spacing-unit-3;
 }
 
@@ -23,7 +23,7 @@ li > {
 }
 
 dt {
-	font-weight: 700;
+	font-weight: 600;
 }
 
 dd {

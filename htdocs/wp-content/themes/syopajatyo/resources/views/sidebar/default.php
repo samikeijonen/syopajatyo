@@ -12,6 +12,8 @@ if ( ! is_active_sidebar( $data->name ) ) :
 endif
 ?>
 
-<aside class="sidebar sidebar--<?= esc_attr( $data->name ) ?> mx-auto max-width-1 px-2 py-4">
-	<?php dynamic_sidebar( esc_attr( $data->name ) ); ?>
+<aside class="sidebar sidebar--<?= esc_attr( $data->name ) ?> grid__span-1">
+	<div class="sidebar__wrapper mx-auto max-width-2">
+		<?php dynamic_sidebar( esc_attr( $data->name ) ); ?>
+	</div>
 </aside>

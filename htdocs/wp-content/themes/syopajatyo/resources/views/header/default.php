@@ -22,15 +22,26 @@
 <body <?php Hybrid\attr( 'body' ); ?>>
 
 <div class="app">
-	<header class="app-header flex justify-between items-center mx-auto max-width-1 px-2 py-4">
+	<header class="app-header items-center px-2 py-2">
 		<a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', 'syopajatyo' ); ?></a>
 
-		<div class="app-header__branding">
-		<?php
-			Syopajatyo\site_title();
-			Syopajatyo\site_description();
-		?>
-		</div>
+		<div class="flex justify-between items-center mx-auto max-width-1">
+			<div class="app-header__branding">
+			<?php
+				Syopajatyo\site_title();
+			?>
+			</div>
 
-		<?php Hybrid\render_view( 'menu', 'primary', [ 'name' => 'primary' ] ); ?>
+			<div class="app-header__search">
+			<?php
+				Hybrid\render_view( 'menu', 'language', [ 'name' => 'language' ] );
+				get_search_form();
+			?>
+			</div>
+		</div>
 	</header>
+
+	<?php
+		Hybrid\render_view( 'menu', 'primary', [ 'name' => 'primary', 'social_links' => 'social' ] );
+		Hybrid\render_view( 'partials', 'title-header' );
+	?>

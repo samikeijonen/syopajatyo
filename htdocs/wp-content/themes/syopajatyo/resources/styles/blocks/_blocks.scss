@@ -75,7 +75,6 @@
 	position: relative;
 
 	.wp-block-cover-image-text {
-		font-family: $font-heading;
 		font-size: var(--font-size-h1);
 		color: var(--color-white);
 		z-index: 1;
@@ -226,7 +225,7 @@
 		float: left;
 		font-style: normal;
 		font-family: serif;
-		font-weight: 700;
+		font-weight: 600;
 		margin-right: $global-spacing-unit-3;
 		text-transform: uppercase;
 	}

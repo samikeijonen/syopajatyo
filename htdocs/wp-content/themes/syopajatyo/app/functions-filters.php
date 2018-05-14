@@ -13,6 +13,8 @@
 
 namespace Syopajatyo;
 
+use Hybrid;
+
 /**
  * Filters the WP nav menu link attributes.
  *
@@ -65,3 +67,22 @@ function excerpt_more( $link ) {
 	return ' &hellip; ' . $link;
 }
 add_filter( 'excerpt_more', __NAMESPACE__ . '\excerpt_more' );
+
+/**
+ * Filters the HTML output of the search form.
+ *
+ * Look searchform.php in resources/views folder.
+ *
+ * @param string $form The search form HTML output.
+ */
+add_filter( 'get_search_form', function( $form ) {
+	$template = Hybrid\locate_template( 'searchform.php' );
+
+	if ( $template ) {
+		ob_start();
+		include( $template );
+		$form = ob_get_clean();
+	}
+
+	return $form;
+}, 0 );

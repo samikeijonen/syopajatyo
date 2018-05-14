@@ -2,18 +2,19 @@
  * Exports the PostCSS configuration.
  */
 module.exports = ( { file, options, env } ) => ( {
-        plugins : {
-                'postcss-import' : {},
-                'postcss-cssnext' : {
+	plugins: {
+                'postcss-import': {},
+                'postcss-cssnext': {
 			features: {
 				customProperties: {
+
 					// Preserve custom properties.
 					// @link: https://github.com/postcss/postcss-custom-properties#preserve
-					preserve: 'true',
+					preserve: 'true'
 				}
 			}
 		},
-                'autoprefixer'    : env === 'production',
-                'cssnano'         : env === 'production'
+                'autoprefixer': env === 'production',
+                'cssnano': env === 'production'
         }
 } );
