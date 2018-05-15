@@ -88,6 +88,24 @@ function get_svg_img( $args = [] ) {
 }
 
 /**
+ * Display SVG Markup.
+ *
+ * @param array $args The parameters needed to get the SVG.
+ */
+function display_svg_img( $args = [] ) {
+	echo get_svg_img( $args ); // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped
+}
+
+/**
+ * Display SVG image.
+ *
+ * @param array $args The parameters needed to get the SVG.
+ */
+function display_svg( $args = [] ) {
+	echo get_svg( $args ); // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped
+}
+
+/**
  * Display SVG icons in social links menu.
  *
  * @param  string  $item_output The menu item output.
