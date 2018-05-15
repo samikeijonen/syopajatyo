@@ -53,3 +53,6 @@ myrecording
 
 # Query Monitor files.
 db.php
+
+# VS Code files.
+.vscode
