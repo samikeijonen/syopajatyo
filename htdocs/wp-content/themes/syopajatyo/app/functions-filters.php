@@ -80,7 +80,7 @@ add_filter( 'get_search_form', function( $form ) {
 
 	if ( $template ) {
 		ob_start();
-		include( $template );
+		include $template;
 		$form = ob_get_clean();
 	}
 

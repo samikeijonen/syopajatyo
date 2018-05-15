@@ -42,6 +42,10 @@
 	</header>
 
 	<?php
-		Hybrid\render_view( 'menu', 'primary', [ 'name' => 'primary', 'social_links' => 'social' ] );
+		Hybrid\render_view( 'menu', 'primary', [
+			'name'         => 'primary',
+			'social_links' => 'social',
+		] );
+
 		Hybrid\render_view( 'partials', 'title-header' );
 	?>
