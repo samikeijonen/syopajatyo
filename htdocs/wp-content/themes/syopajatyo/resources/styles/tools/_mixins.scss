@@ -170,10 +170,7 @@
 }
 
 @mixin subheading {
-	color: var(--color-grey-60);
 	font-size: var(--font-size-h3);
-	font-style: normal;
-	text-align: center;
 }
 
 @function strip-unit( $value ) {
