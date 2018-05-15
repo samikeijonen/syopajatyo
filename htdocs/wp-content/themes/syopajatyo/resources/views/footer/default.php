@@ -12,7 +12,7 @@
 		<div class="mx-auto max-width-1">
 			<?php Hybrid\render_view( 'menu', 'social', [ 'name' => 'social' ] ); ?>
 
-			<p class="app-footer__credit text-center color-grey-60 mb-0">
+			<p class="app-footer__credit text-center mb-0">
 				<?php esc_html_e( 'Powered by crazy ideas and passion', 'syopajatyo' ); ?>
 				<span class="sep"> &middot; </span>
 				<?php
