@@ -50,3 +50,6 @@ myrecording
 
 # OSX Desktop Services Store files.
 .DS_Store
+
+# Query Monitor files.
+db.php
