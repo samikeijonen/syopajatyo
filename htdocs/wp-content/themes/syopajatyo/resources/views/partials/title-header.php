@@ -1,6 +1,6 @@
 <?php
 /**
- * Archive header.
+ * Title header.
  *
  * @package Syopajatyo
  */
@@ -10,7 +10,7 @@
 	<div class="mx-auto max-width-1">
 		<?php
 			if ( is_singular() || is_home() ) : ?>
-				<h1 id="region-title" class="entry__title mb-0"><?php single_post_title(); ?><h1>
+				<h1 class="title-header__title mb-0"><?php single_post_title(); ?></h1>
 			<?php
 			elseif ( is_archive() ) :
 				the_archive_title( '<h1 id="region-title" class="archive-header__title mb-0">', '</h1>' );
