@@ -1,5 +1,6 @@
 .menu {
-	ul {
+	&__items,
+	&__items ul {
 		@include reset-list();
 	}
 
@@ -40,9 +41,9 @@
 		flex-wrap: wrap;
 		padding-bottom: $global-spacing-unit-1;
 
-		> li:not(:last-child)::after {
-			content: "\002F";
-			padding-left: $global-spacing-unit-1;
+		> li:not(:last-child) > a {
+			border-right: 1px solid;
+			margin-right: $global-spacing-unit-1;
 			padding-right: $global-spacing-unit-1;
 		}
 	}
@@ -90,6 +91,8 @@
 	// Language menu links.
 	&--language {
 		color: var(--color-dark);
+		display: block;
+		line-height: 1;
 
 		&:hover,
 		&:focus,

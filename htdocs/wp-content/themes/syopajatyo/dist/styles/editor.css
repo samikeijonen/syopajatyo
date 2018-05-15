@@ -523,12 +523,8 @@
     padding: 2rem 0;
     text-align: center; }
 .edit-post-visual-editor p.wp-block-subhead {
-    color: rgba(0, 0, 0, .6);
-    color: var(--color-grey-60);
     font-size: 1.125rem;
-    font-size: var(--font-size-h3);
-    font-style: normal;
-    text-align: center; }
+    font-size: var(--font-size-h3); }
 .edit-post-visual-editor .has-main-color {
     color: #007fa3;
     color: var(--color-base); }

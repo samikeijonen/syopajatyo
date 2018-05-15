@@ -880,12 +880,8 @@ td {
   padding: 2rem 0;
   text-align: center; }
 p.wp-block-subhead {
-  color: rgba(0, 0, 0, .6);
-  color: var(--color-grey-60);
   font-size: 1.125rem;
-  font-size: var(--font-size-h3);
-  font-style: normal;
-  text-align: center; }
+  font-size: var(--font-size-h3); }
 .has-main-color {
   color: #007fa3;
   color: var(--color-base); }
@@ -914,12 +910,8 @@ p.wp-block-subhead {
 # Components - specific UI components.
 --------------------------------------------------------------*/
 .archive-header__description {
-  color: rgba(0, 0, 0, .6);
-  color: var(--color-grey-60);
   font-size: 1.125rem;
-  font-size: var(--font-size-h3);
-  font-style: normal;
-  text-align: center; }
+  font-size: var(--font-size-h3); }
 .comments__title {
   margin-bottom: 3rem; }
 .comments-nav {
@@ -1008,7 +1000,8 @@ p.wp-block-subhead {
   width: 1em; }
 .custom-logo-link {
   display: inline-block; }
-.menu ul {
+.menu__items,
+.menu__items ul {
   margin: 0;
   padding: 0;
   list-style-type: none; }
@@ -1034,9 +1027,9 @@ p.wp-block-subhead {
   display: flex;
   flex-wrap: wrap;
   padding-bottom: 0.5rem; }
-.menu__items--language > li:not(:last-child)::after {
-    content: "/";
-    padding-left: 0.5rem;
+.menu__items--language > li:not(:last-child) > a {
+    border-right: 1px solid;
+    margin-right: 0.5rem;
     padding-right: 0.5rem; }
 .menu__anchor {
   text-decoration: none; }
@@ -1067,7 +1060,9 @@ p.wp-block-subhead {
       color: var(--color-white); }
 .menu__anchor--language {
     color: #111;
-    color: var(--color-dark); }
+    color: var(--color-dark);
+    display: block;
+    line-height: 1; }
 .menu__anchor--language:hover, .menu__anchor--language:focus, .menu__anchor--language:active {
       color: #007fa3;
       color: var(--color-base); }
