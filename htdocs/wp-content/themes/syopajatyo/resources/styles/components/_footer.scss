@@ -1,3 +1,17 @@
 .app-footer {
 	background-color: var(--color-light);
 }
+
+.svg-img {
+	&--site-logo {
+		border-bottom: 1px solid;
+		display: block;
+		margin-bottom: $global-spacing-unit-1 * 4;
+		max-width: 150px;
+		padding-bottom: $global-spacing-unit-1 * 4;
+	}
+
+	&--potilaat {
+		max-width: 150px;
+	}
+}

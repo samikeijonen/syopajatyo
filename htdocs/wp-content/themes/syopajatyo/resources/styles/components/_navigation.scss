@@ -35,6 +35,13 @@
 		}
 	}
 
+	// Social links menu in footer.
+	&--social-footer {
+		display: flex;
+		flex-wrap: wrap;
+		padding-bottom: $global-spacing-unit-2 * 2;
+	}
+
 	// Language links menu.
 	&--language {
 		display: flex;
@@ -85,6 +92,24 @@
 		&:focus,
 		&:active {
 			color: var(--color-white);
+		}
+	}
+
+	// Social menu links in Footer.
+	&--social-footer {
+		color: var(--color-dark);
+		padding-right: $global-spacing-unit-1;
+
+		.svg {
+			height: 1.5em;
+			top: 0;
+			width: 1.5em;
+		}
+
+		&:hover,
+		&:focus,
+		&:active {
+			color: var(--color-base);
 		}
 	}
 

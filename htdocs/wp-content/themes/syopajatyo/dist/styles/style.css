@@ -630,8 +630,17 @@ td {
   justify-content: center; }
 .items-center {
   align-items: center; }
-@media screen and (min-width: 48em) {
-  @supports (grid-area: auto) {
+@supports (grid-area: auto) {
+  .grid--footer {
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: repeat(4, 1fr); }
+    .grid--footer :first-child,
+    .grid--footer :nth-child(2) {
+      grid-column: span 2; }
+    .grid--footer :nth-child(3) {
+      grid-column: span 4; }
+  @media screen and (min-width: 48em) {
     .grid {
       display: grid;
       grid-gap: 2rem;
@@ -641,7 +650,16 @@ td {
       .grid__span-1 {
         border-left: 1px solid;
         grid-column: span 1;
-        padding-left: 1rem; } } }
+        padding-left: 1rem; }
+    .grid--footer :first-child,
+    .grid--footer :nth-child(2) {
+      grid-column: span 1; }
+    .grid--footer :nth-child(3) {
+      grid-column: span 2; } } }
+.reset-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none; }
 .max-width-1 {
   max-width: 66rem; }
 .max-width-2 {
@@ -649,29 +667,10 @@ td {
 .mx-auto {
   margin-left: auto;
   margin-right: auto; }
-.px-2 {
-  padding-left: 1rem;
-  padding-right: 1rem; }
-.px-3 {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem; }
-.py-2 {
-  padding-bottom: 1rem;
-  padding-top: 1rem; }
-.py-4 {
-  padding-bottom: 2rem;
-  padding-top: 2rem; }
-.py-8 {
-  padding-bottom: 4rem;
-  padding-top: 4rem; }
-.pb-2 {
-  padding-bottom: 1rem; }
-.pb-4 {
-  padding-bottom: 2rem; }
-.mb-0 {
-  margin-bottom: 0; }
-.mb-2 {
-  margin-bottom: 1rem; }
+.reset-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none; }
 /*--------------------------------------------------------------
 # Blocks - editor related styles.
 --------------------------------------------------------------*/
@@ -944,6 +943,14 @@ p.wp-block-subhead {
 .app-footer {
   background-color: #f0eeeb;
   background-color: var(--color-light); }
+.svg-img--site-logo {
+  border-bottom: 1px solid;
+  display: block;
+  margin-bottom: 2rem;
+  max-width: 150px;
+  padding-bottom: 2rem; }
+.svg-img--potilaat {
+  max-width: 150px; }
 .gallery {
   margin-bottom: 1.5em; }
 .gallery-item {
@@ -1023,6 +1030,10 @@ p.wp-block-subhead {
     flex-wrap: wrap;
     justify-content: center;
     padding-bottom: 2rem; }
+.menu__items--social-footer {
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 2rem; }
 .menu__items--language {
   display: flex;
   flex-wrap: wrap;
@@ -1058,6 +1069,17 @@ p.wp-block-subhead {
 .menu__anchor--social:hover, .menu__anchor--social:focus, .menu__anchor--social:active {
       color: #fff;
       color: var(--color-white); }
+.menu__anchor--social-footer {
+    color: #111;
+    color: var(--color-dark);
+    padding-right: 0.5rem; }
+.menu__anchor--social-footer .svg {
+      height: 1.5em;
+      top: 0;
+      width: 1.5em; }
+.menu__anchor--social-footer:hover, .menu__anchor--social-footer:focus, .menu__anchor--social-footer:active {
+      color: #007fa3;
+      color: var(--color-base); }
 .menu__anchor--language {
     color: #111;
     color: var(--color-dark);
@@ -1331,6 +1353,8 @@ p.wp-block-subhead {
   text-decoration: none; }
 .h-decoration-underline:hover, .h-decoration-underline:focus, .h-decoration-underline:active {
   text-decoration: underline; }
+.uppercase {
+  text-transform: uppercase; }
 .font-main {
   font-family: "Titillium Web", sans-serif; }
 .fw-200 {
@@ -1349,6 +1373,29 @@ p.wp-block-subhead {
   text-align: center; }
 .block {
   display: block; }
+.px-2 {
+  padding-left: 1rem;
+  padding-right: 1rem; }
+.px-3 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem; }
+.py-2 {
+  padding-bottom: 1rem;
+  padding-top: 1rem; }
+.py-4 {
+  padding-bottom: 2rem;
+  padding-top: 2rem; }
+.py-8 {
+  padding-bottom: 4rem;
+  padding-top: 4rem; }
+.pb-2 {
+  padding-bottom: 1rem; }
+.pb-4 {
+  padding-bottom: 2rem; }
+.mb-0 {
+  margin-bottom: 0; }
+.mb-2 {
+  margin-bottom: 1rem; }
 
 
 /*# sourceMappingURL=style.css.map*/

@@ -14,9 +14,24 @@
 	align-items: center;
 }
 
-@media screen and (min-width: $breakpoint-1) {
+@supports (grid-area: auto) {
 
-	@supports (grid-area: auto) {
+	.grid--footer {
+		display: grid;
+		grid-gap: $global-spacing-unit-4;
+		grid-template-columns: repeat(4, 1fr);
+
+		:first-child,
+		:nth-child(2) {
+			grid-column: span 2;
+		}
+
+		:nth-child(3) {
+			grid-column: span 4;
+		}
+	}
+
+	@media screen and (min-width: $breakpoint-1) {
 
 		.grid {
 			display: grid;
@@ -31,6 +46,17 @@
 				border-left: 1px solid;
 				grid-column: span 1;
 				padding-left: $global-spacing-unit-1 * 2;
+			}
+		}
+
+		.grid--footer {
+			:first-child,
+			:nth-child(2) {
+				grid-column: span 1;
+			}
+
+			:nth-child(3) {
+				grid-column: span 2;
 			}
 		}
 
