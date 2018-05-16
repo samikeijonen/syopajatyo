@@ -8,17 +8,40 @@
  */
 
 ?>
-	<footer class="app-footer px-2 py-4">
-		<div class="mx-auto max-width-1">
-			<?php Hybrid\render_view( 'menu', 'social', [ 'name' => 'social' ] ); ?>
+	<footer class="app-footer px-2 py-8 font-size-875">
+		<div class="grid--footer mx-auto max-width-1">
+			<p>
+			<?php
+				Syopajatyo\display_svg_img( [
+					'icon'  => 'logo-text',
+					'class' => 'svg-img svg-img--site-logo',
+				] );
 
-			<p class="app-footer__credit text-center mb-0">
-				<?php esc_html_e( 'Powered by crazy ideas and passion', 'syopajatyo' ); ?>
-				<span class="sep"> &middot; </span>
+				Syopajatyo\display_svg_img( [
+					'icon'  => 'logo-potilaat',
+					'class' => 'svg-img svg-img--potilaat',
+				] );
+			?>
+			</p>
+
+			<div class="app-footer__credit">
+				<ul class="reset-list pb-4">
+					<li class="fw-600 uppercase">Suomen syöpäpotilaat Ry</li>
+					<li>Malminkatu 5</li>
+					<li>00700 Helsinki</li>
+					<li>Email: info@syopapotilaat.fi</li>
+				</ul>
 				<?php
-					/* translators: %1$s is theme name, and %2$s is link to theme site. */
-					printf( esc_html__( 'Theme %1$s by %2$s', 'syopajatyo' ), 'Syopajatyo', '<a href="https://foxland.fi/">Foxland</a>' );
+					Hybrid\render_view( 'menu', 'social', [ 'name' => 'social-footer' ] );
+
+					echo '<p class="mb-0">' . esc_html__( 'Design: Kumu Communications &#38; Milart Illustrations by Milart', 'syopajatyo' ) . '</p>';
 				?>
+			</div>
+			<p>
+				Cras volutpat, lacus quis semper pharetra, nisi enim dignissim est.
+				et sollicitudin quam ipsum vel mi. Sed commodo urna ac urna.
+				Nullam eu tortor. Curabitur sodales scelerisque magna.
+				Donec ultricies tristique pede.
 			</p>
 		</div>
 	</footer>
