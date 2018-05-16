@@ -11,7 +11,7 @@
     "lint:styles": "stylelint './resources/styles/**/*.scss' --syntax scss",
     "lint:scripts": "eslint './resources/scripts/**/*.js'",
     "docs": "sassdoc resources/styles --dest docs --theme herman",
-    "phpcs": "phpcs *.php app resources",
+    "phpcs": "phpcs *.php app resources"
   },
   "repository": {
     "type": "git",
