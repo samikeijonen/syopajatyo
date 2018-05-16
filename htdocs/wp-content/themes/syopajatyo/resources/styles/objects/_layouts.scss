@@ -16,17 +16,17 @@
 
 @supports (grid-area: auto) {
 
-	.grid--footer {
+	.grid-footer {
 		display: grid;
 		grid-gap: $global-spacing-unit-4;
 		grid-template-columns: repeat(4, 1fr);
 
-		:first-child,
-		:nth-child(2) {
+		&__logos,
+		&__credit {
 			grid-column: span 2;
 		}
 
-		:nth-child(3) {
+		&__info {
 			grid-column: span 4;
 		}
 	}
@@ -49,14 +49,20 @@
 			}
 		}
 
-		.grid--footer {
-			:first-child,
-			:nth-child(2) {
+		.grid-footer {
+			&__logos,
+			&__credit {
 				grid-column: span 1;
 			}
 
-			:nth-child(3) {
+			&__info {
 				grid-column: span 2;
+			}
+
+			&__credit,
+			&__info {
+				border-left: 1px solid;
+				padding-left: $global-spacing-unit-1 * 3;
 			}
 		}
 
