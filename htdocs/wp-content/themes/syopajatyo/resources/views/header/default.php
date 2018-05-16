@@ -34,7 +34,11 @@
 
 			<div class="app-header__search">
 			<?php
-				Hybrid\render_view( 'menu', 'language', [ 'name' => 'language' ] );
+				Hybrid\render_view( 'menu', 'language', [
+					'name'  => 'language',
+					'label' => _x( 'Language', 'nav menu label', 'syopajatyo' ),
+				] );
+
 				get_search_form();
 			?>
 			</div>
@@ -45,6 +49,7 @@
 		Hybrid\render_view( 'menu', 'primary', [
 			'name'         => 'primary',
 			'social_links' => 'social',
+			'label'        => _x( 'Primary', 'nav menu label', 'syopajatyo' ),
 		] );
 
 		Hybrid\render_view( 'partials', 'title-header' );

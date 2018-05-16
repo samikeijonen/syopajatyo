@@ -23,7 +23,7 @@ $syopajatyo_social_links = wp_nav_menu(
 );
 ?>
 
-<nav class="menu menu--<?= esc_attr( $data->name ) ?> px-2" id="js-menu--<?= esc_attr( $data->name ) ?>">
+<nav class="menu menu--<?= esc_attr( $data->name ) ?> px-2" id="js-menu--<?= esc_attr( $data->name ) ?>" aria-label="<?= esc_attr( $data->label ) ?>">
 	<div class="nav-wrapper mx-auto max-width-1">
 		<button id="menu-toggle" class="menu-toggle flex items-center justify-center" aria-expanded="false" aria-controls="menu__items--<?= esc_attr( $data->name ) ?>">
 			<svg class="menu-toggle-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 40">

@@ -10,7 +10,7 @@ if ( ! has_nav_menu( $data->name ) ) :
 endif
 ?>
 
-<nav class="menu menu--<?= esc_attr( $data->name ) ?>">
+<nav class="menu menu--<?= esc_attr( $data->name ) ?>" aria-label="<?= esc_attr( $data->label ) ?>">
 	<?php
 	wp_nav_menu( [
 		'theme_location' => $data->name,

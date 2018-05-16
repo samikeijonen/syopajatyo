@@ -33,7 +33,10 @@
 					<li>Email: info@syopapotilaat.fi</li>
 				</ul>
 				<?php
-					Hybrid\render_view( 'menu', 'social', [ 'name' => 'social-footer' ] );
+					Hybrid\render_view( 'menu', 'social', [
+						'name'  => 'social-footer',
+						'label' => __( 'Social links', 'syopajatyo' ),
+					] );
 
 					echo '<p class="mb-0">' . esc_html__( 'Design: Kumu Communications &#38; Milart Illustrations by Milart', 'syopajatyo' ) . '</p>';
 				?>
