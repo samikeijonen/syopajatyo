@@ -119,7 +119,7 @@ function nav_menu_social_icons( $item_output, $item, $depth, $args ) {
 	$social_icons = social_links_icons();
 
 	// Change SVG icon inside social links menu if there is supported URL.
-	if ( 'social' === $args->theme_location ) {
+	if ( 'social' === $args->theme_location || 'social-footer' === $args->theme_location ) {
 		foreach ( $social_icons as $attr => $value ) {
 			if ( false !== strpos( $item_output, $attr ) ) {
 				$item_output = str_replace( $args->link_after, '</span>' . get_svg( [ 'icon' => esc_attr( $value ) ] ), $item_output );
