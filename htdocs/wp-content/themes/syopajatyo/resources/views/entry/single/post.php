@@ -7,10 +7,10 @@
 
 ?>
 <article <?php Hybrid\attr( 'entry' ); ?>>
-	<header class="entry__header text-center">
-		<div class="entry__byline pb-2">
-			<?php Hybrid\post_author(); ?>
-			<?php Hybrid\post_date( [ 'before' => Syopajatyo\get_meta_sep() ] ); ?>
+	<header class="entry__header">
+		<div class="entry__byline pb-2 font-size-875">
+			<?php Hybrid\post_date(); ?>
+			<?php Hybrid\post_author( [ 'before' => Syopajatyo\get_meta_sep() ] ); ?>
 			<?php Hybrid\post_comments( [ 'before' => Syopajatyo\get_meta_sep() ] ); ?>
 		</div>
 	</header>
