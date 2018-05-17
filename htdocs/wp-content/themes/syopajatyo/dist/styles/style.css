@@ -651,12 +651,11 @@ td {
         grid-column: span 1;
         padding-left: 1rem; }
     .grid-footer__logos, .grid-footer__credit {
-      grid-column: span 1; }
+      border-right: 1px solid;
+      grid-column: span 1;
+      padding-right: 1.5rem; }
     .grid-footer__info {
-      grid-column: span 2; }
-    .grid-footer__credit, .grid-footer__info {
-      border-left: 1px solid;
-      padding-left: 1.5rem; } } }
+      grid-column: span 2; } } }
 .reset-list {
   margin: 0;
   padding: 0;
@@ -1215,25 +1214,40 @@ p.wp-block-subhead {
   margin: 0;
   padding: 0;
   list-style-type: none;
-  border-bottom: 1px solid #f0eeeb;
-  border-bottom: 1px solid var(--color-light);
-  border-top: 1px solid #f0eeeb;
-  border-top: 1px solid var(--color-light);
-  padding: 2rem;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center; }
+  flex-wrap: wrap; }
 .pagination__item:not(:last-child)::after {
   content: "/";
   padding: 0 1rem; }
-.pagination__anchor {
+.pagination__anchor,
+.page-numbers {
   text-decoration: none; }
+.page-numbers {
+  margin-right: 1rem; }
+.page-numbers:not(.dots) {
+    background-color: #f0eeeb;
+    background-color: var(--color-light);
+    padding: 0.5rem 1rem; }
 .sticky {
   display: block; }
 .updated:not(.published) {
   display: none; }
 .entry {
   margin-bottom: 4rem; }
+.entry--archive {
+    border-bottom: 1px solid #007fa3;
+    border-bottom: 1px solid var(--color-base);
+    padding-bottom: 4rem; }
+@supports (grid-area: auto) {
+      @media screen and (min-width: 48em) {
+        .entry--archive.has-post-thumbnail .entry__summary {
+          display: grid;
+          grid-gap: 2rem;
+          grid-template-columns: repeat(3, 1fr); }
+          .entry--archive.has-post-thumbnail .entry__summary .post-thumbnail {
+            grid-column: span 1; }
+          .entry--archive.has-post-thumbnail .entry__summary .post-excerpt {
+            grid-column: span 2; } } }
 .entry__header,
 .entry__content,
 .entry__summary,
@@ -1245,6 +1259,8 @@ p.wp-block-subhead {
 .entry__byline {
   font-size: 0.875rem;
   font-size: var(--font-size-875); }
+.entry__summary p:last-child {
+  margin-bottom: 0; }
 .entry__footer {
   margin-top: 2rem; }
 .terms-wrapper {
