@@ -46,6 +46,66 @@ add_filter( 'nav_menu_link_attributes', function( $atts, $item, $args, $depth ) 
 }, 10, 4 );
 
 /**
+ * Filters the HTML attributes applied to a page menu item's anchor element.
+ *
+ * @param array $atts {
+ *     The HTML attributes applied to the menu item's `<a>` element, empty strings are ignored.
+ *
+ *     @type string $href The href attribute.
+ * }
+ * @param WP_Post $page         Page data object.
+ * @param int     $depth        Depth of page, used for padding.
+ * @param array   $args         An array of arguments.
+ * @param int     $current_page ID of the current page.
+ */
+add_filter( 'page_menu_link_attributes', function( $atts, $page, $depth, $args, $current_page ) {
+	$atts['class'] = 'menu__anchor menu__anchor--sub-menu';
+
+	if ( $current_page === $page->ID ) {
+		$atts['class'] .= ' is-active';
+	}
+
+	if ( $args['has_children'] ) {
+		$atts['class'] .= ' has-children';
+	}
+
+	if ( 0 === $depth ) {
+		$atts['class'] .= ' is-top-level';
+	}
+
+	return $atts;
+}, 10, 5 );
+
+/**
+ * Filters the list of CSS classes to include with each page item in the list.
+ *
+ * @see wp_list_pages()
+ *
+ * @param string[] $css_class    An array of CSS classes to be applied to each list item.
+ * @param WP_Post  $page         Page data object.
+ * @param int      $depth        Depth of page, used for padding.
+ * @param array    $args         An array of arguments.
+ * @param int      $current_page ID of the current page.
+ */
+add_filter( 'page_css_class', function( $css_class, $page, $depth, $args, $current_page ) {
+	$css_class['class'] = 'menu__item menu__item--sub-menu';
+
+	if ( in_array( 'page_item_has_children', $css_class, true ) ) {
+		$css_class['class'] .= ' has-children';
+	}
+
+	if ( in_array( 'current_page_ancestor', $css_class, true ) ) {
+		$css_class['class'] .= ' menu__item--ancestor';
+	}
+
+	if ( 0 === $depth ) {
+		$css_class['class'] .= ' is-top-level';
+	}
+
+	return $css_class;
+}, 10, 5 );
+
+/**
  * Replaces "[...]" (appended to automatically generated excerpts) with ... and
  * a 'Continue reading' link.
  *
