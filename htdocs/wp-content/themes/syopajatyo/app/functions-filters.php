@@ -118,7 +118,7 @@ function excerpt_more( $link ) {
 	}
 
 	$link = sprintf(
-		'<p class="link-more mb-0"><a href="%1$s" class="more-link" aria-hidden="true" tabindex="-1">%2$s</a></p>',
+		'<p class="link-more mb-0"><a href="%1$s" class="more-link decoration-none uppercase" aria-hidden="true" tabindex="-1">%2$s</a></p>',
 		esc_url( get_permalink( get_the_ID() ) ),
 		/* translators: %s: Name of current post */
 		sprintf( __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'syopajatyo' ), get_the_title( get_the_ID() ) )
