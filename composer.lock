@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "c20a7c946a12738f20cb90c70a9cb8cc",
+    "content-hash": "830aec688a82f62e3c796705e59d6a4b",
     "packages": [
         {
             "name": "composer/installers",
@@ -177,6 +177,49 @@
                 "wordpress"
             ],
             "time": "2015-06-11T15:15:30+00:00"
+        },
+        {
+            "name": "justintadlock/hybrid-core",
+            "version": "5.0.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/justintadlock/hybrid-core.git",
+                "reference": "1726fe10b92cba29991fdf37782022ee14214d37"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/justintadlock/hybrid-core/zipball/1726fe10b92cba29991fdf37782022ee14214d37",
+                "reference": "1726fe10b92cba29991fdf37782022ee14214d37",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6",
+                "psr/container": "^1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/bootstrap-hybrid.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Justin Tadlock",
+                    "email": "justintadlock@gmail.com",
+                    "homepage": "http://justintadlock.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Hybrid Core WordPress theme framework",
+            "homepage": "https://themehybrid.com/hybrid-core",
+            "keywords": [
+                "wordpress"
+            ],
+            "time": "2018-05-10T20:53:16+00:00"
         },
         {
             "name": "koodimonni-language/fi",
@@ -750,6 +793,55 @@
             "time": "2018-02-04T10:52:01+00:00"
         },
         {
+            "name": "psr/container",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/container.git",
+                "reference": "b7ce3b176482dbbc1245ebf52b181af44c2cf55f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/container/zipball/b7ce3b176482dbbc1245ebf52b181af44c2cf55f",
+                "reference": "b7ce3b176482dbbc1245ebf52b181af44c2cf55f",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Psr\\Container\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "http://www.php-fig.org/"
+                }
+            ],
+            "description": "Common Container Interface (PHP FIG PSR-11)",
+            "homepage": "https://github.com/php-fig/container",
+            "keywords": [
+                "PSR-11",
+                "container",
+                "container-interface",
+                "container-interop",
+                "psr"
+            ],
+            "time": "2017-02-14T16:28:37+00:00"
+        },
+        {
             "name": "seravo/seravo-plugin",
             "version": "1.8.0",
             "source": {
@@ -912,11 +1004,13 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "justintadlock/hybrid-core": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=5.3.2"
+        "php": ">=5.6"
     },
     "platform-dev": []
 }
