@@ -6,7 +6,15 @@
 ##### https://seravo.com/docs/development/configure-vagrant-box/#using-dotenv    #####
 ######################################################################################
 
-#Load composer libraries
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+//define( 'HYBRID_DIR', dirname( __DIR__ ) . '/vendor/hybrid-core/' );
+//define( 'HYBRID_URI', dirname( __DIR__ ) . '/vendor/hybrid-core/' );
+//define( 'HYBRID_BOOTSTRAPPED', true )
+
+// Load composer libraries.
 require_once(dirname(__DIR__) . '/vendor/autoload.php');
 
 $root_dir = dirname(__DIR__);
