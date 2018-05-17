@@ -6,7 +6,7 @@
  */
 
 ?>
-<section class="title-header px-2" role="region" aria-labelledby="region-title">
+<section class="title-header px-2 py-4" role="region" aria-labelledby="region-title">
 	<div class="mx-auto max-width-1">
 		<?php
 		if ( is_singular() || is_home() ) :

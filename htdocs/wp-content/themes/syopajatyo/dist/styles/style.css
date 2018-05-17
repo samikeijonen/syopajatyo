@@ -991,9 +991,7 @@ p.wp-block-subhead {
   background-color: #007fa3;
   background-color: var(--color-base);
   color: #fff;
-  color: var(--color-white);
-  padding-bottom: 0.5rem;
-  padding-top: 3rem; }
+  color: var(--color-white); }
 .wp-smiley,
 .emoji {
   background: none;
