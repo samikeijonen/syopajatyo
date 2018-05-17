@@ -1424,6 +1424,8 @@ p.wp-block-subhead {
 .py-8 {
   padding-bottom: 4rem;
   padding-top: 4rem; }
+.pb-1 {
+  padding-bottom: 0.5rem; }
 .pb-2 {
   padding-bottom: 1rem; }
 .pb-4 {

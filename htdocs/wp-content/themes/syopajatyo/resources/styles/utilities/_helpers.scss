@@ -72,12 +72,16 @@
 	padding-top: $global-spacing-unit-1 * 8;
 }
 
+.pb-1 {
+	padding-bottom: $global-spacing-unit-1;
+}
+
 .pb-2 {
-	padding-bottom: $global-spacing-unit-2;
+	padding-bottom: $global-spacing-unit-1 * 2;
 }
 
 .pb-4 {
-	padding-bottom: $global-spacing-unit-4;
+	padding-bottom: $global-spacing-unit-1 * 4;
 }
 
 .mb-0 {
@@ -85,5 +89,5 @@
 }
 
 .mb-2 {
-	margin-bottom: $global-spacing-unit-2;
+	margin-bottom: $global-spacing-unit-1 * 2;
 }
