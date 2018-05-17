@@ -8,6 +8,7 @@
 ?>
 <article <?php Hybrid\attr( 'entry', 'archive' ); ?>>
 	<header class="entry__header">
+		<?php Hybrid\render_view( 'partials', 'byline', [ 'class' => 'pb-1' ] ); ?>
 		<h2 class="entry__title"><a class="decoration-none h-decoration-underline color-dark" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 	</header>
 
