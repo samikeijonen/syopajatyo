@@ -1016,6 +1016,12 @@ p.wp-block-subhead {
 .menu--primary {
   background-color: #111;
   background-color: var(--color-dark); }
+.menu--sidebar ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none; }
+.menu--sidebar ul ul {
+    padding-left: 1.5rem; }
 .menu__items--primary {
   display: none; }
 .menu__items--primary.is-opened {
@@ -1043,6 +1049,8 @@ p.wp-block-subhead {
     border-right: 1px solid;
     margin-right: 0.5rem;
     padding-right: 0.5rem; }
+.menu__item--sub-menu.is-top-level {
+  padding-bottom: 1.5rem; }
 .menu__anchor {
   text-decoration: none; }
 .menu__anchor--primary {
@@ -1089,6 +1097,20 @@ p.wp-block-subhead {
 .menu__anchor--language:hover, .menu__anchor--language:focus, .menu__anchor--language:active {
       color: #007fa3;
       color: var(--color-base); }
+.menu__anchor--sub-menu {
+    color: #111;
+    color: var(--color-dark);
+    display: block; }
+.menu__anchor--sub-menu:hover, .menu__anchor--sub-menu:focus, .menu__anchor--sub-menu:active {
+      color: #007fa3;
+      color: var(--color-base); }
+.menu__anchor--sub-menu.is-active {
+      font-weight: 600; }
+.menu__anchor--sub-menu.is-top-level {
+      text-transform: uppercase; }
+.menu__anchor--sub-menu .svg {
+      top: -0.125em;
+      transform: rotate(-90deg); }
 .menu__sub-menu .menu__anchor--primary {
   text-transform: none; }
 .menu__anchor.menu__anchor--button {
