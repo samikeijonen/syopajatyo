@@ -639,6 +639,8 @@ td {
       grid-column: span 2; }
     .grid-footer__info {
       grid-column: span 4; }
+  .grid__span-1 {
+    padding-top: 4rem; }
   @media screen and (min-width: 48em) {
     .grid {
       display: grid;
@@ -649,7 +651,8 @@ td {
       .grid__span-1 {
         border-left: 1px solid;
         grid-column: span 1;
-        padding-left: 1rem; }
+        padding-left: 1rem;
+        padding-top: 0; }
     .grid-footer__logos, .grid-footer__credit {
       border-right: 1px solid;
       grid-column: span 1;
