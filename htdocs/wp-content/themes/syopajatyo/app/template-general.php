@@ -128,26 +128,6 @@ function post_thumbnail() {
 }
 
 /**
- * Sub pages navigation using Better section nav plugin
- *
- * @since 1.0.0
- */
-function get_better_section_nav() {
-	if ( ! function_exists( 'better_section_nav' ) ) {
-		return;
-	}
-
-	$args = [
-		'before_widget' => '<section class="widget widget--better-section-nav"><nav class="menu menu--sidebar" id="js-menu--sidebar" aria-label="' . esc_html__( 'Subpages', 'syopajatyo' ) . '">',
-		'after_widget'  => '</nav></section>',
-		'before_title'  => '<h2 class="widget__title h6">',
-		'after_title'   => '</h2>',
-	];
-
-	echo better_section_nav( $args );
-}
-
-/**
  * Sub pages navigation
  *
  * Show hierarchial pages of current page.
@@ -162,7 +142,7 @@ function sub_pages_navigation() {
 	global $pretend_id;
 
 	if ( ! empty( $pretend_id ) && is_numeric( $pretend_id ) ) {
-		$post = get_post( $pretend_id );
+		$post = get_post( $pretend_id ); // phpcs:ignore WordPress.Variables.GlobalVariables.OverrideProhibited
 		setup_postdata( $post );
 	}
 
@@ -194,22 +174,11 @@ function sub_pages_navigation() {
 	);
 
 	if ( ! empty( $list ) ) :
-		$parent_top = array_reverse( get_post_ancestors( $post->ID ) );
-
-		if ( ! empty( $parent_top ) ) {
-			$first_parent = get_page( $parent_top[0] );
-			$parent_css   = '';
-		}
-
-		if ( empty( $parent_top ) || get_the_ID() === $first_parent->ID ) {
-			$parent_css   = 'current_page_item';
-			$first_parent = get_page( get_the_ID() );
-		}
-		?>
+	?>
 		<section class="widget widget--sub-pages">
 			<nav class="menu menu--sidebar" id="js-menu--sidebar" aria-label="<?= esc_html__( 'Subpages', 'syopajatyo' ); ?>">
 				<ul class="sub-pages-list">
-					<?= $list; ?>
+					<?= wp_kses_post( $list ); ?>
 				</ul>
 			</nav>
 		</section>
