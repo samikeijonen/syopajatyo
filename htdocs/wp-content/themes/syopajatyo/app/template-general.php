@@ -43,10 +43,12 @@ function site_title() {
 	?>
 		<h1 class="app-header__title mb-0 font-size-cta fw-200"><a class="decoration-none color-dark block" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 		<?php
-			display_svg_img( [
-				'icon'  => 'logo',
-				'class' => 'site-logo',
-			] );
+			display_svg_img(
+				[
+					'icon'  => 'logo',
+					'class' => 'site-logo',
+				]
+			);
 			bloginfo( 'name' );
 		?>
 		</a></h1>
@@ -55,10 +57,12 @@ function site_title() {
 	?>
 		<p class="app-header__title mb-0 font-size-cta fw-200"><a class="decoration-none color-dark block" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 		<?php
-			display_svg_img( [
-				'icon'  => 'logo',
-				'class' => 'site-logo',
-			] );
+			display_svg_img(
+				[
+					'icon'  => 'logo',
+					'class' => 'site-logo',
+				]
+			);
 			bloginfo( 'name' );
 		?>
 		</a></p>
@@ -107,14 +111,112 @@ function post_thumbnail() {
 
 		<a class="post-thumbnail block mb-2" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
 			<?php
-			the_post_thumbnail( 'post-thumbnail', [
-				'alt' => the_title_attribute( [
-					'echo' => false,
-				] ),
-			] );
+			the_post_thumbnail(
+				'post-thumbnail', [
+					'alt' => the_title_attribute(
+						[
+							'echo' => false,
+						]
+					),
+				]
+			);
 			?>
 		</a>
 
 	<?php
 	endif; // End is_singular().
+}
+
+/**
+ * Sub pages navigation using Better section nav plugin
+ *
+ * @since 1.0.0
+ */
+function get_better_section_nav() {
+	if ( ! function_exists( 'better_section_nav' ) ) {
+		return;
+	}
+
+	$args = [
+		'before_widget' => '<section class="widget widget--better-section-nav"><nav class="menu menu--sidebar" id="js-menu--sidebar" aria-label="' . esc_html__( 'Subpages', 'syopajatyo' ) . '">',
+		'after_widget'  => '</nav></section>',
+		'before_title'  => '<h2 class="widget__title h6">',
+		'after_title'   => '</h2>',
+	];
+
+	echo better_section_nav( $args );
+}
+
+/**
+ * Sub pages navigation
+ *
+ * Show hierarchial pages of current page.
+ *
+ * @author    Aucor
+ * @copyright Copyright (c) 2018, Aucor
+ * @link      https://github.com/aucor/aucor-starter/blob/master/template-tags/navigation.php
+ * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+ */
+function sub_pages_navigation() {
+	global $post;
+	global $pretend_id;
+
+	if ( ! empty( $pretend_id ) && is_numeric( $pretend_id ) ) {
+		$post = get_post( $pretend_id );
+		setup_postdata( $post );
+	}
+
+	$hierarchy_pos = count( $post->ancestors );
+
+	if ( $hierarchy_pos > 3 ) {
+		$great_grand_parent = wp_get_post_parent_id( $post->post_parent );
+		$grand_parent       = wp_get_post_parent_id( $great_grand_parent );
+		$parent             = wp_get_post_parent_id( $grand_parent );
+	} elseif ( 3 === $hierarchy_pos ) {
+		$grand_parent = wp_get_post_parent_id( $post->post_parent );
+		$parent       = wp_get_post_parent_id( $grand_parent );
+	} elseif ( 2 === $hierarchy_pos ) {
+		$parent = wp_get_post_parent_id( $post->post_parent );
+	} elseif ( 0 === $hierarchy_pos ) {
+		$parent = $post->ID;
+	} else {
+		$parent = $post->post_parent;
+	}
+
+	$list = wp_list_pages(
+		array(
+			'echo'        => 0,
+			'child_of'    => $parent,
+			'link_after'  => '',
+			'title_li'    => '',
+			'sort_column' => 'menu_order, post_title',
+		)
+	);
+
+	if ( ! empty( $list ) ) :
+		$parent_top = array_reverse( get_post_ancestors( $post->ID ) );
+
+		if ( ! empty( $parent_top ) ) {
+			$first_parent = get_page( $parent_top[0] );
+			$parent_css   = '';
+		}
+
+		if ( empty( $parent_top ) || get_the_ID() === $first_parent->ID ) {
+			$parent_css   = 'current_page_item';
+			$first_parent = get_page( get_the_ID() );
+		}
+		?>
+		<section class="widget widget--sub-pages">
+			<nav class="menu menu--sidebar" id="js-menu--sidebar" aria-label="<?= esc_html__( 'Subpages', 'syopajatyo' ); ?>">
+				<ul class="sub-pages-list">
+					<?= $list; ?>
+				</ul>
+			</nav>
+		</section>
+	<?php
+	endif;
+
+	if ( ! empty( $pretend_id ) ) {
+		wp_reset_postdata();
+	}
 }
