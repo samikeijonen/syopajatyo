@@ -1,0 +1,206 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Syopajatyo\n"
+"POT-Creation-Date: 2018-05-17 16:36+0300\n"
+"PO-Revision-Date: 2018-05-17 16:40+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.6\n"
+"X-Poedit-Basepath: ../..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: style.css\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
+"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+"X-Poedit-SearchPathExcluded-1: vendor\n"
+"X-Poedit-SearchPathExcluded-2: node_modules\n"
+
+#. translators: %s: Name of current post
+#: app/functions-filters.php:124
+#, php-format
+msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
+msgstr "Lue lisää<span class=\"screen-reader-text\"> %s</span>"
+
+#: app/functions-fonts.php:23
+msgctxt "Titillium Web font: on or off"
+msgid "on"
+msgstr ""
+
+#: app/functions-setup.php:102
+msgctxt "nav menu location"
+msgid "Primary"
+msgstr "Päävalikko"
+
+#: app/functions-setup.php:103
+msgctxt "nav menu location"
+msgid "Social links"
+msgstr "Some-linkit"
+
+#: app/functions-setup.php:104
+msgctxt "nav menu location"
+msgid "Social links in footer"
+msgstr "Some-linkit alapalkissa"
+
+#: app/functions-setup.php:105
+msgctxt "nav menu location"
+msgid "Language"
+msgstr "Kieli"
+
+#: app/functions-setup.php:140
+msgctxt "sidebar"
+msgid "Primary"
+msgstr "Vimpainalue"
+
+#: app/functions-svg.php:27 app/functions-svg.php:64
+msgid "Please define default parameters in the form of an array."
+msgstr "Määrittele oletusparametrit array-muodossa."
+
+#: app/functions-svg.php:32 app/functions-svg.php:69
+msgid "Please define an SVG icon filename."
+msgstr "Määrittele SVG-ikonin tiedostonimi."
+
+#: app/template-general.php:30
+msgctxt "meta separator"
+msgid "&middot;"
+msgstr ""
+
+#: app/template-general.php:179
+msgid "Subpages"
+msgstr "Alasivut"
+
+#. translators: %s how many days ago.
+#: resources/views/comment/default.php:18 resources/views/comment/ping.php:14
+#, php-format
+msgid "%s ago"
+msgstr "%s sitten"
+
+#: resources/views/comments/default.php:41
+msgid "Comments are closed."
+msgstr "Kommentointi on suljettu."
+
+#: resources/views/content/404.php:12
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "Ups, sivua ei löytynyt."
+
+#: resources/views/content/404.php:16
+msgid "It looks like nothing was found at this location. Maybe try search?"
+msgstr ""
+"Näyttää siltä että mitään ei löytynyt tästä osoitteesta. Kokeile hakua?"
+
+#: resources/views/entry/single/post.php:25
+msgid "Categories:"
+msgstr "Kategoriat:"
+
+#: resources/views/entry/single/post.php:31
+msgid "Tags:"
+msgstr "Avainsanat:"
+
+#: resources/views/footer/default.php:38
+msgid "Social links"
+msgstr "Some-linkit"
+
+#: resources/views/footer/default.php:41
+msgid "Design: Kumu Communications &#38; Milart Illustrations by Milart"
+msgstr ""
+
+#: resources/views/header/default.php:26
+msgid "Skip to content"
+msgstr "Siirry sisältöön"
+
+#: resources/views/header/default.php:39
+msgctxt "nav menu label"
+msgid "Language"
+msgstr "Kieli"
+
+#: resources/views/header/default.php:52
+msgctxt "nav menu label"
+msgid "Primary"
+msgstr "Pää"
+
+#: resources/views/menu/default.php:34
+msgid "Menu"
+msgstr "Valikko"
+
+#: resources/views/partials/comments-nav.php:12
+msgid "Comments Navigation"
+msgstr "Kommenttien navigaatio"
+
+#: resources/views/partials/comments-nav.php:16
+msgctxt "comments navigation"
+msgid "&larr; Previous"
+msgstr "&larr; Edellinen"
+
+#: resources/views/partials/comments-nav.php:23
+#, php-format
+msgid "Page %1$s of %2$s"
+msgstr "Sivu %1$s/%2$s"
+
+#: resources/views/partials/comments-nav.php:31
+msgctxt "comments navigation"
+msgid "Next &rarr;"
+msgstr "Seuraava &rarr;"
+
+#: resources/views/partials/pagination-posts.php:10
+msgid "Previous page"
+msgstr "Edellinen sivu"
+
+#: resources/views/partials/pagination-posts.php:11
+msgid "Next page"
+msgstr "Seuraava sivu"
+
+#: resources/views/partials/pagination-posts.php:12
+msgid "Page"
+msgstr "Sivu"
+
+#: resources/views/partials/pagination-singular.php:11
+msgid "Pages:"
+msgstr "Sivut:"
+
+#: resources/views/searchform.php:14
+msgctxt "label"
+msgid "Search for:"
+msgstr "Etsi:"
+
+#: resources/views/searchform.php:16
+msgctxt "placeholder"
+msgid "Search &hellip;"
+msgstr "Haku &hellip;"
+
+#: resources/views/searchform.php:17
+msgctxt "submit button"
+msgid "Search"
+msgstr "Hae"
+
+#. Theme Name of the plugin/theme
+msgid "Syopajatyo"
+msgstr ""
+
+#. Theme URI of the plugin/theme
+msgid "https://github.com/samikeijonen/syopajatyo"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Custom theme for syopajatyo.fi site."
+msgstr "Kustomoitu teema syopajatyo.fi -sivustolle."
+
+#. Author of the plugin/theme
+msgid "Sami Keijonen"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://foxland.fi/"
+msgstr ""
+
+#~ msgid "(Untitled)"
+#~ msgstr "(Nimetön)"
+
+#~ msgid "404 Not Found"
+#~ msgstr "Sivua ei löytynyt"
