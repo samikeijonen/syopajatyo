@@ -27,6 +27,11 @@ add_action( 'wp_enqueue_scripts', function() {
 		true
 	);
 
+	// Add SVG icon which we can use via JS.
+	wp_localize_script( 'syopajatyo-app', 'SyopaJaTyoText', array(
+		'icon' => get_svg( array( 'icon' => 'angle-down' ) ),
+	) );
+
 	// Add custom fonts.
 	wp_enqueue_style(
 		'syopajatyo-fonts',

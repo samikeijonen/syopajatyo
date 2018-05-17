@@ -88,7 +88,9 @@
  * navigation support for dropdown menus.
  */
 (function () {
-  var container, button, menu, menuSocial, links, i, len;
+  var container, button, menu, menuSocial, menuSidebar, links, i, len;
+  /* global SyopaJaTyoText */
+
   container = document.getElementById('js-menu--primary'); // Bail if there is no menu.
 
   if (!container) {
@@ -134,6 +136,20 @@
   for (i = 0, len = links.length; i < len; i++) {
     links[i].addEventListener('focus', toggleFocus, true);
     links[i].addEventListener('blur', toggleFocus, true);
+  }
+  /**
+   * Add icon to sub menu items.
+   */
+
+
+  menuSidebar = document.getElementById('js-menu--sidebar');
+
+  if (menuSidebar) {
+    var listItems = menuSidebar.querySelectorAll('.children li a');
+
+    for (i = 0, len = listItems.length; i < len; i++) {
+      listItems[i].insertAdjacentHTML('afterbegin', SyopaJaTyoText.icon);
+    }
   }
   /**
    * Toggle menu classes and ARIA.
