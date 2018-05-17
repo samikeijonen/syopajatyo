@@ -43,6 +43,9 @@ add_action( 'after_setup_theme', function() {
 	// Add title tag support.
 	add_theme_support( 'title-tag' );
 
+	// Add support for Post Thumbnails on posts and pages.
+	add_theme_support( 'post-thumbnails' );
+
 	// Add selective refresh for widgets.
 	add_theme_support( 'customize-selective-refresh-widgets' );
 
@@ -113,7 +116,7 @@ add_action( 'init', function() {
  */
 add_action( 'init', function() {
 	// Set the `post-thumbnail` size.
-	set_post_thumbnail_size( 972, 600, true );
+	set_post_thumbnail_size( 960, 720, true );
 }, 5 );
 
 /**
