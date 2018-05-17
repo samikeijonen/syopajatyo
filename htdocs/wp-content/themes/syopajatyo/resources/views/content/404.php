@@ -6,7 +6,7 @@
  */
 
 ?>
-<main id="main" class="app-main py-4">
+<main id="main" class="app-main px-2 py-8">
 	<section class="entry entry--error mx-auto max-width-2">
 		<header class="entry__header">
 			<h1 class="entry__title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'syopajatyo' ); ?></h1>
