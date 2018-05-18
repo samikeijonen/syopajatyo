@@ -14,6 +14,7 @@
 		padding-bottom: $global-spacing-unit-1 * 8;
 
 		@supports (grid-area: auto) {
+
 			@media screen and (min-width: $breakpoint-1) {
 				&.has-post-thumbnail .entry__summary {
 					display: grid;
@@ -29,6 +30,7 @@
 					}
 				}
 			}
+
 		}
 	}
 }
@@ -48,6 +50,11 @@
 
 .entry__footer {
 	margin-top: $global-spacing-unit-4;
+}
+
+.entry__author {
+	color: var(--color-dark);
+	text-decoration: none;
 }
 
 .terms-wrapper {

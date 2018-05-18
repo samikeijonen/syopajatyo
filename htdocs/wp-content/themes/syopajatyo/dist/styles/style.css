@@ -1280,6 +1280,10 @@ p.wp-block-subhead {
   margin-bottom: 0; }
 .entry__footer {
   margin-top: 2rem; }
+.entry__author {
+  color: #111;
+  color: var(--color-dark);
+  text-decoration: none; }
 .terms-wrapper {
   color: rgba(0, 0, 0, .6);
   color: var(--color-grey-60);
