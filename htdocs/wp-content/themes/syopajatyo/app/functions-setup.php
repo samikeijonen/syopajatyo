@@ -74,6 +74,20 @@ add_action( 'after_setup_theme', function() {
 }, 5 );
 
 /**
+ * Set the content width in pixels, based on the theme's design and stylesheet.
+ *
+ * Priority 0 to make it available to lower priority callbacks.
+ *
+ * @global int $content_width
+ */
+add_action( 'after_setup_theme', function() {
+	// This variable is intended to be overruled from themes.
+	// Open WPCS issue: {@link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/issues/1043}.
+	// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
+	$GLOBALS['content_width'] = apply_filters( 'syopajatyo_content_width', 690 );
+}, 0 );
+
+/**
  * Adds support for the custom background feature. This is in its own function
  * hooked to `after_setup_theme` so that we can give it a later priority. This
  * is so that child themes can more easily overwrite this feature. Note that
