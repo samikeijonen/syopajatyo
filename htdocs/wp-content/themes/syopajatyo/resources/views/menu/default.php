@@ -39,7 +39,7 @@ $syopajatyo_social_links = wp_nav_menu(
 			'theme_location' => $data->name,
 			'container'      => '',
 			'menu_id'        => 'menu__items--' . esc_attr( $data->name ),
-			'menu_class'     => 'menu__items menu__items--' . esc_attr( $data->name ) . ' animated fade-in-down',
+			'menu_class'     => 'menu__items menu__items--' . esc_attr( $data->name ),
 			'item_spacing'   => 'discard',
 		] );
 
