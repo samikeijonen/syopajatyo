@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Syopajatyo\n"
-"POT-Creation-Date: 2018-05-17 16:36+0300\n"
-"PO-Revision-Date: 2018-05-17 16:40+0300\n"
+"POT-Creation-Date: 2018-05-18 10:29+0300\n"
+"PO-Revision-Date: 2018-05-18 10:29+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fi\n"
@@ -34,27 +34,27 @@ msgctxt "Titillium Web font: on or off"
 msgid "on"
 msgstr ""
 
-#: app/functions-setup.php:102
+#: app/functions-setup.php:116
 msgctxt "nav menu location"
 msgid "Primary"
 msgstr "Päävalikko"
 
-#: app/functions-setup.php:103
+#: app/functions-setup.php:117
 msgctxt "nav menu location"
 msgid "Social links"
 msgstr "Some-linkit"
 
-#: app/functions-setup.php:104
+#: app/functions-setup.php:118
 msgctxt "nav menu location"
 msgid "Social links in footer"
 msgstr "Some-linkit alapalkissa"
 
-#: app/functions-setup.php:105
+#: app/functions-setup.php:119
 msgctxt "nav menu location"
 msgid "Language"
 msgstr "Kieli"
 
-#: app/functions-setup.php:140
+#: app/functions-setup.php:154
 msgctxt "sidebar"
 msgid "Primary"
 msgstr "Vimpainalue"
@@ -163,6 +163,12 @@ msgstr "Sivu"
 #: resources/views/partials/pagination-singular.php:11
 msgid "Pages:"
 msgstr "Sivut:"
+
+#. translators: %s: search query.
+#: resources/views/partials/title-header.php:21
+#, php-format
+msgid "Search Results for: %s"
+msgstr "Hakutulokset haulle: %s"
 
 #: resources/views/searchform.php:14
 msgctxt "label"
