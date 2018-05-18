@@ -639,8 +639,8 @@ td {
       grid-column: span 2; }
     .grid-footer__info {
       grid-column: span 4; } }
-.grid__sidebar {
-  padding-top: 4rem; }
+.pagination {
+  padding-bottom: 4rem; }
 @media screen and (min-width: 48em) {
   .grid {
     display: flex;
@@ -648,13 +648,14 @@ td {
     .grid__main {
       width: 64%; }
     .grid__sidebar {
-      padding-top: 0;
       width: 32%; }
   .grid-footer {
     display: flex;
     justify-content: space-between; }
     .grid-footer__item {
       width: 30%; }
+  .pagination {
+    padding-bottom: 0; }
   @supports (grid-area: auto) {
     .grid {
       display: grid;
