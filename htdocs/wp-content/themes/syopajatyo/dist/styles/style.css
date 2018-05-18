@@ -1063,8 +1063,7 @@ p.wp-block-subhead {
   padding-bottom: 2rem; }
 .menu__items--language {
   display: flex;
-  flex-wrap: wrap;
-  padding-bottom: 0.5rem; }
+  flex-wrap: wrap; }
 .menu__items--language > li:not(:last-child) > a {
     border-right: 1px solid;
     margin-right: 0.5rem;

@@ -56,7 +56,6 @@
 	&--language {
 		display: flex;
 		flex-wrap: wrap;
-		padding-bottom: $global-spacing-unit-1;
 
 		> li:not(:last-child) > a {
 			border-right: 1px solid;
