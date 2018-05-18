@@ -8,7 +8,7 @@
 ?>
 <div class="px-2 py-8">
 	<div class="grid mx-auto max-width-1">
-		<main id="main" class="app-main archive grid__span-2">
+		<main id="main" class="app-main archive grid__main">
 		<?php
 		if ( have_posts() ) :
 			while ( have_posts() ) :

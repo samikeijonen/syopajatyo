@@ -10,7 +10,7 @@
 ?>
 	<footer class="app-footer px-2 py-8 font-size-875">
 		<div class="grid-footer mx-auto max-width-1">
-			<p class="grid-footer__logos mb-0">
+			<p class="grid-footer__item grid-footer__logos mb-0">
 			<?php
 				Syopajatyo\display_svg_img( [
 					'icon'  => 'logo-text',
@@ -25,7 +25,7 @@
 			?>
 			</p>
 
-			<div class="grid-footer__credit">
+			<div class="grid-footer__item grid-footer__credit">
 				<ul class="reset-list pb-4">
 					<li class="fw-600 uppercase">Suomen syöpäpotilaat Ry</li>
 					<li>Malminkatu 5</li>
@@ -42,7 +42,7 @@
 				?>
 			</div>
 
-			<p class="grid-footer__info mb-0">
+			<p class="grid-footer__item grid-footer__info mb-0">
 				Cras volutpat, lacus quis semper pharetra, nisi enim dignissim est.
 				et sollicitudin quam ipsum vel mi. Sed commodo urna ac urna.
 				Nullam eu tortor. Curabitur sodales scelerisque magna.
