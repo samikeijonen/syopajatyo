@@ -16,6 +16,9 @@
 		elseif ( is_archive() ) :
 			the_archive_title( '<h1 id="region-title" class="archive-header__title mb-0">', '</h1>' );
 			the_archive_description( '<div class="archive-header__description">', '</div>' );
+		elseif ( is_search() ) :
+			/* translators: %s: search query. */
+			printf( '<h1 class="title-header__title mb-0">' . esc_html__( 'Search Results for: %s', 'syopajatyo' ) . '</h1>', '<span>' . get_search_query() . '</span>' );
 		endif;
 		?>
 	</div>
