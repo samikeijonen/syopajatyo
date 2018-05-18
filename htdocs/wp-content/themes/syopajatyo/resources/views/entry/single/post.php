@@ -8,7 +8,7 @@
 ?>
 <article <?php Hybrid\attr( 'entry' ); ?>>
 	<header class="entry__header">
-		<?php Hybrid\render_view( 'partials', 'byline' , [ 'class' => 'pb-2' ] ); ?>
+		<?php Hybrid\render_view( 'partials', 'byline', [ 'class' => 'pb-2' ] ); ?>
 	</header>
 
 	<div class="entry__content">
