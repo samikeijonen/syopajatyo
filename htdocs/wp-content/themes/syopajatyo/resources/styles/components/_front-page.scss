@@ -23,7 +23,7 @@
 		display: none;
 		left: 0;
 		right: 0;
-		top: -7rem;
+		top: -$global-spacing-unit-1 * 14;
 
 		@media screen and (min-width: $breakpoint-1) {
 			display: block;
