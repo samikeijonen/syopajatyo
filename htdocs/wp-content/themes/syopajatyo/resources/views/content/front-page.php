@@ -7,7 +7,7 @@
 
 ?>
 <main id="main" class="app-main">
-	<div class="fp-title px-2 py-8 text-center">
+	<div class="fp-title px-2 text-center">
 		<div class="mx-auto max-width-3">
 		<?php
 		if ( have_posts() ) :

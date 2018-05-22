@@ -7,9 +7,12 @@
 	display: flex;
 	flex-direction: row;
 	min-height: 70vh;
+	padding-bottom: $global-spacing-unit-1 * 8;
+	padding-top: $global-spacing-unit-1 * 8;
 
 	@media screen and (min-width: $breakpoint-1) {
 		min-height: 85vh;
+		padding-bottom: $global-spacing-unit-1 * 16;
 	}
 }
 

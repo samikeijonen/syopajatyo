@@ -988,10 +988,13 @@ p.wp-block-subhead {
   background-size: cover;
   display: flex;
   flex-direction: row;
-  min-height: 70vh; }
+  min-height: 70vh;
+  padding-bottom: 4rem;
+  padding-top: 4rem; }
 @media screen and (min-width: 48em) {
     .fp-title {
-      min-height: 85vh; } }
+      min-height: 85vh;
+      padding-bottom: 8rem; } }
 .fp-articles {
   background-color: #007fa3;
   background-color: var(--color-base); }
