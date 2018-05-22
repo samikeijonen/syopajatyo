@@ -74,6 +74,7 @@ function get_svg_img( $args = [] ) {
 		'alt'      => '',
 		'class'    => '',
 		'fallback' => false,
+		'folder'   => 'svg',
 		'icon'     => '',
 	];
 
@@ -81,7 +82,7 @@ function get_svg_img( $args = [] ) {
 	$args = wp_parse_args( $args, $defaults );
 
 	// Get SVG markup. Classes and other markup is added in build process.
-	$svg = '<img src="' . get_theme_file_uri( '/dist/svg/' . esc_attr( $args['icon'] ) . '.svg' ) . '" alt="' . esc_attr( $args['alt'] ) . '" class="' . esc_attr( $args['class'] ) . '" role="img">';
+	$svg = '<img src="' . get_theme_file_uri( '/dist/' . esc_attr( $args['folder'] ) . '/' . esc_attr( $args['icon'] ) . '.svg' ) . '" alt="' . esc_attr( $args['alt'] ) . '" class="' . esc_attr( $args['class'] ) . '" role="img">';
 
 	// Return empty if there is no icon.
 	return $svg ? $svg : '';
