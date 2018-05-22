@@ -12,17 +12,20 @@ $font-pre: "Courier 10 Pitch", "Courier", monospace;
 
 	// Headings.
 	--font-size-cta: 1.125rem;
+	--font-size-fp: 1.5rem;
 	--font-size-h1: 1.5rem;
 	--font-size-h2: 1.25rem;
 	--font-size-h3: 1.125rem;
 	--font-size-h4: 1rem;
 	--font-size-h5: 1rem;
 	--font-size-h6: 1rem;
+	--font-size-75: 0.75rem;
 	--font-size-875: 0.875rem;
 	--font-size-125: 1.125rem;
 
 	@media screen and (min-width: $breakpoint-1) {
 		--font-size-cta: 2rem;
+		--font-size-fp: 2.5rem;
 		--font-size-h1: 2rem;
 		--font-size-h2: 1.5rem;
 		--font-size-h3: 1.25rem;
@@ -32,5 +35,6 @@ $font-pre: "Courier 10 Pitch", "Courier", monospace;
 
 	@media screen and (min-width: $breakpoint-2) {
 		--font-size-cta: 2.5rem;
+		--font-size-fp: 3rem;
 	}
 }
