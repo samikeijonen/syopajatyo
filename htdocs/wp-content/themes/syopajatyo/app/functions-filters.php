@@ -129,6 +129,21 @@ function excerpt_more( $link ) {
 add_filter( 'excerpt_more', __NAMESPACE__ . '\excerpt_more' );
 
 /**
+ * Filter the excerpt length.
+ *
+ * @param int $length Excerpt length.
+ * @return int Modified excerpt length.
+ */
+function excerpt_length( $length ) {
+	if ( is_admin() ) {
+		return $length;
+	}
+
+	return is_front_page() ? 10 : 50;
+}
+add_filter( 'excerpt_length', __NAMESPACE__ . '\excerpt_length' );
+
+/**
  * Filters the HTML output of the search form.
  *
  * Look searchform.php in resources/views folder.
