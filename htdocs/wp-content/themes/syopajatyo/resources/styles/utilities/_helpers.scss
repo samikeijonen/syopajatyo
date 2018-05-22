@@ -35,6 +35,10 @@
 	color: var(--color-dark);
 }
 
+.color-white {
+	color: var(--color-white);
+}
+
 .color-grey-60 {
 	color: var(--color-grey-60);
 }
@@ -90,4 +94,16 @@
 
 .mb-2 {
 	margin-bottom: $global-spacing-unit-1 * 2;
+}
+
+.pos-rel {
+	position: relative;
+}
+
+.pos-abs {
+	position: absolute;
+}
+
+.z-index-10 {
+	z-index: 10;
 }
