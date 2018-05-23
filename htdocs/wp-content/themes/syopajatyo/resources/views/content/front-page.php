@@ -35,7 +35,13 @@
 	if ( $syopajatyo_articles_content->have_posts() ) :
 		?>
 		<div class="fp-articles px-2 py-8 pos-rel">
-			<?php Syopajatyo\display_svg_img( [ 'icon' => 'suttu1', 'folder' => 'img', 'class' => 'fp-articles__bg-img pos-abs mx-auto max-width-1' ] ); ?>
+			<?php
+			Syopajatyo\display_svg_img( [
+				'icon'   => 'suttu1',
+				'folder' => 'img',
+				'class'  => 'fp-articles__bg-img pos-abs mx-auto max-width-1',
+			] );
+			?>
 
 			<div class="mx-auto max-width-1 grid pos-rel z-index-11">
 			<?php
@@ -75,5 +81,7 @@
 	<?php
 	endif;
 	wp_reset_postdata(); // Reset post data.
+
+	// Social media links.
 	?>
 </main>

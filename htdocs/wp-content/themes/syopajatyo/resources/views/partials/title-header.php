@@ -10,7 +10,13 @@ if ( is_front_page() ) :
 endif;
 ?>
 <section class="title-header px-2 py-4 pos-rel" role="region" aria-labelledby="region-title">
-	<?php Syopajatyo\display_svg_img( [ 'icon' => 'piirros1', 'folder' => 'img', 'class' => 'title-header__bg-img pos-abs' ] ); ?>
+	<?php
+	Syopajatyo\display_svg_img( [
+		'icon'   => 'piirros1',
+		'folder' => 'img',
+		'class'  => 'title-header__bg-img pos-abs',
+	] );
+	?>
 	<div class="mx-auto max-width-1">
 		<?php
 		if ( is_singular() || is_home() ) :
