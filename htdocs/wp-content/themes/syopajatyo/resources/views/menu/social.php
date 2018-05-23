@@ -19,6 +19,7 @@ endif
 		'menu_class'     => 'menu__items menu__items--' . esc_attr( $data->name ),
 		'link_before'    => '<span class="screen-reader-text">',
 		'link_after'     => '</span>' . Syopajatyo\get_svg( [ 'icon' => 'chain' ] ),
+		'items_wrap'     => '<ul class="%2$s">%3$s</ul>',
 		'item_spacing'   => 'discard',
 		'depth'          => 1,
 	] );

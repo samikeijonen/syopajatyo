@@ -84,4 +84,15 @@
 
 	// Social media links.
 	?>
+	<div class="fp-social-links px-2 py-8">
+		<div class="mx-auto max-width-2 text-center">
+		<h2 class="fp-social-links__title fw-200 h1 uppercase"><?= esc_html__( 'Follow us', 'syopajatyo' ); ?></h2>
+		<?php
+			Hybrid\render_view( 'menu', 'social', [
+				'name'  => 'social-front-page',
+				'label' => __( 'Social links', 'syopajatyo' ),
+			] );
+		?>
+		</div>
+	</div>
 </main>

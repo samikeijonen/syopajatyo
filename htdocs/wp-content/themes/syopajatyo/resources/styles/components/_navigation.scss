@@ -52,6 +52,13 @@
 		padding-bottom: $global-spacing-unit-2 * 2;
 	}
 
+	// Social links menu in front page.
+	&--social-front-page {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
 	// Language links menu.
 	&--language {
 		display: flex;
@@ -108,8 +115,9 @@
 		}
 	}
 
-	// Social menu links in Footer.
-	&--social-footer {
+	// Social menu links in Footer and Front page.
+	&--social-footer,
+	&--social-front-page {
 		color: var(--color-dark);
 		padding-right: $global-spacing-unit-1;
 
