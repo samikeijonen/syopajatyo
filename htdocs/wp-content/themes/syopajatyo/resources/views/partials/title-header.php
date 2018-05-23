@@ -24,7 +24,7 @@ endif;
 			<h1 class="title-header__title mb-0 fw-200 uppercase" id="region-title"><?php single_post_title(); ?></h1>
 		<?php
 		elseif ( is_archive() ) :
-			the_archive_title( '<h1 class="archive-header__title mb-0 fw-200 uppercase" id="region-title">', '</h1>' );
+			the_archive_title( '<h1 class="title-header__title archive-header__title mb-0 fw-200 uppercase" id="region-title">', '</h1>' );
 			the_archive_description( '<div class="archive-header__description">', '</div>' );
 		elseif ( is_search() ) :
 			/* translators: %s: search query. */
