@@ -33,4 +33,25 @@
 
 .fp-featured {
 	background-color: var(--color-light);
+
+	@media screen and (min-width: $breakpoint-1) {
+		&__title {
+			color: var(--color-white);
+			position: relative;
+			z-index: 10;
+
+			&::after {
+				background-image: url("/wp-content/themes/syopajatyo/dist/img/suttu2.svg");
+				background-repeat: no-repeat;
+				background-size: 100% 100%;
+				bottom: -2rem;
+				content: "";
+				left: -9rem;
+				position: absolute;
+				right: -5rem;
+				top: -10rem;
+				z-index: -1;
+			}
+		}
+	}
 }
