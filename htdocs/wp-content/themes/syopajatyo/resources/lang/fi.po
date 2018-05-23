@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Syopajatyo\n"
-"POT-Creation-Date: 2018-05-18 10:29+0300\n"
-"PO-Revision-Date: 2018-05-18 10:29+0300\n"
+"POT-Creation-Date: 2018-05-22 15:45+0300\n"
+"PO-Revision-Date: 2018-05-22 15:45+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fi\n"
@@ -95,6 +95,10 @@ msgid "It looks like nothing was found at this location. Maybe try search?"
 msgstr ""
 "Näyttää siltä että mitään ei löytynyt tästä osoitteesta. Kokeile hakua?"
 
+#: resources/views/content/front-page.php:65
+msgid "Support for job"
+msgstr "Tukea työllistämiseen"
+
 #: resources/views/entry/single/post.php:25
 msgid "Categories:"
 msgstr "Kategoriat:"
@@ -165,7 +169,7 @@ msgid "Pages:"
 msgstr "Sivut:"
 
 #. translators: %s: search query.
-#: resources/views/partials/title-header.php:21
+#: resources/views/partials/title-header.php:24
 #, php-format
 msgid "Search Results for: %s"
 msgstr "Hakutulokset haulle: %s"
