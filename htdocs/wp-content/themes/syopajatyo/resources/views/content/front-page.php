@@ -37,7 +37,7 @@
 		<div class="fp-articles px-2 py-8 pos-rel">
 			<?php Syopajatyo\display_svg_img( [ 'icon' => 'suttu1', 'folder' => 'img', 'class' => 'fp-articles__bg-img pos-abs mx-auto max-width-1' ] ); ?>
 
-			<div class="mx-auto max-width-1 grid pos-rel z-index-10">
+			<div class="mx-auto max-width-1 grid pos-rel z-index-11">
 			<?php
 			while ( $syopajatyo_articles_content->have_posts() ) :
 				$syopajatyo_articles_content->the_post();
@@ -61,7 +61,8 @@
 
 	if ( $syopajatyo_articles_content->have_posts() ) :
 		?>
-		<div class="fp-featured px-2 py-8">
+		<div class="fp-featured px-2">
+			<h2 class="fp-featured__title mx-auto max-width-1 fw-200 h1 py-8 mb-0 uppercase"><?= esc_html__( 'Support for job', 'syopajatyo' ); ?></h2>
 			<div class="mx-auto max-width-1 grid">
 			<?php
 			while ( $syopajatyo_articles_content->have_posts() ) :
