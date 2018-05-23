@@ -33,6 +33,10 @@
 
 .fp-featured {
 	background-color: var(--color-light);
+	background-image: url("/wp-content/themes/syopajatyo/dist/img/piirros3-blue.svg");
+	background-position: top 2rem left 14rem;
+	background-repeat: no-repeat;
+	padding-bottom: $global-spacing-unit-1 * 8;
 
 	@media screen and (min-width: $breakpoint-1) {
 		&__title {
@@ -46,10 +50,10 @@
 				background-size: 100% 100%;
 				bottom: -2rem;
 				content: "";
-				left: -9rem;
+				left: -11rem;
 				position: absolute;
 				right: -5rem;
-				top: -10rem;
+				top: -11rem;
 				z-index: -1;
 			}
 		}

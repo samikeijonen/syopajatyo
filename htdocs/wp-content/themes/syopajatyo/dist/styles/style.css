@@ -1008,7 +1008,11 @@ p.wp-block-subhead {
         display: block; } }
 .fp-featured {
   background-color: #f0eeeb;
-  background-color: var(--color-light); }
+  background-color: var(--color-light);
+  background-image: url("/wp-content/themes/syopajatyo/dist/img/piirros3-blue.svg");
+  background-position: top 2rem left 14rem;
+  background-repeat: no-repeat;
+  padding-bottom: 4rem; }
 @media screen and (min-width: 48em) {
     .fp-featured__title {
       color: #fff;
@@ -1021,10 +1025,10 @@ p.wp-block-subhead {
         background-size: 100% 100%;
         bottom: -2rem;
         content: "";
-        left: -9rem;
+        left: -11rem;
         position: absolute;
         right: -5rem;
-        top: -10rem;
+        top: -11rem;
         z-index: -1; } }
 .gallery {
   margin-bottom: 1.5em; }
