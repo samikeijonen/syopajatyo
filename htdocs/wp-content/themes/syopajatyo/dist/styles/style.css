@@ -1069,8 +1069,27 @@ p.wp-block-subhead {
 .title-header {
   background-color: #007fa3;
   background-color: var(--color-base);
+  background: linear-gradient(90deg, rgba(0, 127, 163, .6) 10%, rgba(0, 127, 163, .9) 100%), url("/wp-content/themes/syopajatyo/dist/img/piirros1.svg");
+  background: linear-gradient(90deg, rgba(var(--color-base-rgb), 0.6) 10%, rgba(var(--color-base-rgb), 0.9) 100%), url("/wp-content/themes/syopajatyo/dist/img/piirros1.svg");
+  background-repeat: no-repeat;
   color: #fff;
   color: var(--color-white); }
+.title-header__bg-img {
+    top: 1rem; }
+.title-header__title {
+    position: relative;
+    padding-left: 3rem;
+    padding-top: 3rem; }
+.title-header__title::after {
+      background-image: url("/wp-content/themes/syopajatyo/dist/img/suttu2.svg");
+      background-repeat: no-repeat;
+      bottom: -3rem;
+      content: "";
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: -1; }
 .wp-smiley,
 .emoji {
   background: none;
