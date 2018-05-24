@@ -1187,6 +1187,9 @@ p.wp-block-subhead {
 .menu__anchor--social-footer:hover, .menu__anchor--social-footer:focus, .menu__anchor--social-footer:active, .menu__anchor--social-front-page:hover, .menu__anchor--social-front-page:focus, .menu__anchor--social-front-page:active {
       color: #007fa3;
       color: var(--color-base); }
+.menu__anchor--social-front-page .svg {
+    height: 3.5em;
+    width: 3.5em; }
 .menu__anchor--language {
     color: #111;
     color: var(--color-dark);
