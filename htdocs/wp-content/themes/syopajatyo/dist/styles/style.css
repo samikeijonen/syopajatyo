@@ -1356,6 +1356,9 @@ p.wp-block-subhead {
 .entry--card {
     background-color: #fff;
     background-color: var(--color-white);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     margin-bottom: 2rem;
     padding: 1.5rem; }
 @supports (grid-area: auto) {

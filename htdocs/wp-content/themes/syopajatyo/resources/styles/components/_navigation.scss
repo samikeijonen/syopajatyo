@@ -134,11 +134,9 @@
 		}
 	}
 
-	&--social-front-page {
-		.svg {
-			height: 3.5em;
-			width: 3.5em;
-		}
+	&--social-front-page .svg {
+		height: 3.5em;
+		width: 3.5em;
 	}
 
 	// Language menu links.

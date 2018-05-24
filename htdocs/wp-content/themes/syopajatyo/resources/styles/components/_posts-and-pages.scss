@@ -38,6 +38,9 @@
 
 	&--card {
 		background-color: var(--color-white);
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
 		margin-bottom: $global-spacing-unit-1 * 4;
 		padding: $global-spacing-unit-1 * 3;
 

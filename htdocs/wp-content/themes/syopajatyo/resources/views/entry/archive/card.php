@@ -5,8 +5,10 @@
  * @package Syopajatyo
  */
 
+// Get background image.
+$syopajatyo_bg = Syopajatyo\get_post_thumbnail_bg();
 ?>
-<article <?php Hybrid\attr( 'entry', 'card' ); ?>>
+<article <?php Hybrid\attr( 'entry', 'card' ); ?><?= wp_kses_post( $syopajatyo_bg ); ?>>
 	<header class="entry__header">
 		<?php
 		Hybrid\post_terms( [

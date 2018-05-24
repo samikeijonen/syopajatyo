@@ -128,13 +128,60 @@ function post_thumbnail() {
 }
 
 /**
+ * Get post thumbnail info.
+ *
+ * @param array $args post thumbnail arguments.
+ *
+ * @return array post thumbnail info.
+ */
+function get_post_thumbnail( $args = [] ) {
+	// Set defaults.
+	$defaults = [
+		'post_thumbnail' => 'post-thumbnail',
+		'id'             => get_the_ID(),
+	];
+
+	// Parse args.
+	$args = wp_parse_args( $args, $defaults );
+
+	// Returns an array (url, width, height, is_intermediate) if it's set, else return false.
+	$bg = false;
+	if ( has_post_thumbnail( $args['id'] ) ) {
+		$thumb_url_array = wp_get_attachment_image_src( get_post_thumbnail_id( $args['id'] ), esc_attr( $args['post_thumbnail'] ), true );
+		$bg              = $thumb_url_array;
+	}
+
+	return $bg;
+}
+
+/**
+ * Get post thumbnail background markup.
+ *
+ * @param array $args post thumbnail arguments.
+ *
+ * @return string post thumbnail markup.
+ */
+function get_post_thumbnail_bg( $args = [] ) {
+
+	$bg = get_post_thumbnail( $args );
+
+	// Returns bg image markup, else return empty.
+	$bg_markup = '';
+	if ( $bg ) {
+		$bg_markup = 'style="background-image:linear-gradient( rgba(256, 256, 256, 0.85), rgba(256, 256, 256, 0.85) ), url(' . esc_url( $bg[0] ) . ');"';
+	}
+
+	return $bg_markup;
+}
+
+/**
  * Sub pages navigation
  *
  * Show hierarchial pages of current page.
  *
  * @author    Aucor
  * @copyright Copyright (c) 2018, Aucor
- * @link      https://github.com/aucor/aucor-starter/blob/master/template-tags/navigation.php
+ * @link     https://github.com/aucor/aucor-starter/blob/master/template-tags/navigation.php
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 function sub_pages_navigation() {
