@@ -27,6 +27,7 @@ array_map(
 		require_once get_parent_theme_file_path( "app/{$file}.php" );
 	},
 	[
+		'functions-customizer',
 		'functions-filters',
 		'functions-fonts',
 		'functions-svg',

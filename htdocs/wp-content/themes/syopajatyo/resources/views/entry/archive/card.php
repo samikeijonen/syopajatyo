@@ -17,6 +17,6 @@
 	</header>
 
 	<div class="entry__summary font-size-875">
-		<div class="post-excerpt"><?php the_excerpt(); ?></div>
+		<?php the_excerpt(); ?>
 	</div>
 </article>

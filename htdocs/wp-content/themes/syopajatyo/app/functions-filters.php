@@ -139,7 +139,7 @@ function excerpt_length( $length ) {
 		return $length;
 	}
 
-	return is_front_page() ? 10 : 50;
+	return is_front_page() ? 20 : 55;
 }
 add_filter( 'excerpt_length', __NAMESPACE__ . '\excerpt_length' );
 
