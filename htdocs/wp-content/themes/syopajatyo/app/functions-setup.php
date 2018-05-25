@@ -49,6 +49,9 @@ add_action( 'after_setup_theme', function() {
 	// Add selective refresh for widgets.
 	add_theme_support( 'customize-selective-refresh-widgets' );
 
+	// Add excerpt for pages.
+	add_post_type_support( 'page', 'excerpt' );
+
 	// Add support for editor color palette.
 	add_theme_support( 'editor-color-palette',
 		[
