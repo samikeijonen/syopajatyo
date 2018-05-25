@@ -42,6 +42,7 @@
 	.grid {
 		display: flex;
 		justify-content: space-between;
+		flex-wrap: wrap;
 
 		&__main {
 			width: 64%;
@@ -50,10 +51,15 @@
 		&__sidebar {
 			width: 32%;
 		}
+
+		.entry--card {
+			width: 30%;
+		}
 	}
 
 	.grid-footer {
 		display: flex;
+		flex-wrap: wrap;
 		justify-content: space-between;
 
 		&__item {
@@ -81,6 +87,10 @@
 				border-left: 1px solid;
 				grid-column: span 1;
 				padding-left: $global-spacing-unit-1 * 2;
+				width: auto;
+			}
+
+			.entry--card {
 				width: auto;
 			}
 		}

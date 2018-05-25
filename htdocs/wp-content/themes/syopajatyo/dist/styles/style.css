@@ -648,13 +648,17 @@ td {
 @media screen and (min-width: 48em) {
   .grid {
     display: flex;
-    justify-content: space-between; }
+    justify-content: space-between;
+    flex-wrap: wrap; }
     .grid__main {
       width: 64%; }
     .grid__sidebar {
       width: 32%; }
+    .grid .entry--card {
+      width: 30%; }
   .grid-footer {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between; }
     .grid-footer__item {
       width: 30%; }
@@ -672,6 +676,8 @@ td {
         border-left: 1px solid;
         grid-column: span 1;
         padding-left: 1rem;
+        width: auto; }
+      .grid .entry--card {
         width: auto; }
     .grid-footer {
       display: grid; }
@@ -1361,6 +1367,8 @@ p.wp-block-subhead {
     background-size: cover;
     margin-bottom: 2rem;
     padding: 1.5rem; }
+.entry--card:last-child {
+      margin-bottom: 0; }
 @supports (grid-area: auto) {
       @media screen and (min-width: 48em) {
         .entry--card {
