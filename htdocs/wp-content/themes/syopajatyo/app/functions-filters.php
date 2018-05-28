@@ -142,18 +142,6 @@ function get_the_excerpt( $excerpt ) {
 add_filter( 'get_the_excerpt', __NAMESPACE__ . '\get_the_excerpt' );
 
 /**
- * Get more link.
- */
-function more_link() {
-	return sprintf(
-		'<p class="link-more mb-0"><a href="%1$s" class="more-link decoration-none uppercase" aria-hidden="true" tabindex="-1">%2$s</a></p>',
-		esc_url( get_permalink( get_the_ID() ) ),
-		/* translators: %s: Name of current post */
-		sprintf( __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'syopajatyo' ), get_the_title( get_the_ID() ) )
-	);
-}
-
-/**
  * Filter the excerpt length.
  *
  * @param int $length Excerpt length.
