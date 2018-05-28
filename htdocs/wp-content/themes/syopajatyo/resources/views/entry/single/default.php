@@ -7,7 +7,7 @@
 
 ?>
 <article <?php Hybrid\attr( 'entry' ); ?>>
-	<?= Syopajatyo\get_excerpt(); ?>
+	<?php Syopajatyo\display_excerpt(); ?>
 
 	<div class="entry__content">
 		<?php

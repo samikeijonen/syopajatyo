@@ -176,7 +176,6 @@ function get_post_thumbnail_bg( $args = [] ) {
 
 /**
  * Get excerpt if it exist.
- *
  */
 function get_excerpt() {
 	if ( ! has_excerpt() ) {
@@ -186,6 +185,13 @@ function get_excerpt() {
 	$excerpt_markup = '<div class="entry__intro font-size-125">' . wpautop( get_the_excerpt() ) . '</div>';
 
 	return $excerpt_markup;
+}
+
+/**
+ * Display excerpt if it exist.
+ */
+function display_excerpt() {
+	echo get_excerpt(); // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped
 }
 
 /**
