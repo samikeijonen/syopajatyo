@@ -1373,8 +1373,17 @@ p.wp-block-subhead {
       @media screen and (min-width: 48em) {
         .entry--card {
           margin-bottom: 0; } } }
-.entry__summary p:last-child {
+.entry__summary p:last-child,
+  .entry__intro p:last-child {
     margin-bottom: 0; }
+.entry__intro::after {
+    border-bottom: 1px solid #007fa3;
+    border-bottom: 1px solid var(--color-base);
+    content: "";
+    display: block;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    width: 4rem; }
 .entry__footer {
     margin-top: 2rem; }
 .entry__author {
@@ -1529,6 +1538,9 @@ p.wp-block-subhead {
 .font-size-75 {
   font-size: 0.75rem;
   font-size: var(--font-size-75); }
+.font-size-125 {
+  font-size: 1.125rem;
+  font-size: var(--font-size-125); }
 .decoration-none {
   text-decoration: none; }
 .h-decoration-underline:hover, .h-decoration-underline:focus, .h-decoration-underline:active {

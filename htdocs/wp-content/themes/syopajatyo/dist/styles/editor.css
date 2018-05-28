@@ -583,6 +583,9 @@
 .edit-post-visual-editor .font-size-75 {
     font-size: 0.75rem;
     font-size: var(--font-size-75); }
+.edit-post-visual-editor .font-size-125 {
+    font-size: 1.125rem;
+    font-size: var(--font-size-125); }
 .edit-post-visual-editor .decoration-none {
     text-decoration: none; }
 .edit-post-visual-editor .h-decoration-underline:hover, .edit-post-visual-editor .h-decoration-underline:focus, .edit-post-visual-editor .h-decoration-underline:active {

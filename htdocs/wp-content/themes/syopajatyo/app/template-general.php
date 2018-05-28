@@ -175,13 +175,27 @@ function get_post_thumbnail_bg( $args = [] ) {
 }
 
 /**
+ * Get excerpt if it exist.
+ *
+ */
+function get_excerpt() {
+	if ( ! has_excerpt() ) {
+		return;
+	}
+
+	$excerpt_markup = '<div class="entry__intro font-size-125">' . wpautop( get_the_excerpt() ) . '</div>';
+
+	return $excerpt_markup;
+}
+
+/**
  * Sub pages navigation
  *
  * Show hierarchial pages of current page.
  *
  * @author    Aucor
  * @copyright Copyright (c) 2018, Aucor
- * @link     https://github.com/aucor/aucor-starter/blob/master/template-tags/navigation.php
+ * @link      https://github.com/aucor/aucor-starter/blob/master/template-tags/navigation.php
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 function sub_pages_navigation() {

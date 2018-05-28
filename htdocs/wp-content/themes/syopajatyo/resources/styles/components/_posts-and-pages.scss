@@ -55,8 +55,18 @@
 		}
 	}
 
-	&__summary p:last-child {
+	&__summary p:last-child,
+	&__intro p:last-child {
 		margin-bottom: 0;
+	}
+
+	&__intro::after {
+		border-bottom: 1px solid var(--color-base);
+		content: "";
+		display: block;
+		margin-bottom: $global-spacing-unit-1 * 4;
+		margin-top: $global-spacing-unit-1 * 4;
+		width: $global-spacing-unit-1 * 8;
 	}
 
 	&__footer {
