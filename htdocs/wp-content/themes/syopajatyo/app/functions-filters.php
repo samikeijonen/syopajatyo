@@ -32,7 +32,9 @@ use Hybrid;
  * @return string  $attr
  */
 add_filter( 'nav_menu_link_attributes', function( $atts, $item, $args, $depth ) {
-	$atts['class'] = 'menu__anchor menu__anchor--' . $args->theme_location;
+	$theme_location = $args->theme_location ? $args->theme_location : 'default';
+
+	$atts['class'] = 'menu__anchor menu__anchor--' . $theme_location;
 
 	if ( in_array( 'current-menu-item', $item->classes, true ) ) {
 		$atts['class'] .= ' is-active';
