@@ -103,7 +103,7 @@ function post_thumbnail() {
 	if ( is_singular() ) :
 	?>
 
-		<div class="entry__thumbnail">
+		<div class="entry__thumbnail mb-4">
 			<?php the_post_thumbnail(); ?>
 		</div><!-- .entry__thumbnail -->
 

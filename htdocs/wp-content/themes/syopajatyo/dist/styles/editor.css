@@ -638,6 +638,8 @@
     margin-bottom: 0; }
 .edit-post-visual-editor .mb-2 {
     margin-bottom: 1rem; }
+.edit-post-visual-editor .mb-4 {
+    margin-bottom: 2rem; }
 .edit-post-visual-editor .pos-rel {
     position: relative; }
 .edit-post-visual-editor .pos-abs {

@@ -7,7 +7,10 @@
 
 ?>
 <article <?php Hybrid\attr( 'entry' ); ?>>
-	<?php Syopajatyo\display_excerpt(); ?>
+	<?php
+		Syopajatyo\post_thumbnail();
+		Syopajatyo\display_excerpt();
+	?>
 
 	<div class="entry__content">
 		<?php
