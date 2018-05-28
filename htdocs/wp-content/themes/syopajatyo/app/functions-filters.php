@@ -117,16 +117,41 @@ function excerpt_more( $link ) {
 		return $link;
 	}
 
-	$link = sprintf(
+	$link = more_link();
+
+	return ' &hellip; ' . $link;
+}
+add_filter( 'excerpt_more', __NAMESPACE__ . '\excerpt_more' );
+
+/**
+ * Replaces "[...]" (appended to automatically generated excerpts) with ... and
+ * a 'Continue reading' link.
+ *
+ * @param string $link Link to single post/page.
+ * @return string 'Continue reading' link prepended.
+ */
+function get_the_excerpt( $excerpt ) {
+	$link = '';
+
+	if ( has_excerpt() && ( ! is_page() || is_front_page() ) ) {
+		$link = more_link();
+	}
+
+	return $excerpt . $link;
+}
+add_filter( 'get_the_excerpt', __NAMESPACE__ . '\get_the_excerpt' );
+
+/**
+ * Get more link.
+ */
+function more_link() {
+	return sprintf(
 		'<p class="link-more mb-0"><a href="%1$s" class="more-link decoration-none uppercase" aria-hidden="true" tabindex="-1">%2$s</a></p>',
 		esc_url( get_permalink( get_the_ID() ) ),
 		/* translators: %s: Name of current post */
 		sprintf( __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'syopajatyo' ), get_the_title( get_the_ID() ) )
 	);
-
-	return ' &hellip; ' . $link;
 }
-add_filter( 'excerpt_more', __NAMESPACE__ . '\excerpt_more' );
 
 /**
  * Filter the excerpt length.
