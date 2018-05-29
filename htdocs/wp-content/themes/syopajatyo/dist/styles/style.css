@@ -1088,6 +1088,7 @@ p.wp-block-subhead {
     padding-top: 3rem; }
 .title-header__title::after {
       background-image: url("/wp-content/themes/syopajatyo/dist/img/suttu2.svg");
+      background-position: center left;
       background-repeat: no-repeat;
       bottom: -3rem;
       content: "";

@@ -21,14 +21,14 @@ endif;
 		<?php
 		if ( is_singular() || is_home() ) :
 		?>
-			<h1 class="title-header__title mb-0 fw-200 uppercase" id="region-title"><?php single_post_title(); ?></h1>
+			<h1 class="title-header__title max-width-2 mb-0 fw-200 uppercase" id="region-title"><?php single_post_title(); ?></h1>
 		<?php
 		elseif ( is_archive() ) :
-			the_archive_title( '<h1 class="title-header__title archive-header__title mb-0 fw-200 uppercase" id="region-title">', '</h1>' );
+			the_archive_title( '<h1 class="title-header__title archive-header__title max-width-2 mb-0 fw-200 uppercase" id="region-title">', '</h1>' );
 			the_archive_description( '<div class="archive-header__description">', '</div>' );
 		elseif ( is_search() ) :
 			/* translators: %s: search query. */
-			printf( '<h1 class="title-header__title mb-0 fw-200 uppercase" id="region-title">' . esc_html__( 'Search Results for: %s', 'syopajatyo' ) . '</h1>', '<span>' . get_search_query() . '</span>' );
+			printf( '<h1 class="title-header__title max-width-2 mb-0 fw-200 uppercase" id="region-title">' . esc_html__( 'Search Results for: %s', 'syopajatyo' ) . '</h1>', '<span>' . get_search_query() . '</span>' );
 		endif;
 		?>
 	</div>
