@@ -44,6 +44,10 @@ add_filter( 'nav_menu_link_attributes', function( $atts, $item, $args, $depth ) 
 		$atts['class'] .= ' menu__anchor--button';
 	}
 
+	if ( 0 === $depth ) {
+		$atts['class'] .= ' is-top-level';
+	}
+
 	return $atts;
 }, 10, 4 );
 
@@ -79,6 +83,28 @@ add_filter( 'page_menu_link_attributes', function( $atts, $page, $depth, $args, 
 }, 10, 5 );
 
 /**
+ * Filters the CSS classes applied to a menu item's list item element.
+ *
+ * @param string[] $classes Array of the CSS classes that are applied to the menu item's `<li>` element.
+ * @param WP_Post  $item    The current menu item.
+ * @param stdClass $args    An object of wp_nav_menu() arguments.
+ * @param int      $depth   Depth of menu item. Used for padding.
+ */
+function nav_menu_css_class( $classes, $item, $args, $depth ) {
+	// Add class if theme location is unknown, like in widgets.
+	if ( ! $args->theme_location ) {
+		$classes['class'] = 'menu__item--default';
+	}
+
+	if ( 0 === $depth ) {
+		$classes['class'] .= ' is-top-level';
+	}
+
+	return $classes;
+}
+add_filter( 'nav_menu_css_class', __NAMESPACE__ . '\nav_menu_css_class', 10, 4 );
+
+/**
  * Filters the list of CSS classes to include with each page item in the list.
  *
  * @see wp_list_pages()
@@ -89,7 +115,7 @@ add_filter( 'page_menu_link_attributes', function( $atts, $page, $depth, $args, 
  * @param array    $args         An array of arguments.
  * @param int      $current_page ID of the current page.
  */
-add_filter( 'page_css_class', function( $css_class, $page, $depth, $args, $current_page ) {
+function page_css_class( $css_class, $page, $depth, $args, $current_page ) {
 	$css_class['class'] = 'menu__item menu__item--sub-menu';
 
 	if ( in_array( 'page_item_has_children', $css_class, true ) ) {
@@ -105,7 +131,8 @@ add_filter( 'page_css_class', function( $css_class, $page, $depth, $args, $curre
 	}
 
 	return $css_class;
-}, 10, 5 );
+}
+add_filter( 'page_css_class', __NAMESPACE__ . '\page_css_class', 10, 5 );
 
 /**
  * Replaces "[...]" (appended to automatically generated excerpts) with ... and

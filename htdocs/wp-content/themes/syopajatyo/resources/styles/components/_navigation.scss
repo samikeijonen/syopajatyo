@@ -72,7 +72,8 @@
 	}
 }
 
-.menu__item--sub-menu.is-top-level {
+.menu__item--sub-menu.is-top-level,
+.menu__item--default.is-top-level {
 	padding-bottom: $global-spacing-unit-1 * 3;
 }
 
@@ -152,8 +153,9 @@
 		}
 	}
 
-	// Sub menu links.
-	&--sub-menu {
+	// Sub menu and default (for example in widget) links.
+	&--sub-menu,
+	&--default {
 		color: var(--color-dark);
 		display: block;
 

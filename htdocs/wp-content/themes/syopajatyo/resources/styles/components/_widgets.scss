@@ -10,4 +10,12 @@
 	select {
 		max-width: 100%;
 	}
+
+	&--nav-menu ul {
+		@include reset-list();
+
+		ul {
+			padding-left: $global-spacing-unit-1 * 3;
+		}
+	}
 }

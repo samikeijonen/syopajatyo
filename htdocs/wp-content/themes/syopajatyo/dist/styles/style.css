@@ -1154,7 +1154,8 @@ p.wp-block-subhead {
     border-right: 1px solid;
     margin-right: 0.5rem;
     padding-right: 0.5rem; }
-.menu__item--sub-menu.is-top-level {
+.menu__item--sub-menu.is-top-level,
+.menu__item--default.is-top-level {
   padding-bottom: 1.5rem; }
 .menu__anchor {
   text-decoration: none; }
@@ -1205,18 +1206,18 @@ p.wp-block-subhead {
 .menu__anchor--language:hover, .menu__anchor--language:focus, .menu__anchor--language:active {
       color: #007fa3;
       color: var(--color-base); }
-.menu__anchor--sub-menu {
+.menu__anchor--sub-menu, .menu__anchor--default {
     color: #111;
     color: var(--color-dark);
     display: block; }
-.menu__anchor--sub-menu:hover, .menu__anchor--sub-menu:focus, .menu__anchor--sub-menu:active {
+.menu__anchor--sub-menu:hover, .menu__anchor--sub-menu:focus, .menu__anchor--sub-menu:active, .menu__anchor--default:hover, .menu__anchor--default:focus, .menu__anchor--default:active {
       color: #007fa3;
       color: var(--color-base); }
-.menu__anchor--sub-menu.is-active {
+.menu__anchor--sub-menu.is-active, .menu__anchor--default.is-active {
       font-weight: 600; }
-.menu__anchor--sub-menu.is-top-level {
+.menu__anchor--sub-menu.is-top-level, .menu__anchor--default.is-top-level {
       text-transform: uppercase; }
-.menu__anchor--sub-menu .svg {
+.menu__anchor--sub-menu .svg, .menu__anchor--default .svg {
       top: -0.125em;
       transform: rotate(-90deg); }
 .menu__sub-menu .menu__anchor--primary {
@@ -1448,6 +1449,12 @@ p.wp-block-subhead {
   margin-bottom: 2rem; }
 .widget select {
     max-width: 100%; }
+.widget--nav-menu ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none; }
+.widget--nav-menu ul ul {
+      padding-left: 1.5rem; }
 /*--------------------------------------------------------------
 # Utilities - Helpers and overrides.
 --------------------------------------------------------------*/

@@ -152,6 +152,18 @@
     }
   }
   /**
+   * Add icon to sub menu items in the sidebar.
+   */
+
+
+  var listItems1 = document.querySelectorAll('.widget--nav-menu .menu__sub-menu li a');
+
+  if (listItems1) {
+    for (i = 0, len = listItems1.length; i < len; i++) {
+      listItems1[i].insertAdjacentHTML('afterbegin', SyopaJaTyoText.icon);
+    }
+  }
+  /**
    * Toggle menu classes and ARIA.
    */
 
