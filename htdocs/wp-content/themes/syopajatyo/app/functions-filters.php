@@ -93,11 +93,11 @@ add_filter( 'page_menu_link_attributes', function( $atts, $page, $depth, $args, 
 function nav_menu_css_class( $classes, $item, $args, $depth ) {
 	// Add class if theme location is unknown, like in widgets.
 	if ( ! $args->theme_location ) {
-		$classes['class'] = 'menu__item--default';
+		$classes[] = 'menu__item--default';
 	}
 
 	if ( 0 === $depth ) {
-		$classes['class'] .= ' is-top-level';
+		$classes[] = 'is-top-level';
 	}
 
 	return $classes;
