@@ -42,7 +42,7 @@ add_action( 'wp_enqueue_scripts', function() {
 		'syopajatyo-style',
 		get_parent_theme_file_uri( 'dist/styles/style.css' ),
 		null,
-		'20180606'
+		'20180607'
 	);
 
 	// Comments JS.

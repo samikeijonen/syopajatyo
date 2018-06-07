@@ -32,18 +32,28 @@ use Hybrid;
  * @return string  $attr
  */
 add_filter( 'nav_menu_link_attributes', function( $atts, $item, $args, $depth ) {
+	// Get theme location, fallback for `default`.
 	$theme_location = $args->theme_location ? $args->theme_location : 'default';
 
+	// Start adding custom classes.
 	$atts['class'] = 'menu__anchor menu__anchor--' . $theme_location;
 
+	// Add `is-active` class.
 	if ( in_array( 'current-menu-item', $item->classes, true ) ) {
 		$atts['class'] .= ' is-active';
 	}
 
+	// Add `menu__anchor--button` when there is `button` class in `<li>` element.
 	if ( in_array( 'button', $item->classes, true ) ) {
 		$atts['class'] .= ' menu__anchor--button';
 	}
 
+	// Add `is-ancestor` class.
+	if ( in_array( 'current-page-ancestor', $item->classes, true ) || in_array( 'current-menu-ancestor', $item->classes, true ) ) {
+		$atts['class'] .= ' is-ancestor';
+	}
+
+	// Add `is-top-level` class using $depth parameter.
 	if ( 0 === $depth ) {
 		$atts['class'] .= ' is-top-level';
 	}

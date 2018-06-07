@@ -1166,7 +1166,7 @@ p.wp-block-subhead {
     display: block;
     padding: 0.5rem 1rem;
     text-transform: uppercase; }
-.menu__anchor--primary:hover, .menu__anchor--primary:focus, .menu__anchor--primary:active, .menu__anchor--primary.is-active {
+.menu__anchor--primary:hover, .menu__anchor--primary:focus, .menu__anchor--primary:active, .menu__anchor--primary.is-active, .menu__anchor--primary.is-ancestor {
       background-color: #007fa3;
       background-color: var(--color-base);
       color: #fff;
