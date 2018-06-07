@@ -156,7 +156,7 @@ add_filter( 'excerpt_more', __NAMESPACE__ . '\excerpt_more' );
  * Replaces "[...]" (appended to automatically generated excerpts) with ... and
  * a 'Continue reading' link.
  *
- * @param string $link Link to single post/page.
+ * @param  string $excerpt Read more link to single post/page.
  * @return string 'Continue reading' link prepended.
  */
 function get_the_excerpt( $excerpt ) {
@@ -173,7 +173,7 @@ add_filter( 'get_the_excerpt', __NAMESPACE__ . '\get_the_excerpt' );
 /**
  * Filter the excerpt length.
  *
- * @param int $length Excerpt length.
+ * @param  int $length Excerpt length.
  * @return int Modified excerpt length.
  */
 function excerpt_length( $length ) {
