@@ -44,9 +44,14 @@
 				?>
 			</div>
 
-			<p class="grid-footer__item grid-footer__info mb-0">
-			Minä, syöpä ja työ &ndash; Vertaistukea, kannustusta, tietoa, verkostoja ja tapahtumia.
-			</p>
+			<div class="grid-footer__item grid-footer__info mb-0">
+				<p>
+				Minä, syöpä ja työ &ndash; Vertaistukea, kannustusta, tietoa, verkostoja ja tapahtumia.
+				</p>
+				<p>
+				STEA tukee hanketta "Elossa ja osallisena, myös työelämässä!" (2017-2020)
+				</p>
+			</div>
 		</div>
 	</footer>
 
