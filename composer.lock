@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "c20a7c946a12738f20cb90c70a9cb8cc",
+    "content-hash": "676f74e4523295cbfbd5eafed3e2d206",
     "packages": [
         {
             "name": "composer/installers",
@@ -267,10 +267,10 @@
         },
         {
             "name": "koodimonni-plugin-language/akismet-sv_se",
-            "version": "4.0.3",
+            "version": "4.0.7",
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/translation/plugin/akismet/4.0.3/sv_SE.zip",
+                "url": "https://downloads.wordpress.org/translation/plugin/akismet/4.0.7/sv_SE.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -330,10 +330,10 @@
         },
         {
             "name": "koodimonni-plugin-language/woocommerce-fi",
-            "version": "3.3.5",
+            "version": "3.4.2",
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/translation/plugin/woocommerce/3.3.5/fi.zip",
+                "url": "https://downloads.wordpress.org/translation/plugin/woocommerce/3.4.2/fi.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -351,10 +351,10 @@
         },
         {
             "name": "koodimonni-plugin-language/woocommerce-sv_se",
-            "version": "3.3.5",
+            "version": "3.4.2",
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/translation/plugin/woocommerce/3.3.5/sv_SE.zip",
+                "url": "https://downloads.wordpress.org/translation/plugin/woocommerce/3.4.2/sv_SE.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -849,16 +849,16 @@
             "time": "2014-10-16T14:50:21+00:00"
         },
         {
-            "name": "wpackagist-plugin/auto-post-thumbnail",
-            "version": "3.4.1",
+            "name": "wpackagist-plugin/wp-libre-form",
+            "version": "1.4.3",
             "source": {
                 "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/auto-post-thumbnail/",
-                "reference": "tags/3.4.1"
+                "url": "https://plugins.svn.wordpress.org/wp-libre-form/",
+                "reference": "tags/1.4.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/auto-post-thumbnail.3.4.1.zip",
+                "url": "https://downloads.wordpress.org/plugin/wp-libre-form.1.4.3.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -866,27 +866,7 @@
                 "composer/installers": "~1.0"
             },
             "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/auto-post-thumbnail/"
-        },
-        {
-            "name": "wpackagist-plugin/google-analytics-dashboard-for-wp",
-            "version": "5.3.3",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/google-analytics-dashboard-for-wp/",
-                "reference": "tags/5.3.3"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/google-analytics-dashboard-for-wp.5.3.3.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/google-analytics-dashboard-for-wp/"
+            "homepage": "https://wordpress.org/plugins/wp-libre-form/"
         },
         {
             "name": "wpackagist-theme/twentyseventeen",
