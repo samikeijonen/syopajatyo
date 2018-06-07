@@ -989,7 +989,7 @@ p.wp-block-subhead {
 .fp-title {
   align-items: flex-end;
   background-image: linear-gradient(180deg, rgba(255, 255, 255, .3) 10%, white 100%), url(../img/header.jpg);
-  background-position: bottom center;
+  background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
@@ -999,7 +999,6 @@ p.wp-block-subhead {
   padding-top: 4rem; }
 @media screen and (min-width: 48em) {
     .fp-title {
-      min-height: 85vh;
       padding-bottom: 8rem; } }
 .fp-articles {
   background-color: #007fa3;

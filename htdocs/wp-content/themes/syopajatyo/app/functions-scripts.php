@@ -15,15 +15,12 @@ namespace Syopajatyo;
  * @return void
  */
 add_action( 'wp_enqueue_scripts', function() {
-	// Get version.
-	$version = wp_get_theme( get_template() )->get( 'Version' );
-
 	// Main scripts.
 	wp_enqueue_script(
 		'syopajatyo-app',
 		get_parent_theme_file_uri( 'dist/scripts/app.js' ),
 		null,
-		$version,
+		'20180606',
 		true
 	);
 
@@ -45,7 +42,7 @@ add_action( 'wp_enqueue_scripts', function() {
 		'syopajatyo-style',
 		get_parent_theme_file_uri( 'dist/styles/style.css' ),
 		null,
-		$version
+		'20180606'
 	);
 
 	// Comments JS.
