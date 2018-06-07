@@ -45,10 +45,7 @@
 			</div>
 
 			<p class="grid-footer__item grid-footer__info mb-0">
-				Cras volutpat, lacus quis semper pharetra, nisi enim dignissim est.
-				et sollicitudin quam ipsum vel mi. Sed commodo urna ac urna.
-				Nullam eu tortor. Curabitur sodales scelerisque magna.
-				Donec ultricies tristique pede.
+			Minä, syöpä ja työ &ndash; Vertaistukea, kannustusta, tietoa, verkostoja ja tapahtumia.
 			</p>
 		</div>
 	</footer>
