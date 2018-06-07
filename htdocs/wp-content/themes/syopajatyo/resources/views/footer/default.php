@@ -28,9 +28,10 @@
 			<div class="grid-footer__item grid-footer__credit">
 				<ul class="reset-list pb-4">
 					<li class="fw-600 uppercase">Suomen syöpäpotilaat Ry</li>
-					<li>Malminkatu 5</li>
+					<li>Malminkaari 5</li>
 					<li>00700 Helsinki</li>
 					<li>Email: info@syopapotilaat.fi</li>
+					<li><a href="https://www.syopapotilaat.fi/">www.syopapotilaat.fi</a></li>
 				</ul>
 				<?php
 					Hybrid\render_view( 'menu', 'social', [
@@ -38,7 +39,8 @@
 						'label' => __( 'Social links', 'syopajatyo' ),
 					] );
 
-					echo '<p class="mb-0">' . esc_html__( 'Design: Kumu Communications &#38; Milart Illustrations by Milart', 'syopajatyo' ) . '</p>';
+					echo '<p class="mb-0">' . esc_html__( 'Design: Kumu Communications &#38; Milart', 'syopajatyo' ) . '</p>';
+					echo '<p class="mb-0">' . esc_html__( 'Illustrations: Milart', 'syopajatyo' ) . '</p>';
 				?>
 			</div>
 
