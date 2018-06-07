@@ -41,6 +41,7 @@
   --color-light: #f0eeeb;
   --color-base: #007fa3;
   --color-base-rgb: 0, 127, 163;
+  --color-light-rgb: 240, 238, 235;
   --color-dark: #111;
   --color-grey-60: rgba(0, 0, 0, .6);
   --color-grey-20: rgba(0, 0, 0, .2);
@@ -113,44 +114,16 @@
 .edit-post-visual-editor textarea {
     display: block;
     min-height: 6.5rem; }
-.edit-post-visual-editor input[type="text"],
-  .edit-post-visual-editor input[type="email"],
-  .edit-post-visual-editor input[type="url"],
-  .edit-post-visual-editor input[type="password"],
-  .edit-post-visual-editor input[type="search"],
-  .edit-post-visual-editor input[type="number"],
-  .edit-post-visual-editor input[type="tel"],
-  .edit-post-visual-editor input[type="range"],
-  .edit-post-visual-editor input[type="date"],
-  .edit-post-visual-editor input[type="month"],
-  .edit-post-visual-editor input[type="week"],
-  .edit-post-visual-editor input[type="time"],
-  .edit-post-visual-editor input[type="datetime"],
-  .edit-post-visual-editor input[type="datetime-local"],
-  .edit-post-visual-editor input[type="color"],
+.edit-post-visual-editor input,
   .edit-post-visual-editor textarea,
   .edit-post-visual-editor select {
-    background-color: rgba(0, 127, 163, .2);
-    background-color: rgba(var(--color-base-rgb), 0.2);
-    border: 2px solid #fff;
-    border: 2px solid var(--color-white);
+    background-color: #f0eeeb;
+    background-color: var(--color-light);
+    border: 1px solid #fff;
+    border: 1px solid var(--color-white);
     padding: calc(0.5rem - 2px);
     width: 100%; }
-.edit-post-visual-editor input[type="text"]:focus,
-    .edit-post-visual-editor input[type="email"]:focus,
-    .edit-post-visual-editor input[type="url"]:focus,
-    .edit-post-visual-editor input[type="password"]:focus,
-    .edit-post-visual-editor input[type="search"]:focus,
-    .edit-post-visual-editor input[type="number"]:focus,
-    .edit-post-visual-editor input[type="tel"]:focus,
-    .edit-post-visual-editor input[type="range"]:focus,
-    .edit-post-visual-editor input[type="date"]:focus,
-    .edit-post-visual-editor input[type="month"]:focus,
-    .edit-post-visual-editor input[type="week"]:focus,
-    .edit-post-visual-editor input[type="time"]:focus,
-    .edit-post-visual-editor input[type="datetime"]:focus,
-    .edit-post-visual-editor input[type="datetime-local"]:focus,
-    .edit-post-visual-editor input[type="color"]:focus,
+.edit-post-visual-editor input:focus,
     .edit-post-visual-editor textarea:focus,
     .edit-post-visual-editor select:focus {
       border-color: #007fa3;

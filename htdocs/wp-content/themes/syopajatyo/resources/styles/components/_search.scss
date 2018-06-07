@@ -1,6 +1,10 @@
 .search-form {
 	position: relative;
 
+	&__field {
+		background-color: rgba(var(--color-base-rgb), 0.2);
+	}
+
 	&__submit {
 		background-color: transparent;
 		color: var(--color-dark);

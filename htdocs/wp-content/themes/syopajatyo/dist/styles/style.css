@@ -43,6 +43,7 @@
   --color-light: #f0eeeb;
   --color-base: #007fa3;
   --color-base-rgb: 0, 127, 163;
+  --color-light-rgb: 240, 238, 235;
   --color-dark: #111;
   --color-grey-60: rgba(0, 0, 0, .6);
   --color-grey-20: rgba(0, 0, 0, .2);
@@ -394,44 +395,16 @@ button:focus,
 textarea {
   display: block;
   min-height: 6.5rem; }
-input[type="text"],
-input[type="email"],
-input[type="url"],
-input[type="password"],
-input[type="search"],
-input[type="number"],
-input[type="tel"],
-input[type="range"],
-input[type="date"],
-input[type="month"],
-input[type="week"],
-input[type="time"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="color"],
+input,
 textarea,
 select {
-  background-color: rgba(0, 127, 163, .2);
-  background-color: rgba(var(--color-base-rgb), 0.2);
-  border: 2px solid #fff;
-  border: 2px solid var(--color-white);
+  background-color: #f0eeeb;
+  background-color: var(--color-light);
+  border: 1px solid #fff;
+  border: 1px solid var(--color-white);
   padding: calc(0.5rem - 2px);
   width: 100%; }
-input[type="text"]:focus,
-  input[type="email"]:focus,
-  input[type="url"]:focus,
-  input[type="password"]:focus,
-  input[type="search"]:focus,
-  input[type="number"]:focus,
-  input[type="tel"]:focus,
-  input[type="range"]:focus,
-  input[type="date"]:focus,
-  input[type="month"]:focus,
-  input[type="week"]:focus,
-  input[type="time"]:focus,
-  input[type="datetime"]:focus,
-  input[type="datetime-local"]:focus,
-  input[type="color"]:focus,
+input:focus,
   textarea:focus,
   select:focus {
     border-color: #007fa3;
@@ -1430,6 +1403,9 @@ p.wp-block-subhead {
       text-decoration: underline; }
 .search-form {
   position: relative; }
+.search-form__field {
+    background-color: rgba(0, 127, 163, .2);
+    background-color: rgba(var(--color-base-rgb), 0.2); }
 .search-form__submit {
     background-color: transparent;
     color: #111;

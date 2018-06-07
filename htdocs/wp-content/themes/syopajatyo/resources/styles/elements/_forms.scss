@@ -4,25 +4,11 @@ textarea {
 	min-height: $global-spacing-unit-13;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="url"],
-input[type="password"],
-input[type="search"],
-input[type="number"],
-input[type="tel"],
-input[type="range"],
-input[type="date"],
-input[type="month"],
-input[type="week"],
-input[type="time"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="color"],
+input,
 textarea,
 select {
-	background-color: rgba(var(--color-base-rgb), 0.2);
-	border: 2px solid var(--color-white);
+	background-color: var(--color-light);
+	border: 1px solid var(--color-white);
 	padding: calc(#{ $global-spacing-unit-1 } - 2px);
 	width: 100%;
 
