@@ -15,7 +15,7 @@
 				the_post();
 
 				Hybrid\render_view( 'entry/archive', Hybrid\get_post_hierarchy() );
-				endwhile;
+			endwhile;
 
 			Hybrid\render_view( 'partials', 'pagination-posts' );
 			endif;
