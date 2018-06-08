@@ -1,6 +1,6 @@
 pre {
 	@include font-size(1.125rem);
-	background-color: var(--color-light);
+	background-color: rgba(var(--color-light-rgb), 0.3);
 	font-family: $font-pre;
 	margin: 0 0 $global-spacing-unit-4;
 	max-width: 100%;

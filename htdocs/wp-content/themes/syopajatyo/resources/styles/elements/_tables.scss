@@ -7,7 +7,7 @@ table {
 }
 
 tr:nth-child(even) {
-	background-color: var(--color-light);
+	background-color: rgba(var(--color-light-rgb), 0.3);
 }
 
 th,

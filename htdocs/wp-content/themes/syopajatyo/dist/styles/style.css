@@ -40,10 +40,10 @@
 :root {
   --color-white: #fff;
   --color-black: #000;
-  --color-light: #f0eeeb;
+  --color-light: #b7a99a;
   --color-base: #007fa3;
   --color-base-rgb: 0, 127, 163;
-  --color-light-rgb: 240, 238, 235;
+  --color-light-rgb: 183, 169, 154;
   --color-dark: #111;
   --color-grey-60: rgba(0, 0, 0, .6);
   --color-grey-20: rgba(0, 0, 0, .2);
@@ -398,8 +398,8 @@ textarea {
 input,
 textarea,
 select {
-  background-color: #f0eeeb;
-  background-color: var(--color-light);
+  background-color: rgba(183, 169, 154, .3);
+  background-color: rgba(var(--color-light-rgb), 0.3);
   border: 1px solid #fff;
   border: 1px solid var(--color-white);
   padding: calc(0.5rem - 2px);
@@ -543,16 +543,16 @@ acronym {
           text-decoration: underline dotted; }
 mark,
 ins {
-  background-color: #f0eeeb;
-  background-color: var(--color-light);
+  background-color: rgba(183, 169, 154, .3);
+  background-color: rgba(var(--color-light-rgb), 0.3);
   text-decoration: none; }
 big {
   font-size: 134%; }
 pre {
   font-size: 1.125rem;
   line-height: 1.77777778;
-  background-color: #f0eeeb;
-  background-color: var(--color-light);
+  background-color: rgba(183, 169, 154, .3);
+  background-color: rgba(var(--color-light-rgb), 0.3);
   font-family: "Courier 10 Pitch", "Courier", monospace;
   margin: 0 0 2rem;
   max-width: 100%;
@@ -570,8 +570,8 @@ table {
   table-layout: fixed;
   width: 100%; }
 tr:nth-child(even) {
-  background-color: #f0eeeb;
-  background-color: var(--color-light); }
+  background-color: rgba(183, 169, 154, .3);
+  background-color: rgba(var(--color-light-rgb), 0.3); }
 th,
 td {
   padding: 0.5rem;
@@ -671,7 +671,7 @@ td {
 .max-width-2 {
   max-width: 44rem; }
 .max-width-3 {
-  max-width: 36rem; }
+  max-width: 40rem; }
 .mx-auto {
   margin-left: auto;
   margin-right: auto; }
@@ -708,8 +708,8 @@ td {
     color: var(--color-white);
     outline-offset: -2px; }
 .wp-block-text-columns {
-  background-color: #f0eeeb;
-  background-color: var(--color-light);
+  background-color: var(--color-light-rgb-30);
+  background-color: var(--color-light-rgb-30);
   margin-bottom: 2rem;
   padding: 4rem 1rem; }
 .wp-block-text-columns .wp-block-column {
@@ -908,10 +908,10 @@ p.wp-block-subhead {
   background-color: #fff;
   background-color: var(--color-white); }
 .has-light-color {
-  color: #f0eeeb;
+  color: #b7a99a;
   color: var(--color-light); }
 .has-light-background-color {
-  background-color: #f0eeeb;
+  background-color: #b7a99a;
   background-color: var(--color-light); }
 /*--------------------------------------------------------------
 # Components - specific UI components.
@@ -949,8 +949,8 @@ p.wp-block-subhead {
   margin-right: 1rem;
   width: 60px; }
 .app-footer {
-  background-color: #f0eeeb;
-  background-color: var(--color-light); }
+  background-color: rgba(183, 169, 154, .3);
+  background-color: rgba(var(--color-light-rgb), 0.3); }
 .svg-img--site-logo {
   border-bottom: 1px solid;
   display: block;
@@ -959,7 +959,7 @@ p.wp-block-subhead {
   padding-bottom: 2rem; }
 .svg-img--potilaat {
   max-width: 150px; }
-.fp-title {
+.fp-header {
   align-items: flex-end;
   background-image: linear-gradient(180deg, rgba(255, 255, 255, .3) 10%, white 100%), url(../img/header.jpg);
   background-position: center center;
@@ -971,8 +971,14 @@ p.wp-block-subhead {
   padding-bottom: 4rem;
   padding-top: 4rem; }
 @media screen and (min-width: 48em) {
-    .fp-title {
+    .fp-header {
       padding-bottom: 8rem; } }
+.fp-header__title {
+    background-image: url("/wp-content/themes/syopajatyo/dist/img/suttu1.svg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 3rem; }
 .fp-articles {
   background-color: #007fa3;
   background-color: var(--color-base); }
@@ -985,8 +991,8 @@ p.wp-block-subhead {
       .fp-articles__bg-img {
         display: block; } }
 .fp-featured {
-  background-color: #f0eeeb;
-  background-color: var(--color-light);
+  background-color: rgba(183, 169, 154, .3);
+  background-color: rgba(var(--color-light-rgb), 0.3);
   background-image: url("/wp-content/themes/syopajatyo/dist/img/piirros3-blue.svg");
   background-position: top 2rem left 14rem;
   background-repeat: no-repeat;
@@ -1047,8 +1053,9 @@ p.wp-block-subhead {
 .title-header {
   background-color: #007fa3;
   background-color: var(--color-base);
-  background: linear-gradient(90deg, rgba(0, 127, 163, .6) 10%, rgba(0, 127, 163, .9) 100%), url("/wp-content/themes/syopajatyo/dist/img/piirros1.svg");
-  background: linear-gradient(90deg, rgba(var(--color-base-rgb), 0.6) 10%, rgba(var(--color-base-rgb), 0.9) 100%), url("/wp-content/themes/syopajatyo/dist/img/piirros1.svg");
+  background-image: url("/wp-content/themes/syopajatyo/dist/img/blue-bg.jpg");
+  background-position: center 18%;
+  background-size: cover;
   background-repeat: no-repeat;
   color: #fff;
   color: var(--color-white); }
@@ -1056,19 +1063,7 @@ p.wp-block-subhead {
     top: 1rem; }
 .title-header__title {
     position: relative;
-    padding-left: 3rem;
     padding-top: 3rem; }
-.title-header__title::after {
-      background-image: url("/wp-content/themes/syopajatyo/dist/img/suttu2.svg");
-      background-position: center left;
-      background-repeat: no-repeat;
-      bottom: -3rem;
-      content: "";
-      left: 0;
-      position: absolute;
-      right: 0;
-      top: 0;
-      z-index: -1; }
 .wp-smiley,
 .emoji {
   background: none;
@@ -1307,8 +1302,8 @@ p.wp-block-subhead {
 .page-numbers {
   margin-right: 1rem; }
 .page-numbers:not(.dots) {
-    background-color: #f0eeeb;
-    background-color: var(--color-light);
+    background-color: rgba(183, 169, 154, .3);
+    background-color: rgba(var(--color-light-rgb), 0.3);
     padding: 0.5rem 1rem; }
 .sticky {
   display: block; }
@@ -1415,10 +1410,10 @@ p.wp-block-subhead {
     right: 2px;
     top: 2px; }
 .sidebar__wrapper {
-  background-color: #f0eeeb;
-  background-color: var(--color-light);
-  box-shadow: inset 0 0 0 4px #f0eeeb, inset 0 0 0 5px #fff;
-  box-shadow: inset 0 0 0 4px var(--color-light), inset 0 0 0 5px var(--color-white);
+  background-color: rgba(183, 169, 154, .3);
+  background-color: rgba(var(--color-light-rgb), 0.3);
+  box-shadow: inset 0 0 0 4px rgba(183, 169, 154, .3), inset 0 0 0 5px #fff;
+  box-shadow: inset 0 0 0 4px rgba(var(--color-light-rgb), 0.3), inset 0 0 0 5px var(--color-white);
   padding: 1.5rem; }
 .widget {
   margin-bottom: 2rem; }

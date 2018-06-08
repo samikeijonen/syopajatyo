@@ -7,14 +7,14 @@
 
 ?>
 <main id="main" class="app-main">
-	<div class="fp-title px-2 text-center">
+	<div class="fp-header px-2 text-center">
 		<div class="mx-auto max-width-3">
 		<?php
 		if ( have_posts() ) :
 			while ( have_posts() ) :
 				the_post();
 				?>
-				<h1 class="mb-0 font-size-fp fw-200"><?php single_post_title(); ?></h1>
+				<h1 class="fp-header__title mb-0 font-size-fp fw-200"><?php single_post_title(); ?></h1>
 				<?php
 			endwhile;
 		endif;
@@ -35,14 +35,6 @@
 	if ( $syopajatyo_articles_content->have_posts() ) :
 		?>
 		<div class="fp-articles px-2 py-8 pos-rel">
-			<?php
-			Syopajatyo\display_svg_img( [
-				'icon'   => 'suttu1',
-				'folder' => 'img',
-				'class'  => 'fp-articles__bg-img pos-abs mx-auto max-width-1',
-			] );
-			?>
-
 			<div class="mx-auto max-width-1 grid pos-rel z-index-11">
 			<?php
 			while ( $syopajatyo_articles_content->have_posts() ) :

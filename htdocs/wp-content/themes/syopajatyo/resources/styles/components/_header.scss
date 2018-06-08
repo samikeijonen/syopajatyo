@@ -18,7 +18,9 @@
 
 .title-header {
 	background-color: var(--color-base);
-	background: linear-gradient(90deg, rgba(var(--color-base-rgb), 0.6) 10%, rgba(var(--color-base-rgb), 0.9) 100%), url("/wp-content/themes/syopajatyo/dist/img/piirros1.svg");
+	background-image: url("/wp-content/themes/syopajatyo/dist/img/blue-bg.jpg");
+	background-position: center 18%;
+	background-size: cover;
 	background-repeat: no-repeat;
 	color: var(--color-white);
 
@@ -28,20 +30,6 @@
 
 	&__title {
 		position: relative;
-		padding-left: $global-spacing-unit-1 * 6;
 		padding-top: $global-spacing-unit-1 * 6;
-
-		&::after {
-			background-image: url("/wp-content/themes/syopajatyo/dist/img/suttu2.svg");
-			background-position: center left;
-			background-repeat: no-repeat;
-			bottom: -$global-spacing-unit-1 * 6;
-			content: "";
-			left: 0;
-			position: absolute;
-			right: 0;
-			top: 0;
-			z-index: -1;
-		}
 	}
 }

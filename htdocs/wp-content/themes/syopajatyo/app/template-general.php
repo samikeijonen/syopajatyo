@@ -41,7 +41,7 @@ function get_meta_sep( $sep = '' ) {
 function site_title() {
 	if ( is_front_page() && is_home() ) :
 	?>
-		<h1 class="app-header__title mb-0 font-size-cta fw-200"><a class="decoration-none color-dark block" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+		<h1 class="app-header__title mb-0 h1 fw-200 uppercase"><a class="decoration-none color-dark block" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 		<?php
 			display_svg_img(
 				[
@@ -55,7 +55,7 @@ function site_title() {
 	<?php
 	else :
 	?>
-		<p class="app-header__title mb-0 font-size-cta fw-200"><a class="decoration-none color-dark block" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+		<p class="app-header__title mb-0 h1 fw-200 uppercase"><a class="decoration-none color-dark block" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 		<?php
 			display_svg_img(
 				[

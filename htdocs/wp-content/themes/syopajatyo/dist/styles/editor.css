@@ -38,10 +38,10 @@
 :root {
   --color-white: #fff;
   --color-black: #000;
-  --color-light: #f0eeeb;
+  --color-light: #b7a99a;
   --color-base: #007fa3;
   --color-base-rgb: 0, 127, 163;
-  --color-light-rgb: 240, 238, 235;
+  --color-light-rgb: 183, 169, 154;
   --color-dark: #111;
   --color-grey-60: rgba(0, 0, 0, .6);
   --color-grey-20: rgba(0, 0, 0, .2);
@@ -117,8 +117,8 @@
 .edit-post-visual-editor input,
   .edit-post-visual-editor textarea,
   .edit-post-visual-editor select {
-    background-color: #f0eeeb;
-    background-color: var(--color-light);
+    background-color: rgba(183, 169, 154, .3);
+    background-color: rgba(var(--color-light-rgb), 0.3);
     border: 1px solid #fff;
     border: 1px solid var(--color-white);
     padding: calc(0.5rem - 2px);
@@ -262,16 +262,16 @@
             text-decoration: underline dotted; }
 .edit-post-visual-editor mark,
   .edit-post-visual-editor ins {
-    background-color: #f0eeeb;
-    background-color: var(--color-light);
+    background-color: rgba(183, 169, 154, .3);
+    background-color: rgba(var(--color-light-rgb), 0.3);
     text-decoration: none; }
 .edit-post-visual-editor big {
     font-size: 134%; }
 .edit-post-visual-editor pre {
     font-size: 1.125rem;
     line-height: 1.77777778;
-    background-color: #f0eeeb;
-    background-color: var(--color-light);
+    background-color: rgba(183, 169, 154, .3);
+    background-color: rgba(var(--color-light-rgb), 0.3);
     font-family: "Courier 10 Pitch", "Courier", monospace;
     margin: 0 0 2rem;
     max-width: 100%;
@@ -289,8 +289,8 @@
     table-layout: fixed;
     width: 100%; }
 .edit-post-visual-editor tr:nth-child(even) {
-    background-color: #f0eeeb;
-    background-color: var(--color-light); }
+    background-color: rgba(183, 169, 154, .3);
+    background-color: rgba(var(--color-light-rgb), 0.3); }
 .edit-post-visual-editor th,
   .edit-post-visual-editor td {
     padding: 0.5rem;
@@ -321,8 +321,8 @@
       color: var(--color-white);
       outline-offset: -2px; }
 .edit-post-visual-editor .wp-block-text-columns {
-    background-color: #f0eeeb;
-    background-color: var(--color-light);
+    background-color: var(--color-light-rgb-30);
+    background-color: var(--color-light-rgb-30);
     margin-bottom: 2rem;
     padding: 4rem 1rem; }
 .edit-post-visual-editor .wp-block-text-columns .wp-block-column {
@@ -521,10 +521,10 @@
     background-color: #fff;
     background-color: var(--color-white); }
 .edit-post-visual-editor .has-light-color {
-    color: #f0eeeb;
+    color: #b7a99a;
     color: var(--color-light); }
 .edit-post-visual-editor .has-light-background-color {
-    background-color: #f0eeeb;
+    background-color: #b7a99a;
     background-color: var(--color-light); }
 .edit-post-visual-editor .h1 {
     font-size: 1.5rem;
