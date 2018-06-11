@@ -24,29 +24,41 @@
 
 	<?php
 	// Articles section.
-	$syopajatyo_articles_args = [
-		'post_type'      => 'post',
-		'posts_per_page' => 3,
-		'no_found_rows'  => true,
-	];
+	$k = 1;
+	while ( $k <= 2 ) :
+		$syopajatyo_articles_args_{$k}  = [
+			'post_type'      => 'post',
+			'cat'            => absint( get_theme_mod( 'featured_category_' . $k ) ),
+			'posts_per_page' => 1,
+			'no_found_rows'  => true,
+		];
 
-	$syopajatyo_articles_content = new WP_Query( $syopajatyo_articles_args );
+		$syopajatyo_articles_content_{$k} = new WP_Query( $syopajatyo_articles_args_{$k} );
 
-	if ( $syopajatyo_articles_content->have_posts() ) :
-		?>
-		<div class="fp-articles px-2 py-8 pos-rel">
-			<div class="mx-auto max-width-1 grid pos-rel z-index-11">
-			<?php
-			while ( $syopajatyo_articles_content->have_posts() ) :
-				$syopajatyo_articles_content->the_post();
-				Hybrid\render_view( 'entry/archive', 'card' );
-				endwhile;
+		if ( $syopajatyo_articles_content_{$k}->have_posts() ) :
+			if ( 1 === $k ) :
 			?>
+			<div class="fp-articles px-2 py-8 pos-rel">
+				<div class="mx-auto max-width-1 grid pos-rel z-index-11">
+				<?php
+			endif;
+
+				while ( $syopajatyo_articles_content_{$k}->have_posts() ) :
+					$syopajatyo_articles_content_{$k}->the_post();
+					Hybrid\render_view( 'entry/archive', 'card' );
+				endwhile;
+
+			if ( 2 === $k ) :
+				?>
+				</div>
 			</div>
-		</div>
-	<?php
-	endif;
-	wp_reset_postdata(); // Reset post data.
+		<?php
+			endif;
+
+		endif;
+		wp_reset_postdata(); // Reset post data.
+		$k++;
+	endwhile;
 
 	// Featured section.
 	$syopajatyo_pages_args = [
