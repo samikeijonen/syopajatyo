@@ -9,6 +9,8 @@
 
 namespace Syopajatyo;
 
+use Hybrid;
+
 /**
  * Theme Customizer.
  *
@@ -38,14 +40,17 @@ function customize_register( $wp_customize ) {
 		);
 		// Add the 'featured_page_*' control.
 		$wp_customize->add_control(
-			'featured_category_' . $k,
-			[
-				/* Translators: %s stands for number. For example Select category 1. */
-				'label'    => sprintf( esc_html__( 'Select category %s', 'syopajatyo' ), $k ),
-				'section'  => 'front-page-featured',
-				'type'     => 'hybrid-dropdown-terms',
-				'priority' => $k + 1,
-			]
+			new Hybrid\Customize\Controls\DropdownTerms(
+				$wp_customize,
+				'featured_category_' . $k,
+				$args = [
+					/* Translators: %s stands for number. For example Select category 1. */
+					'label'    => sprintf( esc_html__( 'Select category %s', 'syopajatyo' ), $k ),
+					'section'  => 'front-page-featured',
+					'type'     => 'hybrid-dropdown-terms',
+					'priority' => $k + 1,
+				]
+			)
 		);
 
 		$k++; // Add one before loop ends.
