@@ -27,6 +27,33 @@ function customize_register( $wp_customize ) {
 	// Loop same setting couple of times.
 	$k = 1;
 
+	while ( $k <= 3 ) {
+		// Add the 'featured_category_*' setting.
+		$wp_customize->add_setting(
+			'featured_category_' . $k,
+			[
+				'default'           => 0,
+				'sanitize_callback' => 'absint',
+			]
+		);
+		// Add the 'featured_page_*' control.
+		$wp_customize->add_control(
+			'featured_category_' . $k,
+			[
+				/* Translators: %s stands for number. For example Select category 1. */
+				'label'    => sprintf( esc_html__( 'Select category %s', 'syopajatyo' ), $k ),
+				'section'  => 'front-page-featured',
+				'type'     => 'hybrid-dropdown-terms',
+				'priority' => $k + 1,
+			]
+		);
+
+		$k++; // Add one before loop ends.
+	} // End while loop.
+
+	// Loop same setting couple of times.
+	$k = 1;
+
 	while ( $k <= 9 ) {
 		// Add the 'featured_page_*' setting.
 		$wp_customize->add_setting(
