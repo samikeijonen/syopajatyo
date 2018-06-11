@@ -10,6 +10,10 @@ tr:nth-child(even) {
 	background-color: rgba(var(--color-light-rgb), 0.3);
 }
 
+tr {
+	vertical-align: top;
+}
+
 th,
 td {
 	padding: $global-spacing-unit-1;
