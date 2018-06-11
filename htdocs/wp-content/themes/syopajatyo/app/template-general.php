@@ -250,7 +250,7 @@ function sub_pages_navigation() {
 	?>
 		<section class="widget widget--sub-pages">
 			<nav class="menu menu--sidebar" id="js-menu--sidebar" aria-label="<?= esc_html__( 'Subpages', 'syopajatyo' ); ?>">
-				<ul class="sub-pages-list">
+				<ul class="menu__items menu__items--sub-pages">
 					<?= wp_kses_post( $list ); ?>
 				</ul>
 			</nav>
