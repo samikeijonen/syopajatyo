@@ -288,9 +288,6 @@
     margin: 0 0 2rem;
     table-layout: fixed;
     width: 100%; }
-.edit-post-visual-editor tr:nth-child(even) {
-    background-color: rgba(183, 169, 154, .3);
-    background-color: rgba(var(--color-light-rgb), 0.3); }
 .edit-post-visual-editor tr {
     vertical-align: top; }
 .edit-post-visual-editor th,
