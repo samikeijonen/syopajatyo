@@ -62,6 +62,7 @@
     "seravo/seravo-plugin": ">=1.4.0",
 
     "wpackagist-plugin/wp-libre-form": "*",
+    "wpackagist-plugin/the-events-calendar": "*",
 
     "wpackagist-theme/twentyseventeen": "*"
   },
