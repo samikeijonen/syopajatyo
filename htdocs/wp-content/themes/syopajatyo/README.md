@@ -1,6 +1,6 @@
-[![Build Status](https://travis-ci.org/samikeijonen/uuups.svg?branch=master)](https://travis-ci.org/samikeijonen/uuups)
+[![Build Status](https://travis-ci.org/samikeijonen/syopajatyo.svg?branch=master)](https://travis-ci.org/samikeijonen/syopajatyo)
 
-# Uuups &ndash; experimental WordPress Theme
+# Syopajatyo
 
 Uuups is an experiment how to bring your theme to the next level.
 
