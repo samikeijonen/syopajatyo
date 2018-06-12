@@ -25,7 +25,6 @@ endif;
 		<?php
 		elseif ( is_archive() ) :
 			the_archive_title( '<h1 class="title-header__title archive-header__title max-width-2 mb-0 fw-200 uppercase" id="region-title">', '</h1>' );
-			the_archive_description( '<div class="archive-header__description">', '</div>' );
 		elseif ( is_search() ) :
 			/* translators: %s: search query. */
 			printf( '<h1 class="title-header__title max-width-2 mb-0 fw-200 uppercase" id="region-title">' . esc_html__( 'Search Results for: %s', 'syopajatyo' ) . '</h1>', '<span>' . get_search_query() . '</span>' );

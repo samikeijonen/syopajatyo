@@ -10,6 +10,8 @@
 	<div class="grid mx-auto max-width-1">
 		<main id="main" class="app-main archive grid__main">
 		<?php
+		the_archive_description( '<div class="entry__intro font-size-125">', '</div>' );
+
 		if ( have_posts() ) :
 			while ( have_posts() ) :
 				the_post();
@@ -18,7 +20,7 @@
 			endwhile;
 
 			Hybrid\render_view( 'partials', 'pagination-posts' );
-			endif;
+		endif;
 		?>
 		</main>
 
