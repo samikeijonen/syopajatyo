@@ -26,9 +26,9 @@
 	// Articles section.
 	$k = 1;
 	while ( $k <= 3 ) :
-		$syopajatyo_articles_args_{$k}  = [
-			'post_type'      => $k <=2 ? 'post' : 'tribe_events',
-			'cat'            => $k <=2 ? absint( get_theme_mod( 'featured_category_' . $k ) ) : '',
+		$syopajatyo_articles_args_{$k} = [
+			'post_type'      => $k <= 2 ? 'post' : 'tribe_events',
+			'cat'            => $k <= 2 ? absint( get_theme_mod( 'featured_category_' . $k ) ) : '',
 			'posts_per_page' => 1,
 			'no_found_rows'  => true,
 		];
@@ -43,10 +43,10 @@
 				<?php
 			endif;
 
-				while ( $syopajatyo_articles_content_{$k}->have_posts() ) :
-					$syopajatyo_articles_content_{$k}->the_post();
-					Hybrid\render_view( 'entry/archive', 'card' );
-				endwhile;
+			while ( $syopajatyo_articles_content_{$k}->have_posts() ) :
+				$syopajatyo_articles_content_{$k}->the_post();
+				Hybrid\render_view( 'entry/archive', 'card' );
+			endwhile;
 
 			if ( 3 === $k ) :
 				?>
