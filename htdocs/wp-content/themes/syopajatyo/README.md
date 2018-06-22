@@ -17,12 +17,12 @@ Directory structure aims to be modern app-like, what ever that means :)
 	- `resources/img` have all the images.
 	- `resources/svg` have SVG icons.
 	- `resources/lang` have language files.
-- `app` folder is for theme related functions and classes. Classes are loaded automatically but `functions-*.php` files needs to be added manually via `functions.php`.
+- `app` folder is for theme related functions and classes. `*.php` files needs to be added manually via `functions.php`.
 - `dist` folder has processed and optimized assets ready to be included to theme. Do not edit or add anything to `dist` folder. It is processed automatically via task tools.
 
 ## Installation and setup
 
-Starter theme uses [Composer](https://getcomposer.org/) and [NPM](https://www.npmjs.com/) to manage its dependencies. Install both on your machine before using this starter theme.
+Theme uses [Composer](https://getcomposer.org/) and [NPM](https://www.npmjs.com/) to manage its dependencies. Install both on your machine before using this starter theme.
 
 Theme has [Hybrid Core 5.0](https://github.com/justintadlock/hybrid-core/tree/5.0) as a must have dependency.
 
@@ -31,7 +31,7 @@ Theme has [Hybrid Core 5.0](https://github.com/justintadlock/hybrid-core/tree/5.
 Theme lives in the `wp-content/theme/syopajatyo` folder.
 
 ```
-# Go to the `themes` directory of your WordPress installation.
+# Go to the `wp-content/theme/syopajatyo` directory of your WordPress installation.
 cd wp-content/themes/syopajatyo
 ```
 
