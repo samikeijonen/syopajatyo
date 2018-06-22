@@ -267,10 +267,10 @@
         },
         {
             "name": "koodimonni-plugin-language/akismet-sv_se",
-            "version": "4.0.7",
+            "version": "4.0.8",
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/translation/plugin/akismet/4.0.7/sv_SE.zip",
+                "url": "https://downloads.wordpress.org/translation/plugin/akismet/4.0.8/sv_SE.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -330,10 +330,10 @@
         },
         {
             "name": "koodimonni-plugin-language/woocommerce-fi",
-            "version": "3.4.2",
+            "version": "3.4.3",
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/translation/plugin/woocommerce/3.4.2/fi.zip",
+                "url": "https://downloads.wordpress.org/translation/plugin/woocommerce/3.4.3/fi.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -351,10 +351,10 @@
         },
         {
             "name": "koodimonni-plugin-language/woocommerce-sv_se",
-            "version": "3.4.2",
+            "version": "3.4.3",
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/translation/plugin/woocommerce/3.4.2/sv_SE.zip",
+                "url": "https://downloads.wordpress.org/translation/plugin/woocommerce/3.4.3/sv_SE.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -751,16 +751,16 @@
         },
         {
             "name": "seravo/seravo-plugin",
-            "version": "1.8.0",
+            "version": "1.9.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seravo/seravo-plugin.git",
-                "reference": "2e4b4b11b948802a6d28b2f28ea1fd7fcfa5e5ba"
+                "reference": "f978ca785426b0bdec69acf92d44760fa202820c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seravo/seravo-plugin/zipball/2e4b4b11b948802a6d28b2f28ea1fd7fcfa5e5ba",
-                "reference": "2e4b4b11b948802a6d28b2f28ea1fd7fcfa5e5ba",
+                "url": "https://api.github.com/repos/Seravo/seravo-plugin/zipball/f978ca785426b0bdec69acf92d44760fa202820c",
+                "reference": "f978ca785426b0bdec69acf92d44760fa202820c",
                 "shasum": ""
             },
             "require": {
@@ -795,7 +795,7 @@
                 "wp",
                 "wp-palvelu"
             ],
-            "time": "2018-03-23T07:22:01+00:00"
+            "time": "2018-06-21T07:06:07+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
@@ -850,15 +850,15 @@
         },
         {
             "name": "wpackagist-plugin/the-events-calendar",
-            "version": "4.6.18",
+            "version": "4.6.19",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/the-events-calendar/",
-                "reference": "tags/4.6.18"
+                "reference": "tags/4.6.19"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/the-events-calendar.4.6.18.zip",
+                "url": "https://downloads.wordpress.org/plugin/the-events-calendar.4.6.19.zip",
                 "reference": null,
                 "shasum": null
             },

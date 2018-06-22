@@ -56,11 +56,11 @@ add_action( 'after_setup_theme', function() {
 	add_theme_support( 'editor-color-palette',
 		[
 			'name'  => 'main',
-			'color' => '#2516c7',
+			'color' => '#007fa3',
 		],
 		[
 			'name'  => 'dark',
-			'color' => '#06031f',
+			'color' => '#111',
 		],
 		[
 			'name'  => 'white',
@@ -68,7 +68,7 @@ add_action( 'after_setup_theme', function() {
 		],
 		[
 			'name'  => 'light',
-			'color' => '#ecebff',
+			'color' => '#b7a99a',
 		]
 	);
 

@@ -235,7 +235,7 @@
 	overflow: hidden;
 }
 
-.has-background {
+.has-background:not(.wp-block-button__link) {
 	padding: $global-spacing-unit-3;
 }
 
