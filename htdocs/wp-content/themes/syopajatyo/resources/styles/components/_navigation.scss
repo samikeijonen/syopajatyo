@@ -63,6 +63,7 @@
 	&--language {
 		display: flex;
 		flex-wrap: wrap;
+		justify-content: flex-end;
 
 		> li:not(:last-child) > a {
 			border-right: 1px solid;

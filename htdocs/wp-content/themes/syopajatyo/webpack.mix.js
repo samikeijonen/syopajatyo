@@ -128,7 +128,7 @@ mix.webpackConfig( {
 //
 // @link https://laravel.com/docs/5.6/mix#browsersync-reloading
 mix.browserSync( {
-	proxy: 'foxland-products.test/',
+	proxy: 'https://syopajatyo.test/',
 	files: [
 		'**/*.{jpg,jpeg,png,gif,svg,eot,ttf,woff,woff2}',
 		'resources/views/**/*.php',

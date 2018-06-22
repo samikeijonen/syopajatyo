@@ -1,25 +1,28 @@
 .fp-header {
-	align-items: flex-end;
+	align-items: center;
 	background-image: linear-gradient(180deg, rgba(256, 256, 256, 0.3) 10%, rgba(256, 256, 256, 1) 100%), url("../img/header.jpg");
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: cover;
 	display: flex;
 	flex-direction: row;
-	min-height: 70vh;
+	min-height: 42vh;
 	padding-bottom: $global-spacing-unit-1 * 8;
 	padding-top: $global-spacing-unit-1 * 8;
 
 	@media screen and (min-width: $breakpoint-1) {
-		padding-bottom: $global-spacing-unit-1 * 16;
+		min-height: 52vh;
 	}
 
 	&__title {
-		background-image: url("/wp-content/themes/syopajatyo/dist/img/suttu1.svg");
-		background-position: center center;
-		background-repeat: no-repeat;
-		background-size: cover;
 		padding: $global-spacing-unit-1 * 6;
+
+		@media screen and (min-width: $breakpoint-1) {
+			background-image: url("/wp-content/themes/syopajatyo/dist/img/suttu1.svg");
+			background-position: center center;
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
 	}
 }
 
