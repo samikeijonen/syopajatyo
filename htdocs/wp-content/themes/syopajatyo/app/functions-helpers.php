@@ -23,7 +23,7 @@ use function Hybrid\app;
  * @return string
  */
 function asset( $path ) {
-	// Get the Laravel Mix manifest.
+	// Get the Laravel Mix manifest...
 	$manifest = mix();
 
 	// Make sure to trim any slashes from the front of the path.
