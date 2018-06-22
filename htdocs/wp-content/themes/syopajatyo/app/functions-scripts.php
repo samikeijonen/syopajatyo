@@ -16,13 +16,7 @@ namespace Syopajatyo;
  */
 add_action( 'wp_enqueue_scripts', function() {
 	// Main scripts.
-	wp_enqueue_script(
-		'syopajatyo-app',
-		get_parent_theme_file_uri( 'dist/scripts/app.js' ),
-		null,
-		'20180606',
-		true
-	);
+	wp_enqueue_script( 'syopajatyo-app', asset( 'scripts/app.js' ), null, false, true );
 
 	// Add SVG icon which we can use via JS.
 	wp_localize_script( 'syopajatyo-app', 'SyopaJaTyoText', array(
@@ -30,20 +24,10 @@ add_action( 'wp_enqueue_scripts', function() {
 	) );
 
 	// Add custom fonts.
-	wp_enqueue_style(
-		'syopajatyo-fonts',
-		fonts_url(),
-		null,
-		null
-	);
+	wp_enqueue_style( 'syopajatyo-fonts', fonts_url(), null, null );
 
 	// Main styles.
-	wp_enqueue_style(
-		'syopajatyo-style',
-		get_parent_theme_file_uri( 'dist/styles/style.css' ),
-		null,
-		'20180611'
-	);
+	wp_enqueue_style( 'syopajatyo-style', asset( 'styles/style.css' ), null );
 
 	// Comments JS.
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -62,16 +46,8 @@ add_action( 'wp_enqueue_scripts', function() {
  * @return void
  */
 add_action( 'enqueue_block_editor_assets', function() {
-	// Get version.
-	$version = wp_get_theme( get_template() )->get( 'Version' );
-
 	// Main block styles.
-	wp_enqueue_style(
-		'syopajatyo-blocks',
-		get_parent_theme_file_uri( 'dist/styles/editor.css' ),
-		null,
-		$version
-	);
+	wp_enqueue_style( 'syopajatyo-blocks', asset( 'styles/editor.css' ), null );
 }, 10 );
 
 /**
