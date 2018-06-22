@@ -2,42 +2,9 @@
 
 # Syopajatyo
 
-Uuups is an experiment how to bring your theme to the next level.
+Custom theme for [syopajatyo.fi](https://syopajatyo.fi/) site.
 
-1. The theme uses modern PHP, JS, CSS, and other tools.
-1. The theme also attempts to stick with WP standards so that it doesn't feel too foreign.
-
-This is playground from two starter themes:
-
-1. [Justin Tadlock's starter theme](https://github.com/justintadlock/abc)
-1. [Mine starter theme called Foxer](https://github.com/samikeijonen/foxer)
-
-All the ideas are still open and there are no documentation.
-
-## Demo
-
-[Demo can be seen in Foxland site](https://foxland.fi/demo/uuups/).
-
-## My wishlist
-
-I have hopes and dreams for the starter theme:
-
-- Accessibility ready out of the box.
-- Clean semantic HTML without lots of extra DIVs
-- Scalable, modular CSS/SASS architecture. It should guide developers how they write their CSS.
-- Ready for Gutenberg and a maximum WYSIWYG experience.
-- ES6 for JavaScript.
-- Gulp, Webpack, or npm scripts for automated tasks like    - compiling assets.
-  - optimising images and SVGs.
-  - CSS, JS, and PHPCS linting.
-  - SVG system.
-- being design system ready.
-
-## My workflow
-
-I'll work on `dev` branch where I keep un-minified CSS, JS, SVGs etc. In `master` all assets are cleaned and compile when running `npm run build`.
-
-In other words `master` branch is ready for production.
+Theme is based on [Uuups](https://github.com/samikeijonen/uuups) where you can get more informantion.
 
 ## Directory structure
 
@@ -47,10 +14,11 @@ Directory structure aims to be modern app-like, what ever that means :)
 	- `resources/views` have all the template structure and partials files.
 	- `resources/styles` have SASS files.
 	- `resources/scripts` have JS files.
-	- `resources/svg-icons` have SVG icons.
+	- `resources/img` have all the images.
+	- `resources/svg` have SVG icons.
 	- `resources/lang` have language files.
-- `app` folder is for theme related functions and classes. Classes are loaded automatically but `functions-files` needs to be added manually via `functions.php`.
-- `dist` folder has processed and optimized assets ready to be included to theme. Do not edit or add anything to `dist` folder. It is processed automatically via task tools like Webpack or Gulp.
+- `app` folder is for theme related functions and classes. Classes are loaded automatically but `functions-*.php` files needs to be added manually via `functions.php`.
+- `dist` folder has processed and optimized assets ready to be included to theme. Do not edit or add anything to `dist` folder. It is processed automatically via task tools.
 
 ## Installation and setup
 
@@ -58,51 +26,14 @@ Starter theme uses [Composer](https://getcomposer.org/) and [NPM](https://www.np
 
 Theme has [Hybrid Core 5.0](https://github.com/justintadlock/hybrid-core/tree/5.0) as a must have dependency.
 
-### Creating new theme
+### Install dependencies
 
-WordPress themes lives in the `wp-content/themes` folder. This is where we fetch our starter theme files.
+Theme lives in the `wp-content/theme/syopajatyo` folder.
 
 ```
 # Go to the `themes` directory of your WordPress installation.
-cd wp-content/themes
+cd wp-content/themes/syopajatyo
 ```
-
-You can download files from this repo or clone the repository to the `wp-content/themes` directory.
-
-```
-git clone -b master git@github.com:samikeijonen/uuups.git <theme-name>
-```
-
-Make sure you’re in the root folder of your theme.
-
-```
-cd <theme-name>
-```
-
-#### Run setup script
-
-Run setup wizard in theme root with bash command
-
-```
-sh setup.sh
-```
-
-You'll be asked three questions:
-
-1. Theme name (Default: "Uuups").
-1. Unique id for your theme name. Like `uuups` or `super-cool`. Use only lowercase `a-z` and `-`. (Default: uuups).
-1. Local development url is used by Browsersync and can be manually changed in `/resources/build/config.js`.
-
-In Windows you might need to install [Cygwin](https://www.cygwin.com/) or
-similar tool to run `sh` script.
-
-Or you can do search and replace:
-
-1. Search for `'uuups'` (inside single quotations) to capture the text domain.
-1. Search for `Text Domain: uuups` in style.css.
-1. Search for ` Uuups` (with a space before it) to capture DocBlocks.
-1. Search for `Uuups` to capture all the namespaces.
-1. Search for `uuups-` to capture prefixed handles.
 
 #### Install composer dependencies.
 
@@ -122,37 +53,39 @@ npm install
 yarn install
 ```
 
-#### Active theme
+## Build process
 
-Activate your theme under `Appearance > Themes`. Or use WP-CLI to activate your theme.
+This theme utilizes [Laravel Mix](https://laravel.com/docs/5.6/mix) for most of the build process with the theme.
+
+Laravel Mix is a layer built on top of Webpack that makes defining your build process much easier than attempting to write out a custom `webpack.config.js` configuration file.  It simplifies most of the complexity while still allowing you to define custom Webpack config options for more advanced uses.
+
+You may configure the build process to your liking by editing `webpack.mix.js` in the root folder.
+
+The following is a list of commands you can run from the command line:
 
 ```
-wp theme activate <theme-name>
+# Processes all of your assets for a development environment.
+npm run dev
+
+# Watches for changes to any files and rebuilds for a development environment.
+npm run watch
+
+# Watches for changes to files and syncs with the browser using BrowserSync.
+npm run hot
+
+# Processes all of your assets for a production environment.
+npm run build
+
+# Lint JavaScript and/or SCSS files.
+npm run lint
+npm run lint:styles
+npm run lint:scripts
+
+# Auto-adds a textdomain and/or creates a POT file.
+npm run i18n
+npm run i18n:textdomain
+npm run i18n:pot
 ```
-
-## Webpack tasks
-
-In this theme experiment I use [Webpack](https://webpack.js.org/) tasks for automated processes.
-
-You can configure Webpack related settings
-in the `resources/build/config.js` file. Change at least `proxy`
-setting in browserSync to match your local environment URL. This will be needed if you use Browsersync feature by running `npm run watch`.
-
-You can also change folder structure but it's not recommended.
-
-Run `npm run watch` to activate build process in the background. You'll get development proxy at http://localhost:3000 where changes to the code will be updated automatically to browser.
-
-Tip: Press `ctrl` + `c` to quit build process.
-
-All tasks:
-
-- `npm run watch` &ndash; Automatically watch changes to CSS, JS, and PHP. Also kicks off BrowserSync.
-- `npm run dev` &ndash; Output assets like CSS, JS, images, SVGs to `dist` folder.
-- `npm run lint` &ndash; Run SASS and JS against WordPress coding standards.
-	- `npm run lint:styles` &ndash; Run SASS against WordPress coding standards.
-	- `npm run lint:scripts` &ndash; Run Javascript against WordPress coding standards.
-- `nmp run docs` &ndash; Create SASS docs which can be seen in [Uuups Github pages](https://samikeijonen.github.io/uuups/).
-- `npm run build` &ndash; Minify and compress assets like CSS, JS, images, SVGs to `dist` folder. Run this when you're ready for production.
 
 ## Accessibility testing
 
@@ -179,10 +112,7 @@ There are two separate stylesheets
 which are automatically compiled to `dist/styles`:
 
 - `style.scss` &ndash; Main stylesheet for the theme.
-- `blocks.scss` &ndash; Stylesheet only for the new editor (Gutenberg).
-
-Actually all the files in `resources/styles/*.scss`
-are outputted in the `dist/styles/*.css` during build process.
+- `editor.scss` &ndash; Stylesheet only for the new editor (Gutenberg).
 
 ### Main stylesheet
 
@@ -200,7 +130,7 @@ it's that important.
 
 ### Styles for the editor
 
-`blocks.scss` tries to put all the necessary styles
+`editor.scss` tries to put all the necessary styles
 to the new editor.
 
 Note a little trick where we prefix all the styles
@@ -218,7 +148,7 @@ with class `edit-post-visual-editor`:
 
 ## New editor (Gutenberg) support
 
-At the moment support for new editor means these things to me:
+At the moment support for new editor means these things:
 
 - Add support `editor-color-palette` to match theme colors.
 - Add support for `align-wide` blocks.
@@ -285,8 +215,6 @@ This loads template files from `resources/views/content` folder respecting the [
 // 6. resources/views/index.php
 ```
 
-
-
 ## Coding standards and linting
 
 Theme mostly follows [WordPress coding standards](https://make.wordpress.org/core/handbook/best-practices/coding-standards/). There are couple of things you need to install in your
@@ -324,37 +252,13 @@ I also recommend installing ESLint extension to your IDE, for example [VS Code E
 
 Theme has an `.editorconfig` file that sets your code editor settings accordingly. [Download the extension to your editor](http://editorconfig.org/#download). The settings will automatically be applied when you edit code when you have the extension.
 
-## SASS docs
-
-Running `npm run docs` creates [sassdocs](http://sassdoc.com/) in `docs` folder. At the moment I'm
-testing [Herman sassdoc theme](https://github.com/oddbird/sassdoc-theme-herman).
-
-The end [result can be seen in Github pages](https://samikeijonen.github.io/uuups/). This is nowhere near of design system but it's a nice start.
-
 ## SVG system
 
 All the main SVG related functions can be found in the `app/functions-svg.php` file. It’s well-documented in the code, but here’s a summary:
 
-- Add SVG icons in `resources/svg` folder. `npm run dev` copies these SVG files in `dist/svg` folder.
-- When ready for production, `npm run build` cleans all the SVG files.
-- `Hybrid\get_svg()` function returns inline SVG icon markup by default.
-- For example `Hybrid\get_svg( 'angle-down.svg' )`.
-- Or with arguments: `Hybrid\get_svg( 'angle-down.svg', [ 'title' => 'This is title', 'desc' => 'This is desc' ] );`.
+- Add SVG icons in `resources/svg` folder. `npm run dev` or `npm run build` copies these SVG files in `dist/svg` folder.
+	- In the same cleans them up.
+	- Adds attributes and classes for using these icons as decorative only.
+- `Syopajatyo\get_svg()` function returns inline SVG icon markup by default.
+- For example `Uuups\get_svg( [ 'icon' => 'folder-open' ]`.
 - SVG icons are automatically used in Social links menu.
-
-## FAQ
-
-> What about sidebars?
-
-For old themes I probably would not try to add align-wide support if child themes can be broken.
-
-For new themes you can definitely have "wide" and "full-width" blocks even if there is sidebar on the right or left.
-
-Yeah but how? Using CSS :)
-
-## Other starter themes
-
-Check out
-
-- [Tonik](https://github.com/tonik/theme/).
-- [Sage](https://github.com/roots/sage/).
