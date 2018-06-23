@@ -51,6 +51,17 @@ add_action( 'enqueue_block_editor_assets', function() {
 }, 10 );
 
 /**
+ * Handles JavaScript detection.
+ *
+ * Adds a `js` class to the root `<html>` element when JavaScript is detected.
+ *
+ * @since 1.0.0
+ */
+add_action( 'wp_head', function() {
+	echo "<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>\n";
+}, 0 );
+
+/**
  * Helper function for getting the script/style `.min` suffix for minified files.
  *
  * @return string
