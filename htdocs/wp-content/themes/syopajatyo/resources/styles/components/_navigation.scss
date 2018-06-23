@@ -17,182 +17,183 @@
 			}
 		}
 	}
-}
 
-.menu__items {
-	// Primary menu.
-	&--primary {
-		display: none;
+	// Menu items.
+	&__items {
+		// Primary menu.
+		&--primary {
+			display: none;
 
-		&.is-opened {
-			display: block;
-			padding-bottom: $global-spacing-unit-2;
-			padding-top: $global-spacing-unit-2;
-			right: $global-spacing-unit-2;
-			text-align: center;
+			&.is-opened {
+				display: block;
+				padding-bottom: $global-spacing-unit-2;
+				padding-top: $global-spacing-unit-2;
+				right: $global-spacing-unit-2;
+				text-align: center;
+			}
 		}
-	}
 
-	// Social links menu.
-	&--social {
-		display: none;
+		// Social links menu.
+		&--social {
+			display: none;
 
-		&.is-opened {
+			&.is-opened {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
+				padding-bottom: $global-spacing-unit-2 * 2;
+			}
+		}
+
+		// Social links menu in footer.
+		&--social-footer {
+			display: flex;
+			flex-wrap: wrap;
+			padding-bottom: $global-spacing-unit-2 * 2;
+		}
+
+		// Social links menu in front page.
+		&--social-front-page {
 			display: flex;
 			flex-wrap: wrap;
 			justify-content: center;
-			padding-bottom: $global-spacing-unit-2 * 2;
+		}
+
+		// Language links menu.
+		&--language {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: flex-end;
+
+			> li:not(:last-child) > a {
+				border-right: 1px solid;
+				margin-right: $global-spacing-unit-1;
+				padding-right: $global-spacing-unit-1;
+			}
 		}
 	}
 
-	// Social links menu in footer.
-	&--social-footer {
-		display: flex;
-		flex-wrap: wrap;
-		padding-bottom: $global-spacing-unit-2 * 2;
+	&__item--sub-menu.is-top-level,
+	&__item--default.is-top-level {
+		padding-bottom: $global-spacing-unit-1 * 3;
 	}
 
-	// Social links menu in front page.
-	&--social-front-page {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: center;
-	}
+	&__anchor {
+		text-decoration: none;
 
-	// Language links menu.
-	&--language {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: flex-end;
-
-		> li:not(:last-child) > a {
-			border-right: 1px solid;
-			margin-right: $global-spacing-unit-1;
-			padding-right: $global-spacing-unit-1;
-		}
-	}
-}
-
-.menu__item--sub-menu.is-top-level,
-.menu__item--default.is-top-level {
-	padding-bottom: $global-spacing-unit-1 * 3;
-}
-
-.menu__anchor {
-	text-decoration: none;
-
-	// Primary menu links.
-	&--primary {
-		color: var(--color-white);
-		font-size: var(--font-size-875);
-		display: block;
-		padding: $global-spacing-unit-1 $global-spacing-unit-2;
-		text-transform: uppercase;
-
-		&:hover,
-		&:focus,
-		&:active,
-		&.is-active,
-		&.is-ancestor {
-			background-color: var(--color-base);
+		// Primary menu links.
+		&--primary {
 			color: var(--color-white);
-		}
-	}
-
-	// Social menu links.
-	&--social {
-		color: var(--color-white);
-		padding-left: $global-spacing-unit-1;
-		padding-right: $global-spacing-unit-1;
-
-		.svg {
-			height: 1.25em;
-			top: -0.125em;
-			width: 1.25em;
-		}
-
-		&:hover,
-		&:focus,
-		&:active {
-			color: var(--color-white);
-		}
-	}
-
-	// Social menu links in Footer and Front page.
-	&--social-footer,
-	&--social-front-page {
-		color: var(--color-dark);
-		padding-right: $global-spacing-unit-1;
-
-		.svg {
-			height: 1.5em;
-			top: 0;
-			width: 1.5em;
-		}
-
-		&:hover,
-		&:focus,
-		&:active {
-			color: var(--color-base);
-		}
-	}
-
-	&--social-front-page .svg {
-		height: 3.5em;
-		width: 3.5em;
-	}
-
-	// Language menu links.
-	&--language {
-		color: var(--color-dark);
-		display: block;
-		line-height: 1;
-
-		&:hover,
-		&:focus,
-		&:active {
-			color: var(--color-base);
-		}
-	}
-
-	// Sub menu and default (for example in widget) links.
-	&--sub-menu,
-	&--default {
-		color: var(--color-dark);
-		display: block;
-
-		&:hover,
-		&:focus,
-		&:active {
-			color: var(--color-base);
-		}
-
-		&.is-active {
-			font-weight: 600;
-		}
-
-		&.is-top-level {
+			font-size: var(--font-size-875);
+			display: block;
+			padding: $global-spacing-unit-1 $global-spacing-unit-2;
 			text-transform: uppercase;
+
+			&:hover,
+			&:focus,
+			&:active,
+			&.is-active,
+			&.is-ancestor {
+				background-color: var(--color-base);
+				color: var(--color-white);
+			}
 		}
 
-		.svg {
-			top: -0.125em;
-			transform: rotate(-90deg);
+		// Social menu links.
+		&--social {
+			color: var(--color-white);
+			padding-left: $global-spacing-unit-1;
+			padding-right: $global-spacing-unit-1;
+
+			.svg {
+				height: 1.25em;
+				top: -0.125em;
+				width: 1.25em;
+			}
+
+			&:hover,
+			&:focus,
+			&:active {
+				color: var(--color-white);
+			}
+		}
+
+		// Social menu links in Footer and Front page.
+		&--social-footer,
+		&--social-front-page {
+			color: var(--color-dark);
+			padding-right: $global-spacing-unit-1;
+
+			.svg {
+				height: 1.5em;
+				top: 0;
+				width: 1.5em;
+			}
+
+			&:hover,
+			&:focus,
+			&:active {
+				color: var(--color-base);
+			}
+		}
+
+		&--social-front-page .svg {
+			height: 3.5em;
+			width: 3.5em;
+		}
+
+		// Language menu links.
+		&--language {
+			color: var(--color-dark);
+			display: block;
+			line-height: 1;
+
+			&:hover,
+			&:focus,
+			&:active {
+				color: var(--color-base);
+			}
+		}
+
+		// Sub menu and default (for example in widget) links.
+		&--sub-menu,
+		&--default {
+			color: var(--color-dark);
+			display: block;
+
+			&:hover,
+			&:focus,
+			&:active {
+				color: var(--color-base);
+			}
+
+			&.is-active {
+				font-weight: 600;
+			}
+
+			&.is-top-level {
+				text-transform: uppercase;
+			}
+
+			.svg {
+				top: -0.125em;
+				transform: rotate(-90deg);
+			}
+		}
+
+		&.menu__anchor--button {
+			@include button-block;
+
+			&:hover,
+			&:active,
+			&:focus {
+				@include button-block-hover;
+			}
 		}
 	}
-}
 
-.menu__sub-menu .menu__anchor--primary {
-	text-transform: none;
-}
-
-.menu__anchor.menu__anchor--button {
-	@include button-block;
-
-	&:hover,
-	&:active,
-	&:focus {
-		@include button-block-hover;
+	&__sub-menu .menu__anchor--primary {
+		text-transform: none;
 	}
 }
 
@@ -214,34 +215,34 @@
 	&:focus {
 		outline: 1px dotted;
 	}
-}
 
-.menu-toggle-icon {
-	display: inline-block;
-	fill: currentColor;
-	height: $global-spacing-unit-1 * 4;
-	margin-right: $global-spacing-unit-1;
-	stroke: var(--color-white);
-	stroke-width: 2;
-	transition: all $transition-duration-1;
-	width: $global-spacing-unit-1 * 4;
-}
-
-.line {
-	transition: all $transition-duration-1;
-}
-
-[aria-expanded="true"] {
-	.line-1 {
-		transform: translateX(14px) translateY(-3px) rotate(45deg);
+	&__icon {
+		display: inline-block;
+		fill: currentColor;
+		height: $global-spacing-unit-1 * 4;
+		margin-right: $global-spacing-unit-1;
+		stroke: var(--color-white);
+		stroke-width: 2;
+		transition: all $transition-duration-1;
+		width: $global-spacing-unit-1 * 4;
 	}
 
-	.line-2 {
-		opacity: 0;
-	}
+	&__line {
+		transition: all $transition-duration-1;
 
-	.line-3 {
-		transform: translateX(-14px) translateY(14px) rotate(-45deg);
+		[aria-expanded="true"] & {
+			&--1 {
+				transform: translateX(14px) translateY(-3px) rotate(45deg);
+			}
+
+			&--2 {
+				opacity: 0;
+			}
+
+			&--3 {
+				transform: translateX(-14px) translateY(14px) rotate(-45deg);
+			}
+		}
 	}
 }
 
@@ -262,74 +263,76 @@
 		display: none;
 	}
 
-	.menu__item {
-		position: relative;
-	}
-
-	.nav-wrapper {
-		align-items: center;
-		display: flex;
-		justify-content: space-between;
-	}
-
-	.menu__items {
-		&--primary {
-			&,
-			&.is-toggled {
-				align-items: center;
-				display: flex;
-				flex-wrap: wrap;
-			}
-
-			ul {
-				background-color: var(--color-dark);
-				left: -999em;
-				opacity: 0;
-				position: absolute;
-				top: 100%;
-				transform: translateY(-$global-spacing-unit-2);
-				transition: transform $transition-duration-1, opacity $transition-duration-1;
-				width: $global-spacing-unit-13 * 2;
-				z-index: 99999;
-
-				ul {
-					top: 0;
-				}
-
-				// Class "focus" is added by Javascript which enables
-				// keyboard focus to submenu items.
-				.focus > ul,
-				li:hover > ul {
-					left: auto;
-					right: 100%;
-				}
-
-				a {
-					padding: $global-spacing-unit-1 $global-spacing-unit-2;
-				}
-
-				.svg {
-					position: absolute;
-					right: $global-spacing-unit-2;
-					top: calc(50% - 0.5em);
-					transform: rotate(-90deg);
-				}
-			}
-
-			/* stylelint-disable no-descending-specificity */
-			.focus > ul,
-			li:hover > ul {
-				left: 0;
-				opacity: 1;
-				transform: translateY(0);
-			}
-			/* stylelint-enable */
+	.menu {
+		&__wrapper {
+			align-items: center;
+			display: flex;
+			justify-content: space-between;
 		}
 
-		&--social {
-			display: flex;
-			flex-wrap: wrap;
-			justify-content: center;
+		&__item {
+			position: relative;
+		}
+
+		&__items {
+			&--primary {
+				&,
+				&.is-toggled {
+					align-items: center;
+					display: flex;
+					flex-wrap: wrap;
+				}
+
+				ul {
+					background-color: var(--color-dark);
+					left: -999em;
+					opacity: 0;
+					position: absolute;
+					top: 100%;
+					transform: translateY(-$global-spacing-unit-2);
+					transition: transform $transition-duration-1, opacity $transition-duration-1;
+					width: $global-spacing-unit-13 * 2;
+					z-index: 99999;
+
+					ul {
+						top: 0;
+					}
+
+					// Class "focus" is added by Javascript which enables
+					// keyboard focus to submenu items.
+					.focus > ul,
+					li:hover > ul {
+						left: auto;
+						right: 100%;
+					}
+
+					a {
+						padding: $global-spacing-unit-1 $global-spacing-unit-2;
+					}
+
+					.svg {
+						position: absolute;
+						right: $global-spacing-unit-2;
+						top: calc(50% - 0.5em);
+						transform: rotate(-90deg);
+					}
+				}
+
+				/* stylelint-disable no-descending-specificity */
+				.focus > ul,
+				li:hover > ul {
+					left: 0;
+					opacity: 1;
+					transform: translateY(0);
+				}
+				/* stylelint-enable */
+			}
+
+			&--social {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
+			}
 		}
 	}
 }
