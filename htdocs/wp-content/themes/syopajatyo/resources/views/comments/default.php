@@ -14,10 +14,9 @@ if ( post_password_required() || ( ! have_comments() && ! comments_open() && ! p
 	<div id="comments" class="comments">
 
 		<?php if ( have_comments() ) : ?>
-
 			<h2 class="comments__title"><?php comments_number(); ?></h2>
 
-			<?php Hybrid\render_view( 'partials', 'comments-nav' ); ?>
+			<?php Hybrid\comments_pagination(); ?>
 
 			<ol class="comments__list">
 				<?php
@@ -33,9 +32,11 @@ if ( post_password_required() || ( ! have_comments() && ! comments_open() && ! p
 				?>
 			</ol>
 
-		<?php endif ?>
+			<?php Hybrid\comments_pagination();
 
-		<?php if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) : ?>
+		endif;
+
+		if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) : ?>
 
 			<p class="comments__closed">
 				<?php esc_html_e( 'Comments are closed.', 'syopajatyo' ); ?>

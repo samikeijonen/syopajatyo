@@ -1,24 +1,34 @@
-.pagination__items {
-	@include reset-list();
-	display: flex;
-	flex-wrap: wrap;
-}
+.pagination {
+	&__items {
+		@include reset-list();
+		display: flex;
+		flex-wrap: wrap;
+	}
 
-.pagination__item:not(:last-child) {
+	&__item:not(:last-child) {
+		margin-right: $global-spacing-unit-2;
+	}
 
-	&::after {
-		content: "\002F";
-		padding: 0 $global-spacing-unit-2;
+	&__anchor {
+		background-color: rgba(var(--color-light-rgb), 0.3);
+		display: block;
+		padding: $global-spacing-unit-1 $global-spacing-unit-2;
+		text-decoration: none;
+	}
+
+	+ .comments__list {
+		margin-top: $global-spacing-unit-2 * 3;
+	}
+
+	.comments__list + & {
+		margin-bottom: $global-spacing-unit-2 * 3;
 	}
 }
 
-.pagination__anchor,
-.page-numbers {
-	text-decoration: none;
-}
-
+// For Core markup.
 .page-numbers {
 	margin-right: $global-spacing-unit-2;
+	text-decoration: none;
 
 	&:not(.dots) {
 		background-color: rgba(var(--color-light-rgb), 0.3);
