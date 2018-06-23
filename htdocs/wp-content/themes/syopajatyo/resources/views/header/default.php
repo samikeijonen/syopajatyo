@@ -36,7 +36,7 @@
 			<?php
 				Hybrid\render_view( 'menu', 'language', [
 					'name'  => 'language',
-					'label' => _x( 'Language', 'nav menu label', 'syopajatyo' ),
+					'label' => esc_html_x( 'Language', 'nav menu label', 'syopajatyo' ),
 				] );
 
 				get_search_form();

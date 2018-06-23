@@ -35,27 +35,31 @@
 
 		$syopajatyo_articles_content_{$k} = new WP_Query( $syopajatyo_articles_args_{$k} );
 
-		if ( $syopajatyo_articles_content_{$k}->have_posts() ) :
-			if ( 1 === $k ) :
+		// Open section.
+		if ( 1 === $k ) :
 			?>
 			<div class="fp-articles px-2 py-8 pos-rel">
 				<div class="mx-auto max-width-1 grid pos-rel z-index-11">
 				<?php
-			endif;
+		endif;
 
+		if ( $syopajatyo_articles_content_{$k}->have_posts() ) :
 			while ( $syopajatyo_articles_content_{$k}->have_posts() ) :
 				$syopajatyo_articles_content_{$k}->the_post();
-				Hybrid\render_view( 'entry/archive', 'card' );
+				Hybrid\render_view( 'entry/archive', 'card', [ 'content' => 'ok' ] );
 			endwhile;
-
-			if ( 3 === $k ) :
-				?>
-				</div>
-			</div>
-		<?php
-			endif;
-
+		else :
+			Hybrid\render_view( 'entry/archive', 'card', [ 'content' => 'none' ] );
 		endif;
+
+		// Close section.
+		if ( 3 === $k ) :
+			?>
+			</div>
+		</div>
+		<?php
+		endif;
+
 		wp_reset_postdata(); // Reset post data.
 		$k++;
 	endwhile;
@@ -76,12 +80,12 @@
 		<div class="fp-featured px-2">
 			<h2 class="fp-featured__title mx-auto max-width-1 fw-200 h1 py-8 mb-0 uppercase"><?= esc_html__( 'Support for job', 'syopajatyo' ); ?></h2>
 			<div class="mx-auto max-width-1 grid">
-			<?php
-			while ( $syopajatyo_pages_content->have_posts() ) :
-				$syopajatyo_pages_content->the_post();
-				Hybrid\render_view( 'entry/archive', 'card' );
+				<?php
+				while ( $syopajatyo_pages_content->have_posts() ) :
+					$syopajatyo_pages_content->the_post();
+					Hybrid\render_view( 'entry/archive', 'card' );
 				endwhile;
-			?>
+				?>
 			</div>
 		</div>
 	<?php
