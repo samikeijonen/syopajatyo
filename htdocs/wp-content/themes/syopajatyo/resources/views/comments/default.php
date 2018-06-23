@@ -32,11 +32,11 @@ if ( post_password_required() || ( ! have_comments() && ! comments_open() && ! p
 				?>
 			</ol>
 
-			<?php Hybrid\comments_pagination();
+			<?php Hybrid\comments_pagination(); ?>
 
-		endif;
+		<?php endif; ?>
 
-		if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) : ?>
+		<?php if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) : ?>
 
 			<p class="comments__closed">
 				<?php esc_html_e( 'Comments are closed.', 'syopajatyo' ); ?>
