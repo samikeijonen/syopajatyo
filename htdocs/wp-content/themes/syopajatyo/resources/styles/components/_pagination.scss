@@ -15,7 +15,9 @@
 		padding: $global-spacing-unit-1 $global-spacing-unit-2;
 		text-decoration: none;
 	}
+}
 
+.comments-pagination {
 	+ .comments__list {
 		margin-top: $global-spacing-unit-2 * 3;
 	}

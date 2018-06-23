@@ -10,18 +10,6 @@
 	margin-left: $global-spacing-unit-3;
 }
 
-.aligncenter {
-	@include center-block;
-	clear: both;
-}
-
-// Align full and wide.
-.alignfull {
-	margin-left: -$global-spacing-unit-2;
-	margin-right: -$global-spacing-unit-2;
-	max-width: calc(100% + #{$global-spacing-unit-4});
-}
-
 @media (min-width: $breakpoint-1) {
 
 	.alignleft,
@@ -29,8 +17,37 @@
 		max-width: 50%;
 	}
 
-	.alignwide {
-		max-width: $max-width-wide;
-	}
+}
 
+.aligncenter {
+	@include center-block;
+	clear: both;
+}
+
+// Align full and wide.
+.alignfull,
+.alignwide {
+	margin-left: -$global-spacing-unit-2;
+	margin-right: -$global-spacing-unit-2;
+	max-width: calc(100% + #{$global-spacing-unit-4});
+
+	@media (min-width: $breakpoint-1) {
+		margin-left: -$global-spacing-unit-2 * 2;
+		margin-right: -$global-spacing-unit-2 * 2;
+		max-width: calc(100% + #{$global-spacing-unit-4 * 2});
+
+		&.wp-gallery-block {
+			margin-left: -$global-spacing-unit-2 * 3;
+			margin-right: -$global-spacing-unit-2 * 3;
+			max-width: calc(100% + #{$global-spacing-unit-4 * 3});
+		}
+	}
+}
+
+@media (min-width: $breakpoint-1) {
+	.wp-block-gallery.alignwide {
+		margin-left: -$global-spacing-unit-1 * 5;
+		margin-right: -$global-spacing-unit-1 * 5;
+		max-width: calc(100% + #{$global-spacing-unit-2 * 5});
+	}
 }

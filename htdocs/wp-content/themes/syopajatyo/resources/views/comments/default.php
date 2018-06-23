@@ -16,7 +16,7 @@ if ( post_password_required() || ( ! have_comments() && ! comments_open() && ! p
 		<?php if ( have_comments() ) : ?>
 			<h2 class="comments__title"><?php comments_number(); ?></h2>
 
-			<?php Hybrid\comments_pagination(); ?>
+			<?php Hybrid\render_view( 'partials', 'pagination-comments' ); ?>
 
 			<ol class="comments__list">
 				<?php
@@ -32,7 +32,7 @@ if ( post_password_required() || ( ! have_comments() && ! comments_open() && ! p
 				?>
 			</ol>
 
-			<?php Hybrid\comments_pagination(); ?>
+			<?php Hybrid\render_view( 'partials', 'pagination-comments' ); ?>
 
 		<?php endif; ?>
 

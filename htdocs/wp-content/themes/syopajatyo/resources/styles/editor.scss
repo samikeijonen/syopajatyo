@@ -67,7 +67,8 @@
 		}
 	}
 
-	.editor-block-list__block {
+	.editor-block-list__block,
+	.editor-default-block-appender {
 		max-width: $max-width-2;
 	}
 

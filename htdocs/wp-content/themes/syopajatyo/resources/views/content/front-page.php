@@ -83,7 +83,7 @@
 				<?php
 				while ( $syopajatyo_pages_content->have_posts() ) :
 					$syopajatyo_pages_content->the_post();
-					Hybrid\render_view( 'entry/archive', 'card' );
+					Hybrid\render_view( 'entry/archive', 'card', [ 'content' => 'ok' ] );
 				endwhile;
 				?>
 			</div>
