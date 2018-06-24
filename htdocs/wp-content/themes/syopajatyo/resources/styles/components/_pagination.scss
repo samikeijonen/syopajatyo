@@ -3,6 +3,10 @@
 		@include reset-list();
 		display: flex;
 		flex-wrap: wrap;
+
+		&--singular a {
+			margin-right: $global-spacing-unit-2;
+		}
 	}
 
 	&__item:not(:last-child) {
@@ -15,15 +19,15 @@
 		padding: $global-spacing-unit-1 $global-spacing-unit-2;
 		text-decoration: none;
 	}
-}
 
-.comments-pagination {
-	+ .comments__list {
-		margin-top: $global-spacing-unit-2 * 3;
-	}
+	&--comments {
+		+ .comments__list {
+			margin-top: $global-spacing-unit-2 * 3;
+		}
 
-	.comments__list + & {
-		margin-bottom: $global-spacing-unit-2 * 3;
+		.comments__list + & {
+			margin-bottom: $global-spacing-unit-2 * 3;
+		}
 	}
 }
 
