@@ -75,16 +75,20 @@ add_filter( 'nav_menu_link_attributes', function( $atts, $item, $args, $depth ) 
  * @param int     $current_page ID of the current page.
  */
 add_filter( 'page_menu_link_attributes', function( $atts, $page, $depth, $args, $current_page ) {
+	// Used for child pages menu.
 	$atts['class'] = 'menu__anchor menu__anchor--sub-menu';
 
+	// Add active page class.
 	if ( $current_page === $page->ID ) {
 		$atts['class'] .= ' is-active';
 	}
 
+	// Add `has-children` class.
 	if ( $args['has_children'] ) {
 		$atts['class'] .= ' has-children';
 	}
 
+	// Add `is-top-level` class using $depth parameter.
 	if ( 0 === $depth ) {
 		$atts['class'] .= ' is-top-level';
 	}
@@ -106,6 +110,7 @@ function nav_menu_css_class( $classes, $item, $args, $depth ) {
 		$classes[] = 'menu__item--default';
 	}
 
+	// Add `is-top-level` class using $depth parameter.
 	if ( 0 === $depth ) {
 		$classes[] = 'is-top-level';
 	}
@@ -126,18 +131,22 @@ add_filter( 'nav_menu_css_class', __NAMESPACE__ . '\nav_menu_css_class', 10, 4 )
  * @param int      $current_page ID of the current page.
  */
 function page_css_class( $css_class, $page, $depth, $args, $current_page ) {
-	$css_class['class'] = 'menu__item menu__item--sub-menu';
+	// Used for child pages menu.
+	$css_class = [ 'menu__item menu__item--sub-menu' ];
 
+	// Add `has-children` class.
 	if ( in_array( 'page_item_has_children', $css_class, true ) ) {
-		$css_class['class'] .= ' has-children';
+		$css_class[] = 'has-children';
 	}
 
+	// Add custom menu ancestor class.
 	if ( in_array( 'current_page_ancestor', $css_class, true ) ) {
-		$css_class['class'] .= ' menu__item--ancestor';
+		$css_class[] = 'menu__item--ancestor';
 	}
 
+	// Add `is-top-level` class using $depth parameter.
 	if ( 0 === $depth ) {
-		$css_class['class'] .= ' is-top-level';
+		$css_class[] = 'is-top-level';
 	}
 
 	return $css_class;
@@ -215,11 +224,26 @@ add_filter( 'get_search_form', function( $form ) {
 }, 0 );
 
 add_filter( 'navigation_markup_template', function( $template, $class ) {
+	// Set custom modifier classes.
+	$class = 'pagination' === $class ? 'posts' : 'comments';
+
+	// Modified template with custom classes.
 	$template = '
-	<nav class="navigation %1$s %1$s--posts" role="navigation">
+	<nav class="pagination pagination--' . $class . '" role="navigation">
 		<h2 class="screen-reader-text">%2$s</h2>
 		<div class="pagination__items">%3$s</div>
 	</nav>';
 
 	return $template;
 }, 10, 2 );
+
+/**
+ * Wraps page "links" that aren't actually links (just text) with `<span class="page-numbers">` so that they
+ * can also be styled.  This makes `wp_link_pages()` consistent with the output of `paginate_links()`.
+ *
+ * @param  string $link Link in wp_link_pages().
+ * @return string
+ */
+add_filter( 'wp_link_pages_link', function( $link ) {
+	return 0 !== strpos( $link, '<a' ) ? "<span class='pagination__item'>{$link}</span>" : $link;
+}, 5 );
