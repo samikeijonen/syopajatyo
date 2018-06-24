@@ -5,9 +5,9 @@
  * @package Syopajatyo
  */
 
-Hybrid\singular_pagination( [
-	'show_all'        => true,
-	'prev_next'       => false,
-	'title_text'      => __( 'Pages:', 'syopajatyo' ),
-	'container_class' => 'pagination pagination--singular',
+wp_link_pages( [
+	'before' => '<nav class="pagination pagination--singular"><div class="pagination__items pagination__items--singular">',
+	'after'  => '</div></nav>',
+	'link_before' => '<span class="pagination__anchor">',
+	'link_after'  => '</span>',
 ] );
