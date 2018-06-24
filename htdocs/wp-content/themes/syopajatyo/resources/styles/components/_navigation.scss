@@ -181,7 +181,7 @@
 			}
 		}
 
-		&.menu__anchor--button {
+		&--button {
 			@include button-block;
 
 			&:hover,
