@@ -63,6 +63,7 @@
 
     "wpackagist-plugin/wp-libre-form": "*",
     "wpackagist-plugin/the-events-calendar": "*",
+    "wpackagist-plugin/gutenberg": "*",
 
     "wpackagist-theme/twentyseventeen": "*"
   },

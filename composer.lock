@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "dcd73d34e8f005d1584c7f5f92adf09c",
+    "content-hash": "53177ea7aded6e4a678aaf78bdfb756d",
     "packages": [
         {
             "name": "composer/installers",
@@ -847,6 +847,26 @@
                 "environment"
             ],
             "time": "2014-10-16T14:50:21+00:00"
+        },
+        {
+            "name": "wpackagist-plugin/gutenberg",
+            "version": "3.1.0",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/gutenberg/",
+                "reference": "tags/3.1.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/gutenberg.3.1.0.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/gutenberg/"
         },
         {
             "name": "wpackagist-plugin/the-events-calendar",
