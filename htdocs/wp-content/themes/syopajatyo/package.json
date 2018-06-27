@@ -23,10 +23,10 @@
     }
   },
   "lint-staged": {
-    "./htdocs/wp-content/themes/syopajatyo/resources/scripts/**/*.js": [
+    "htdocs/wp-content/themes/syopajatyo/resources/scripts/**/*.js": [
       "npm run lint:scripts"
     ],
-    "./htdocs/wp-content/themes/syopajatyo/resources/styles/**/*.scss": [
+    "htdocs/wp-content/themes/syopajatyo/resources/styles/**/*.scss": [
       "npm run lint:styles"
     ]
   },
