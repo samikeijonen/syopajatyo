@@ -222,28 +222,3 @@ add_filter( 'get_search_form', function( $form ) {
 
 	return $form;
 }, 0 );
-
-add_filter( 'navigation_markup_template', function( $template, $class ) {
-	// Set custom modifier classes.
-	$class = 'pagination' === $class ? 'posts' : 'comments';
-
-	// Modified template with custom classes.
-	$template = '
-	<nav class="pagination pagination--' . $class . '" role="navigation">
-		<h2 class="screen-reader-text">%2$s</h2>
-		<div class="pagination__items">%3$s</div>
-	</nav>';
-
-	return $template;
-}, 10, 2 );
-
-/**
- * Wraps page "links" that aren't actually links (just text) with `<span class="page-numbers">` so that they
- * can also be styled.  This makes `wp_link_pages()` consistent with the output of `paginate_links()`.
- *
- * @param  string $link Link in wp_link_pages().
- * @return string
- */
-add_filter( 'wp_link_pages_link', function( $link ) {
-	return 0 !== strpos( $link, '<a' ) ? "<span class='pagination__item'>{$link}</span>" : $link;
-}, 5 );
