@@ -23,10 +23,10 @@
     }
   },
   "lint-staged": {
-    "./resources/scripts/**/*.js": [
+    "./htdocs/wp-content/themes/syopajatyo/resources/scripts/**/*.js": [
       "npm run lint:scripts"
     ],
-    "./resources/styles/**/*.scss": [
+    "./htdocs/wp-content/themes/syopajatyo/resources/styles/**/*.scss": [
       "npm run lint:styles"
     ]
   },
@@ -34,7 +34,7 @@
     "type": "git",
     "url": "git+https://github.com/samikeijonen/syopajatyo.git"
   },
-  "author": "Justin Tadlock",
+  "author": "Sami Keijonen",
   "license": "GPL-2.0+",
   "bugs": {
     "url": "https://github.com/samikeijonen/syopajatyo/issues"
