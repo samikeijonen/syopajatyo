@@ -13,9 +13,7 @@
  */
 
 // Load Hybrid Core.
-if ( file_exists( get_parent_theme_file_path( 'hybrid-core/src/bootstrap-hybrid.php' ) ) ) {
-	require_once get_parent_theme_file_path( 'hybrid-core/src/bootstrap-hybrid.php' );
-}
+Hybrid\app();
 
 // Bootstrap the theme. This loads any functions-files from the `/app` folder
 // that are needed. If the theme needs a more robust bootstrapping process, it's
