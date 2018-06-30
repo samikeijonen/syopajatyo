@@ -65,7 +65,9 @@
     "wpackagist-plugin/the-events-calendar": "*",
     "wpackagist-plugin/gutenberg": "*",
 
-    "wpackagist-theme/twentyseventeen": "*"
+    "wpackagist-theme/twentyseventeen": "*",
+
+    "justintadlock/hybrid-core" : "5.0.x-dev"
   },
   "extra": {
     "installer-paths": {
@@ -77,6 +79,7 @@
       "htdocs/wp-content/languages/": ["vendor:koodimonni-language"],
       "htdocs/wp-content/languages/plugins/": ["vendor:koodimonni-plugin-language"],
       "htdocs/wp-content/languages/themes/": ["vendor:koodimonni-theme-language"],
+      "htdocs/wp-content/themes/syopajatyo/hybrid-core": ["vendor:justintadlock"],
       ".": ["type:seravo-wordpress-dropin"]
     },
     "wordpress-install-dir": "htdocs/wordpress"
