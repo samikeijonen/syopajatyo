@@ -6,11 +6,9 @@
  */
 
 ?>
-<div class="px-2 py-8">
-	<div class="grid mx-auto max-width-1">
-		<main id="main" class="app-main archive grid__main">
+		<main id="main" class="app-main archive grid__main py-8 px-2">
 		<?php
-		the_archive_description( '<div class="entry__intro font-size-125">', '</div>' );
+		the_archive_description( '<div class="entry__intro max-width-2 mx-auto font-size-125">', '</div>' );
 
 		if ( have_posts() ) :
 			while ( have_posts() ) :
@@ -28,5 +26,3 @@
 		// Load sidebar/* template.
 		Hybrid\render_view( 'sidebar', 'primary', [ 'name' => 'primary' ] );
 		?>
-	</div>
-</div>

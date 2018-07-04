@@ -33,10 +33,6 @@
 
 }
 
-.pagination {
-	padding-bottom: $global-spacing-unit-1 * 8;
-}
-
 @media screen and (min-width: $breakpoint-1) {
 
 	.grid {
@@ -73,19 +69,53 @@
 
 	@supports (grid-area: auto) {
 
+		.app {
+			display: grid;
+			grid-gap: 0 2rem;
+			grid-template-columns: auto 44rem auto;
+			grid-template-areas:
+				"header header header"
+				"nav    nav    nav"
+				"title  title  title"
+				"main   main   sidebar"
+				"footer footer footer";
+		}
+
+		.app-header {
+			grid-area: header;
+		}
+
+		.menu--primary {
+			grid-area: nav;
+		}
+
+		.title-header {
+			grid-area: title;
+		}
+
+		.app-main {
+			grid-area: main;
+		}
+
+		.sidebar {
+			grid-area: sidebar;
+		}
+
+		.app-footer {
+			grid-area: footer;
+		}
+
 		.grid {
 			display: grid;
 			grid-gap: $global-spacing-unit-4;
 			grid-template-columns: repeat(3, 1fr);
 
 			&__main {
-				grid-column: span 2;
 				width: auto;
 			}
 
 			&__sidebar {
 				border-left: 1px solid;
-				grid-column: span 1;
 				padding-left: $global-spacing-unit-1 * 2;
 				width: auto;
 			}

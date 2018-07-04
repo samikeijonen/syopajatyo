@@ -1,4 +1,9 @@
 .pagination {
+	&--posts {
+		@include center();
+		max-width: $max-width-2;
+	}
+
 	&__items {
 		@include reset-list();
 		display: flex;
