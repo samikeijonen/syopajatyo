@@ -15,7 +15,6 @@
 		&__link {
 			@include button-block;
 			display: inline-block;
-			text-decoration: none;
 
 			&:visited {
 				color: var(--color-white);
@@ -26,12 +25,27 @@
 			&:active {
 				@include button-block-hover;
 			}
+
+			.is-style-outline & {
+				@include button-block-outline;
+
+				&:hover,
+				&:focus,
+				&:active {
+					@include button-block-outline-hover;
+				}
+			}
+		}
+
+		&.is-style-squared {
+			@include cool-featured();
 		}
 	}
 
-	// Text columns.
+	// Columns.
+	&-columns,
 	&-text-columns {
-		margin-bottom: $global-spacing-unit-4;
+		margin-bottom: $global-spacing-unit-1 * 4;
 
 		.wp-block-column {
 			margin: 0;
@@ -48,10 +62,12 @@
 				grid-gap: $global-spacing-unit-3;
 				grid-template-columns: repeat(2, 1fr);
 
+				&.has-3-columns,
 				&.columns-3 {
 					grid-template-columns: repeat(3, 1fr);
 				}
 
+				&.has-4-columns,
 				&.columns-4 {
 					grid-template-columns: repeat(4, 1fr);
 				}
@@ -138,6 +154,32 @@
 		}
 	}
 
+	// Latests posts.
+	&-latest-posts {
+		&.is-grid {
+			list-style-type: none;
+			padding-left: 0;
+
+			li {
+				margin-bottom: $global-spacing-unit-1 * 3;
+			}
+
+			@supports (grid-area: auto) {
+				display: grid;
+				grid-gap: $global-spacing-unit-3;
+				grid-template-columns: repeat(auto-fill, minmax($global-spacing-unit-1 * 30, 1fr));
+
+				li {
+					margin-bottom: 0;
+				}
+			}
+		}
+
+		&__post-date {
+			display: block;
+		}
+	}
+
 	// Pullquote and Quote.
 	&-pullquote {
 		border-bottom: 0.25rem solid;
@@ -152,9 +194,39 @@
 		}
 	}
 
-	&-quote.is-large cite {
-		display: block;
-		text-align: right;
+	&-quote.is-style-large {
+		p {
+			@include font-size(1.5rem);
+		}
+
+		cite {
+			display: block;
+			text-align: right;
+		}
+	}
+
+	// Separator.
+	&-separator {
+		&.is-style-wide {
+			max-width: $global-spacing-unit-1 * 28;
+		}
+
+		// Dots style.
+		&.is-style-dots {
+			background-color: transparent;
+			max-width: none;
+			height: auto;
+			text-align: center;
+
+			&::before {
+				content: "\00b7 \00b7 \00b7";
+				color: var(--color-base);
+				font-size: calc(var(--global-baseline) * 3);
+				letter-spacing: $global-spacing-unit-1 * 4;
+				padding-left: $global-spacing-unit-1 * 4;
+				font-family: serif;
+			}
+		}
 	}
 
 	// Subheading.
@@ -230,24 +302,58 @@
 			}
 		}
 	}
+
+	// File.
+	&-file {
+		margin-bottom: $global-spacing-unit-1 * 4;
+
+		&__button {
+			@include button-block();
+			margin-left: $global-spacing-unit-1 * 2;
+
+			&:visited {
+				color: var(--color-white);
+			}
+
+			&:hover,
+			&:focus,
+			&:active {
+				@include button-block-hover;
+			}
+		}
+	}
 }
 
 // Paragraph.
-.has-drop-cap {
+.has-drop-cap:not(:focus) {
 	&::first-letter {
 		font-size: var(--font-size-h1);
 		float: left;
 		font-style: normal;
 		font-family: serif;
 		font-weight: 600;
-		margin-right: $global-spacing-unit-3;
+		margin-right: $global-spacing-unit-1 * 2;
 		text-transform: uppercase;
 	}
-
-	&:not(:focus) {
-		overflow: hidden;
-	}
 }
+
+.is-small-text {
+	font-size: var(--font-size-875);
+}
+
+.is-regular-text {
+	font-size: var(--global-font-size);
+}
+
+.is-large-text {
+	font-size: var(--font-size-h2);
+}
+
+.is-larger-text {
+	font-size: var(--font-size-h1);
+	line-height: var(--line-height-heading);
+}
+
 
 // Has background.
 .has-background:not(.wp-block-button__link) {
