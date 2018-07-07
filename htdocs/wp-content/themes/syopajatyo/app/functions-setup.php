@@ -53,24 +53,28 @@ add_action( 'after_setup_theme', function() {
 	add_post_type_support( 'page', 'excerpt' );
 
 	// Add support for editor color palette.
-	add_theme_support( 'editor-color-palette',
+	add_theme_support( 'editor-color-palette', [
 		[
-			'name'  => 'main',
+			'name'  => esc_html__( 'Main', 'syopajatyo' ),
+			'slug'  => 'main',
 			'color' => '#007fa3',
 		],
 		[
-			'name'  => 'dark',
+			'name'  => esc_html__( 'Dark', 'syopajatyo' ),
+			'slug'  => 'dark',
 			'color' => '#111',
 		],
 		[
-			'name'  => 'white',
+			'name'  => esc_html__( 'White', 'syopajatyo' ),
+			'slug'  => 'white',
 			'color' => '#fff',
 		],
 		[
-			'name'  => 'light',
+			'name'  => esc_html__( 'Light', 'syopajatyo' ),
+			'slug'  => 'light',
 			'color' => '#b7a99a',
 		]
-	);
+	] );
 
 	// Add support for align wide blocks.
 	add_theme_support( 'align-wide' );
