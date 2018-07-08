@@ -24,7 +24,7 @@ Directory structure aims to be modern app-like, what ever that means :)
 
 Theme uses [Composer](https://getcomposer.org/) and [NPM](https://www.npmjs.com/) to manage its dependencies. Install both on your machine before using this starter theme.
 
-Theme has [Hybrid Core 5.0](https://github.com/justintadlock/hybrid-core/tree/5.0) as a must have dependency.
+Note that theme has [Hybrid Core 5.0](https://github.com/justintadlock/hybrid-core/tree/5.0) as a must have dependency. This is loaded in the root of the project with `composer install` as other dependencies.
 
 ### Install dependencies
 
@@ -33,12 +33,6 @@ Theme lives in the `wp-content/theme/syopajatyo` folder.
 ```
 # Go to the `wp-content/theme/syopajatyo` directory of your WordPress installation.
 cd wp-content/themes/syopajatyo
-```
-
-#### Install composer dependencies.
-
-```
-composer install
 ```
 
 #### Install node dependencies using either NPM or Yarn.
