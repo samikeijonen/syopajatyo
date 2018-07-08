@@ -73,7 +73,7 @@ add_action( 'after_setup_theme', function() {
 			'name'  => esc_html__( 'Light', 'syopajatyo' ),
 			'slug'  => 'light',
 			'color' => '#b7a99a',
-		]
+		],
 	] );
 
 	// Add support for align wide blocks.
