@@ -1,6 +1,12 @@
 {
-    "/scripts/app.js": "/scripts/app.js?id=afcc0e8e78abc40eba9b",
-    "/styles/style.css": "/styles/style.css?id=65380c839e372660392b",
-    "/styles/editor.css": "/styles/editor.css?id=cb610f8357e6656d101b",
-    "/styles/theme.css": "/styles/theme.css?id=d41d8cd98f00b204e980"
+    "/scripts/app.js": "/scripts/app.js?id=9a2377df811e8d6e0476",
+    "/styles/style.css": "/styles/style.css?id=b78e4b6c2a7ac8ac545f",
+    "/styles/editor.css": "/styles/editor.css?id=f4c98ba9db10426a2a43",
+    "/styles/theme.css": "/styles/theme.css?id=3728e902acab6fdc4ff1",
+    "/scripts/app.js.map": "/scripts/app.js.map?id=32be6a27c9ef457b5f7d",
+    "/styles/style.css.map": "/styles/style.css.map?id=f972d3df766fd5fd2d7a",
+    "/styles/editor.css.map": "/styles/editor.css.map?id=31e83f672ca33f501ff8",
+    "/styles/theme.css.map": "/styles/theme.css.map?id=21403f68cd92e85fd01b",
+    "/scripts/customize-preview.js": "/scripts/customize-preview.js?id=235057c7c4a411f89fa2",
+    "/scripts/customize-preview.js.map": "/scripts/customize-preview.js.map?id=ba5f7898f690320ce27d"
 }

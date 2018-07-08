@@ -43,7 +43,8 @@ mix.version();
 // Compile JavaScript.
 //
 // @link https://laravel.com/docs/5.6/mix#working-with-scripts
-mix.js( 'resources/scripts/app.js', 'scripts' );
+mix.js( 'resources/scripts/app.js', 'scripts' )
+   .js( 'resources/scripts/customize-preview.js', 'scripts' );
 
 // Compile SASS and CSS.
 //
