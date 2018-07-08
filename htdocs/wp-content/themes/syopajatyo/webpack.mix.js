@@ -132,10 +132,10 @@ mix.webpackConfig( {
 mix.browserSync( {
 	proxy: 'https://syopajatyo.test/',
 	files: [
-		'**/*.{jpg,jpeg,png,gif,svg,eot,ttf,woff,woff2}',
+		'**/*.{css,js,jpg,jpeg,png,gif,svg,eot,ttf,woff,woff2}',
 		'resources/views/**/*.php',
-		'resources/styles/**/*.scss',
-		'resources/scripts/**/*.js',
+		//'resources/styles/**/*.scss',
+		//'resources/scripts/**/*.js',
 		'app/**/*.php'
 	]
 } );
