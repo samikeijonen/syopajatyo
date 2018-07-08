@@ -134,6 +134,7 @@ mix.browserSync( {
 		'**/*.{jpg,jpeg,png,gif,svg,eot,ttf,woff,woff2}',
 		'resources/views/**/*.php',
 		'resources/styles/**/*.scss',
+		'resources/scripts/**/*.js',
 		'app/**/*.php'
 	]
 } );
