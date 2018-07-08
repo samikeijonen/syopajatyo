@@ -7,7 +7,7 @@ blockquote {
 	p {
 		@include font-size(1.25rem);
 
-		&:last-child {
+		&:last-of-type {
 			margin-bottom: 0;
 		}
 	}
