@@ -8,7 +8,7 @@
  *
  * @link https://laravel.com/docs/5.6/mix
  *
- * @package   Uuups
+ * @package Syopajatyo
  */
 
 // Import required packages.
