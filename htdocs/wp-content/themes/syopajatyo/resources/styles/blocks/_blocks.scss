@@ -154,6 +154,95 @@
 		}
 	}
 
+	// File.
+	&-file {
+		margin-bottom: $global-spacing-unit-1 * 4;
+
+		&__button {
+			@include button-block();
+			margin-left: $global-spacing-unit-1 * 2;
+
+			&:visited {
+				color: var(--color-white);
+			}
+
+			&:hover,
+			&:focus,
+			&:active {
+				@include button-block-hover;
+			}
+		}
+	}
+
+	// Gallery.
+	&-gallery {
+		display: flex;
+		flex-wrap: wrap;
+		list-style-type: none;
+		margin-left: -$global-spacing-unit-1;
+		margin-right: -$global-spacing-unit-1;
+		padding-left: 0;
+
+		.blocks-gallery-item {
+			display: flex;
+			flex-direction: column;
+			flex-grow: 1;
+			justify-content: center;
+			margin: $global-spacing-unit-1;
+			position: relative;
+
+			figure {
+				align-items: flex-end;
+				height: 100%;
+				display: flex;
+				margin: 0;
+			}
+
+			img {
+				display: block;
+				max-width: 100%;
+				height: auto;
+			}
+
+			figcaption {
+				background-color: var(--color-base);
+				color: var(--color-white);
+				padding: $global-spacing-unit-1 / 2;
+				margin-bottom: 0;
+				margin-top: 0;
+				position: absolute;
+				text-align: center;
+				width: 100%;
+			}
+
+			// Responsive fallback value, 2 columns.
+			width: calc(100% / 2 - #{ $global-spacing-unit-1 } * 2);
+		}
+
+		// Cropped.
+		&.is-cropped .blocks-gallery-item {
+			a,
+			img {
+				flex: 1;
+				height: 100%;
+				object-fit: cover;
+				width: 100%;
+			}
+		}
+
+		&.columns-1 .blocks-gallery-item {
+			width: calc(100% / 1 - #{ $global-spacing-unit-1 } * 2);
+		}
+
+		@media (min-width: $breakpoint-1) {
+			@for $i from 3 through 8 {
+				&.columns-#{ $i } .blocks-gallery-item {
+					width: calc(100% / #{ $i } - #{ $global-spacing-unit-1 } * 2);
+				}
+			}
+		}
+	}
+
 	// Latests posts.
 	&-latest-posts {
 		&.is-grid {
@@ -231,95 +320,6 @@
 	// Subheading.
 	&-subhead {
 		@include subheading;
-	}
-
-	// Gallery.
-	&-gallery {
-		display: flex;
-		flex-wrap: wrap;
-		list-style-type: none;
-		margin-left: -$global-spacing-unit-1;
-		margin-right: -$global-spacing-unit-1;
-		padding-left: 0;
-
-		.blocks-gallery-item {
-			display: flex;
-			flex-direction: column;
-			flex-grow: 1;
-			justify-content: center;
-			margin: $global-spacing-unit-1;
-			position: relative;
-
-			figure {
-				align-items: flex-end;
-				height: 100%;
-				display: flex;
-				margin: 0;
-			}
-
-			img {
-				display: block;
-				max-width: 100%;
-				height: auto;
-			}
-
-			figcaption {
-				background-color: var(--color-base);
-				color: var(--color-white);
-				padding: $global-spacing-unit-1 / 2;
-				margin-bottom: 0;
-				margin-top: 0;
-				position: absolute;
-				text-align: center;
-				width: 100%;
-			}
-
-			// Responsive fallback value, 2 columns.
-			width: calc(100% / 2 - #{ $global-spacing-unit-1 } * 2);
-		}
-
-		// Cropped.
-		&.is-cropped .blocks-gallery-item {
-			a,
-			img {
-				flex: 1;
-				height: 100%;
-				object-fit: cover;
-				width: 100%;
-			}
-		}
-
-		&.columns-1 .blocks-gallery-item {
-			width: calc(100% / 1 - #{ $global-spacing-unit-1 } * 2);
-		}
-
-		@media (min-width: $breakpoint-1) {
-			@for $i from 3 through 8 {
-				&.columns-#{ $i } .blocks-gallery-item {
-					width: calc(100% / #{ $i } - #{ $global-spacing-unit-1 } * 2);
-				}
-			}
-		}
-	}
-
-	// File.
-	&-file {
-		margin-bottom: $global-spacing-unit-1 * 4;
-
-		&__button {
-			@include button-block();
-			margin-left: $global-spacing-unit-1 * 2;
-
-			&:visited {
-				color: var(--color-white);
-			}
-
-			&:hover,
-			&:focus,
-			&:active {
-				@include button-block-hover;
-			}
-		}
 	}
 }
 
