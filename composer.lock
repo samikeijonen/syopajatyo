@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "7b7866df17281e3964a2560943fd5469",
+    "content-hash": "1bfebacf4ec51783b72329bd4ea2b55b",
     "packages": [
         {
             "name": "composer/installers",
@@ -184,12 +184,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/justintadlock/hybrid-core.git",
-                "reference": "30b356e95b3a8492bbe38932d735202f9bbbfdf5"
+                "reference": "9dd2cb6058407df5d7d711d0d8f9f995cb51ba8d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/justintadlock/hybrid-core/zipball/30b356e95b3a8492bbe38932d735202f9bbbfdf5",
-                "reference": "30b356e95b3a8492bbe38932d735202f9bbbfdf5",
+                "url": "https://api.github.com/repos/justintadlock/hybrid-core/zipball/9dd2cb6058407df5d7d711d0d8f9f995cb51ba8d",
+                "reference": "9dd2cb6058407df5d7d711d0d8f9f995cb51ba8d",
                 "shasum": ""
             },
             "require": {
@@ -218,7 +218,7 @@
             "keywords": [
                 "wordpress"
             ],
-            "time": "2018-07-08T12:35:26+00:00"
+            "time": "2018-07-09T12:50:45+00:00"
         },
         {
             "name": "koodimonni-language/fi",
@@ -911,16 +911,36 @@
             "homepage": "https://wordpress.org/plugins/gutenberg/"
         },
         {
-            "name": "wpackagist-plugin/the-events-calendar",
-            "version": "4.6.19",
+            "name": "wpackagist-plugin/imagify",
+            "version": "1.8.0.1",
             "source": {
                 "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/the-events-calendar/",
-                "reference": "tags/4.6.19"
+                "url": "https://plugins.svn.wordpress.org/imagify/",
+                "reference": "tags/1.8.0.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/the-events-calendar.4.6.19.zip",
+                "url": "https://downloads.wordpress.org/plugin/imagify.1.8.0.1.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/imagify/"
+        },
+        {
+            "name": "wpackagist-plugin/the-events-calendar",
+            "version": "4.6.20",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/the-events-calendar/",
+                "reference": "tags/4.6.20"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/the-events-calendar.4.6.20.zip",
                 "reference": null,
                 "shasum": null
             },
