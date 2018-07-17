@@ -11,7 +11,7 @@
  */
 
 // Load header/* template.
-Hybrid\render_view( 'header', Hybrid\get_global_hierarchy() );
+Hybrid\View\render( 'header', Hybrid\get_global_hierarchy() );
 ?>
 <div class="px-2 py-8">
 	<div class="grid mx-auto max-width-1">
@@ -24,10 +24,10 @@ Hybrid\render_view( 'header', Hybrid\get_global_hierarchy() );
 		</main>
 		<?php
 			// Load sidebar/* template.
-			Hybrid\render_view( 'sidebar', 'primary', [ 'name' => 'primary' ] );
+			Hybrid\View\render( 'sidebar', 'primary', [ 'name' => 'primary' ] );
 		?>
 	</div>
 </div>
 <?php
 // Load footer/* template.
-Hybrid\render_view( 'footer', Hybrid\get_global_hierarchy() );
+Hybrid\View\render( 'footer', Hybrid\get_global_hierarchy() );
