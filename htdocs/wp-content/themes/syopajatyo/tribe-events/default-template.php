@@ -11,7 +11,7 @@
  */
 
 // Load header/* template.
-Hybrid\View\render( 'header', Hybrid\get_global_hierarchy() );
+Hybrid\View\render( 'header', Hybrid\Template\hierarchy() );
 ?>
 <div class="px-2 py-8">
 	<div class="grid mx-auto max-width-1">
@@ -30,4 +30,4 @@ Hybrid\View\render( 'header', Hybrid\get_global_hierarchy() );
 </div>
 <?php
 // Load footer/* template.
-Hybrid\View\render( 'footer', Hybrid\get_global_hierarchy() );
+Hybrid\View\render( 'footer', Hybrid\Template\hierarchy() );
