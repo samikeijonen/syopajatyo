@@ -5,7 +5,7 @@
  * @package Syopajatyo
  */
 
-Hybrid\render_pagination( 'singular', [
+Hybrid\Pagination\render( 'singular', [
 	'show_all'    => true,
 	'prev_next'   => false,
 ] );

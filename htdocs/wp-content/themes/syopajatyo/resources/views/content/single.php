@@ -14,7 +14,7 @@
 			while ( have_posts() ) :
 				the_post();
 
-				Hybrid\render_view( 'entry/single', Hybrid\get_post_hierarchy() );
+				Hybrid\View\render( 'entry/single', Hybrid\Post\hierarchy() );
 				endwhile;
 
 			comments_template();
@@ -25,7 +25,7 @@
 
 		<?php
 		// Load sidebar/* template.
-		Hybrid\render_view( 'sidebar', 'primary', [ 'name' => 'primary' ] );
+		Hybrid\View\render( 'sidebar', 'primary', [ 'name' => 'primary' ] );
 		?>
 	</div>
 </div>

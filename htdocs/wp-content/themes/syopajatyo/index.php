@@ -10,4 +10,4 @@
  * @package Syopajatyo
  */
 
-Hybrid\render_view( 'index' );
+Hybrid\View\render( 'index' );

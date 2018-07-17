@@ -46,10 +46,10 @@
 		if ( $syopajatyo_articles_content_{$k}->have_posts() ) :
 			while ( $syopajatyo_articles_content_{$k}->have_posts() ) :
 				$syopajatyo_articles_content_{$k}->the_post();
-				Hybrid\render_view( 'entry/archive', 'card', [ 'content' => 'ok' ] );
+				Hybrid\View\render( 'entry/archive', 'card', [ 'content' => 'ok' ] );
 			endwhile;
 		else :
-			Hybrid\render_view( 'entry/archive', 'card', [ 'content' => 'none' ] );
+			Hybrid\View\render( 'entry/archive', 'card', [ 'content' => 'none' ] );
 		endif;
 
 		// Close section.
@@ -83,7 +83,7 @@
 				<?php
 				while ( $syopajatyo_pages_content->have_posts() ) :
 					$syopajatyo_pages_content->the_post();
-					Hybrid\render_view( 'entry/archive', 'card', [ 'content' => 'ok' ] );
+					Hybrid\View\render( 'entry/archive', 'card', [ 'content' => 'ok' ] );
 				endwhile;
 				?>
 			</div>
@@ -98,7 +98,7 @@
 		<div class="mx-auto max-width-2 text-center">
 		<h2 class="fp-social-links__title fw-200 h1 uppercase"><?= esc_html__( 'Follow us', 'syopajatyo' ); ?></h2>
 		<?php
-			Hybrid\render_view( 'menu', 'social', [
+			Hybrid\View\render( 'menu', 'social', [
 				'name'  => 'social-front-page',
 				'label' => __( 'Social links', 'syopajatyo' ),
 			] );

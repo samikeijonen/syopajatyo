@@ -6,10 +6,10 @@
  */
 
 // Load header/* template.
-Hybrid\render_view( 'header', Hybrid\get_global_hierarchy() );
+Hybrid\View\render( 'header', Hybrid\Template\hierarchy() );
 
 // Load content template.
-Hybrid\render_view( 'content', Hybrid\get_global_hierarchy() );
+Hybrid\View\render( 'content', Hybrid\Template\hierarchy() );
 
 // Load footer/* template.
-Hybrid\render_view( 'footer', Hybrid\get_global_hierarchy() );
+Hybrid\View\render( 'footer', Hybrid\Template\hierarchy() );

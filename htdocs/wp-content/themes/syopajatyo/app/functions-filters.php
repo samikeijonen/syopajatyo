@@ -14,6 +14,7 @@
 namespace Syopajatyo;
 
 use Hybrid;
+use function Hybrid\Template\locate as locate_template;
 
 /**
  * Filters the WP nav menu link attributes.
@@ -212,7 +213,7 @@ add_filter( 'excerpt_length', __NAMESPACE__ . '\excerpt_length' );
  * @param string $form The search form HTML output.
  */
 add_filter( 'get_search_form', function( $form ) {
-	$template = Hybrid\locate_template( 'searchform.php' );
+	$template = locate_template( 'searchform.php' );
 
 	if ( $template ) {
 		ob_start();

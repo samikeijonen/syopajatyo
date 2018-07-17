@@ -6,27 +6,27 @@
  */
 
 ?>
-<article <?php Hybrid\attr( 'entry' ); ?>>
+<article <?php Hybrid\Attr\render( 'entry' ); ?>>
 	<header class="entry__header">
-		<?php Hybrid\render_view( 'partials', 'byline', [ 'class' => 'pb-2' ] ); ?>
+		<?php Hybrid\View\render( 'partials', 'byline', [ 'class' => 'pb-2' ] ); ?>
 	</header>
 
 	<div class="entry__content">
 		<?php
 		the_content();
-		Hybrid\render_view( 'partials', 'pagination-singular' );
+		Hybrid\View\render( 'partials', 'pagination-singular' );
 		?>
 	</div>
 
 	<footer class="entry__footer">
 		<?php
-			Hybrid\post_terms( [
+			Hybrid\Post\render_terms( [
 				'taxonomy' => 'category',
 				'before'   => '<span class="terms-wrapper"><span class="screen-reader-text">' . esc_html__( 'Categories:', 'syopajatyo' ) . ' </span>' . Syopajatyo\get_svg( [ 'icon' => 'folder-open' ] ),
 				'after'    => '</span>',
 			] );
 
-			Hybrid\post_terms( [
+			Hybrid\Post\render_terms( [
 				'taxonomy' => 'post_tag',
 				'before'   => '<span class="terms-wrapper"><span class="screen-reader-text">' . esc_html__( 'Tags:', 'syopajatyo' ) . ' </span>' . Syopajatyo\get_svg( [ 'icon' => 'hashtag' ] ),
 				'after'    => '</span>',

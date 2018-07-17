@@ -184,12 +184,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/justintadlock/hybrid-core.git",
-                "reference": "9dd2cb6058407df5d7d711d0d8f9f995cb51ba8d"
+                "reference": "1b5d7112e984a871f0bdf6f1b3d0ef8bb69b0b60"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/justintadlock/hybrid-core/zipball/9dd2cb6058407df5d7d711d0d8f9f995cb51ba8d",
-                "reference": "9dd2cb6058407df5d7d711d0d8f9f995cb51ba8d",
+                "url": "https://api.github.com/repos/justintadlock/hybrid-core/zipball/1b5d7112e984a871f0bdf6f1b3d0ef8bb69b0b60",
+                "reference": "1b5d7112e984a871f0bdf6f1b3d0ef8bb69b0b60",
                 "shasum": ""
             },
             "require": {
@@ -218,7 +218,7 @@
             "keywords": [
                 "wordpress"
             ],
-            "time": "2018-07-09T12:50:45+00:00"
+            "time": "2018-07-17T14:08:26+00:00"
         },
         {
             "name": "koodimonni-language/fi",
@@ -932,15 +932,15 @@
         },
         {
             "name": "wpackagist-plugin/the-events-calendar",
-            "version": "4.6.20",
+            "version": "4.6.20.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/the-events-calendar/",
-                "reference": "tags/4.6.20"
+                "reference": "tags/4.6.20.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/the-events-calendar.4.6.20.zip",
+                "url": "https://downloads.wordpress.org/plugin/the-events-calendar.4.6.20.1.zip",
                 "reference": null,
                 "shasum": null
             },
