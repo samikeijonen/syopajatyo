@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "1bfebacf4ec51783b72329bd4ea2b55b",
+    "content-hash": "420c88ddc071a5c49a93636182c7ae8e",
     "packages": [
         {
             "name": "composer/installers",
@@ -184,12 +184,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/justintadlock/hybrid-core.git",
-                "reference": "1b5d7112e984a871f0bdf6f1b3d0ef8bb69b0b60"
+                "reference": "9e0b8d0962cfc38998e4fdedb087480233a45edf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/justintadlock/hybrid-core/zipball/1b5d7112e984a871f0bdf6f1b3d0ef8bb69b0b60",
-                "reference": "1b5d7112e984a871f0bdf6f1b3d0ef8bb69b0b60",
+                "url": "https://api.github.com/repos/justintadlock/hybrid-core/zipball/9e0b8d0962cfc38998e4fdedb087480233a45edf",
+                "reference": "9e0b8d0962cfc38998e4fdedb087480233a45edf",
                 "shasum": ""
             },
             "require": {
@@ -218,7 +218,7 @@
             "keywords": [
                 "wordpress"
             ],
-            "time": "2018-07-17T14:08:26+00:00"
+            "time": "2018-07-17T18:20:45+00:00"
         },
         {
             "name": "koodimonni-language/fi",
@@ -1000,7 +1000,7 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=5.3.2"
+        "php": ">=5.6"
     },
     "platform-dev": []
 }
