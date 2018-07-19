@@ -24,7 +24,8 @@
 /*--------------------------------------------------------------
 # Generic - Ground-zero styles (resets, box-sizing, etc.).
 --------------------------------------------------------------*/
-@import "generic/normalize";
+// Import via NPM.
+@import "../../node_modules/normalize.css";
 @import "generic/box-sizing";
 
 
