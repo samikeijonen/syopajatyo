@@ -21,7 +21,7 @@ namespace Syopajatyo;
  * @param  string $sep Separator for metadata.
  * @return string
  */
-function get_meta_sep( $sep = '' ) {
+function sep( $sep = '' ) {
 
 	return apply_filters(
 		'syopajatyo_meta_sep',

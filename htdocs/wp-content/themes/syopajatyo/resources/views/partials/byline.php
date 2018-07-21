@@ -11,5 +11,5 @@ endif;
 ?>
 <div class="entry__byline font-size-875 <?= esc_attr( $data->class ) ?>">
 	<?php Hybrid\Post\render_date(); ?>
-	<?php Hybrid\Post\render_comments_link( [ 'before' => Syopajatyo\get_meta_sep() ] ); ?>
+	<?php Hybrid\Post\render_comments_link( [ 'before' => Syopajatyo\sep() ] ); ?>
 </div>
