@@ -11,12 +11,22 @@
 		<?= get_avatar( $data->comment, 120, '', '', [ 'class' => 'comment__avatar' ] ) ?>
 
 		<div class="comment__info">
-			<span class="comment__author fw-700"><?php comment_author_link(); ?></span>
-			<br />
-			<?php /* translators: %s how many days ago. */ ?>
-			<a href="<?php comment_link(); ?>" class="comment__permalink"><time class="comment__published"><?php printf( __( '%s ago', 'syopajatyo' ), esc_attr( human_time_diff( get_comment_time( 'U' ) ) ) ); // phpcs:ignore WordPress.XSS.EscapeOutput ?></time></a>
-			<?php edit_comment_link( null, Syopajatyo\get_meta_sep() ); ?>
-			<?php Hybrid\Comment\render_reply_link( [ 'before' => Syopajatyo\get_meta_sep() ] ); ?>
+		<?php
+			Hybrid\Comment\render_author( [
+				'class' => 'comment__author fw-700',
+				'after' => '<br />',
+			] );
+			Hybrid\Comment\render_permalink( [
+				'text' => sprintf(
+					// Translators: 1 is the comment date and 2 is the time.
+					esc_html__( '%1$s at %2$s', 'syopajatyo' ),
+					Hybrid\Comment\fetch_date(),
+					Hybrid\Comment\fetch_time()
+				),
+			] );
+			Hybrid\Comment\render_edit_link( [ 'before' => Syopajatyo\sep() ] );
+			Hybrid\Comment\render_reply_link( [ 'before' => Syopajatyo\sep() ] );
+		?>
 		</div>
 	</header>
 
