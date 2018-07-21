@@ -184,12 +184,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/justintadlock/hybrid-core.git",
-                "reference": "9e0b8d0962cfc38998e4fdedb087480233a45edf"
+                "reference": "17bc0c80cc9b7bdfe74bdda4a49ef2e1619026eb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/justintadlock/hybrid-core/zipball/9e0b8d0962cfc38998e4fdedb087480233a45edf",
-                "reference": "9e0b8d0962cfc38998e4fdedb087480233a45edf",
+                "url": "https://api.github.com/repos/justintadlock/hybrid-core/zipball/17bc0c80cc9b7bdfe74bdda4a49ef2e1619026eb",
+                "reference": "17bc0c80cc9b7bdfe74bdda4a49ef2e1619026eb",
                 "shasum": ""
             },
             "require": {
@@ -218,7 +218,7 @@
             "keywords": [
                 "wordpress"
             ],
-            "time": "2018-07-17T18:20:45+00:00"
+            "time": "2018-07-20T22:14:56+00:00"
         },
         {
             "name": "koodimonni-language/fi",
@@ -892,15 +892,15 @@
         },
         {
             "name": "wpackagist-plugin/gutenberg",
-            "version": "3.2.0",
+            "version": "3.3.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/gutenberg/",
-                "reference": "tags/3.2.0"
+                "reference": "tags/3.3.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/gutenberg.3.2.0.zip",
+                "url": "https://downloads.wordpress.org/plugin/gutenberg.3.3.0.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -912,15 +912,15 @@
         },
         {
             "name": "wpackagist-plugin/imagify",
-            "version": "1.8.0.1",
+            "version": "1.8.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/imagify/",
-                "reference": "tags/1.8.0.1"
+                "reference": "tags/1.8.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/imagify.1.8.0.1.zip",
+                "url": "https://downloads.wordpress.org/plugin/imagify.1.8.1.zip",
                 "reference": null,
                 "shasum": null
             },
