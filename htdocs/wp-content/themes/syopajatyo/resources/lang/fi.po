@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Syopajatyo\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/style\n"
-"POT-Creation-Date: 2018-07-18 12:28:35+00:00\n"
-"PO-Revision-Date: 2018-07-18 15:30+0300\n"
+"POT-Creation-Date: 2018-07-21 08:11:51+00:00\n"
+"PO-Revision-Date: 2018-07-21 11:15+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fi\n"
@@ -71,14 +71,19 @@ msgstr "Lue lisää<span class=\"screen-reader-text\"> %s</span>"
 msgid "Subpages"
 msgstr "Alasivut"
 
-#. translators: %s how many days ago.
-#: resources/views/comment/default.php:17 resources/views/comment/ping.php:14
-msgid "%s ago"
-msgstr "%s sitten"
+#. Translators: 1 is the comment date and 2 is the time.
+#: resources/views/comment/default.php:22
+msgid "%1$s at %2$s"
+msgstr "%1$s klo %2$s"
 
-#: resources/views/comment/default.php:26
+#: resources/views/comment/default.php:36
 msgid "Your comment is awaiting moderation."
 msgstr "Kommenttisi odottaa moderointia."
+
+#. translators: %s how many days ago.
+#: resources/views/comment/ping.php:14
+msgid "%s ago"
+msgstr "%s sitten"
 
 #: resources/views/comments/default.php:42
 msgid "Comments are closed."
@@ -259,11 +264,6 @@ msgstr "Hae"
 
 #~ msgid "(Untitled)"
 #~ msgstr "(Nimetön)"
-
-#, fuzzy
-#~| msgid "Page %1$s of %2$s"
-#~ msgid "%1$s &#215; %2$s"
-#~ msgstr "Sivu %1$s/%2$s"
 
 #, fuzzy
 #~| msgid "Page %1$s of %2$s"

@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Syopajatyo 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/style\n"
-"POT-Creation-Date: 2018-07-18 12:28:35+00:00\n"
+"POT-Creation-Date: 2018-07-21 08:11:51+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -60,13 +60,18 @@ msgstr ""
 msgid "Subpages"
 msgstr ""
 
-#: resources/views/comment/default.php:17 resources/views/comment/ping.php:14
-#. translators: %s how many days ago.
-msgid "%s ago"
+#: resources/views/comment/default.php:22
+#. Translators: 1 is the comment date and 2 is the time.
+msgid "%1$s at %2$s"
 msgstr ""
 
-#: resources/views/comment/default.php:26
+#: resources/views/comment/default.php:36
 msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: resources/views/comment/ping.php:14
+#. translators: %s how many days ago.
+msgid "%s ago"
 msgstr ""
 
 #: resources/views/comments/default.php:42
