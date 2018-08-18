@@ -34,7 +34,7 @@
 					<li><a href="https://www.syopapotilaat.fi/">www.syopapotilaat.fi</a></li>
 				</ul>
 				<?php
-					Hybrid\View\render( 'menu', 'social', [
+					Hybrid\View\display( 'menu', 'social', [
 						'name'  => 'social-footer',
 						'label' => __( 'Social links', 'syopajatyo' ),
 					] );

@@ -15,7 +15,7 @@
 	<?php wp_head(); ?>
 </head>
 
-<body <?php Hybrid\Attr\render( 'body' ); ?>>
+<body <?php Hybrid\Attr\display( 'body' ); ?>>
 
 <div class="app">
 	<header class="app-header items-center px-2 py-2">
@@ -30,7 +30,7 @@
 
 			<div class="app-header__search">
 			<?php
-				Hybrid\View\render( 'menu', 'language', [
+				Hybrid\View\display( 'menu', 'language', [
 					'name'  => 'language',
 					'label' => esc_html_x( 'Language', 'nav menu label', 'syopajatyo' ),
 				] );
@@ -42,11 +42,11 @@
 	</header>
 
 	<?php
-		Hybrid\View\render( 'menu', 'primary', [
+		Hybrid\View\display( 'menu', 'primary', [
 			'name'         => 'primary',
 			'social_links' => 'social',
 			'label'        => _x( 'Primary', 'nav menu label', 'syopajatyo' ),
 		] );
 
-		Hybrid\View\render( 'partials', 'title-header' );
+		Hybrid\View\display( 'partials', 'title-header' );
 	?>

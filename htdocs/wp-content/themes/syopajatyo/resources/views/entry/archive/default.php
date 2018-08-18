@@ -6,9 +6,9 @@
  */
 
 ?>
-<article <?php Hybrid\Attr\render( 'entry', 'archive' ); ?>>
+<article <?php Hybrid\Attr\display( 'entry', 'archive' ); ?>>
 	<header class="entry__header">
-		<?php Hybrid\View\render( 'partials', 'byline', [ 'class' => 'pb-1' ] ); ?>
+		<?php Hybrid\View\display( 'partials', 'byline', [ 'class' => 'pb-1' ] ); ?>
 		<h2 class="entry__title"><a class="decoration-none h-decoration-underline color-dark" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 	</header>
 

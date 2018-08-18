@@ -24,9 +24,16 @@ $syopajatyo = new \Hybrid\Core\Application();
  * Before booting the application, add any bindings to the container that are
  * necessary to run the theme.
  *
- * Register customize class instance and boot it.
  */
+
+// Register customize class instance and boot it.
 $syopajatyo->instance( 'syopajatyo/customize', new \Syopajatyo\Customize() )->boot();
+
+// Register the Laravel Mix manifest for cache-busting.
+$syopajatyo->singleton( 'syopajatyo/mix', function() {
+	$file = get_theme_file_path( 'dist/mix-manifest.json' );
+	return file_exists( $file ) ? json_decode( file_get_contents( $file ), true ) : null;
+} );
 
 /**
  * Perform bootstrap actions.

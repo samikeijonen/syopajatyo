@@ -10,6 +10,6 @@ if ( 'post' !== get_post_type() ) :
 endif;
 ?>
 <div class="entry__byline font-size-875 <?= esc_attr( $data->class ) ?>">
-	<?php Hybrid\Post\render_date(); ?>
-	<?php Hybrid\Post\render_comments_link( [ 'before' => Syopajatyo\sep() ] ); ?>
+	<?php Hybrid\Post\display_date(); ?>
+	<?php Hybrid\Post\display_comments_link( [ 'before' => Syopajatyo\sep() ] ); ?>
 </div>

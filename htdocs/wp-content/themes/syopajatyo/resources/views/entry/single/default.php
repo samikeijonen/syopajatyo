@@ -6,7 +6,7 @@
  */
 
 ?>
-<article <?php Hybrid\Attr\render( 'entry' ); ?>>
+<article <?php Hybrid\Attr\display( 'entry' ); ?>>
 	<?php
 		Syopajatyo\post_thumbnail();
 		Syopajatyo\display_excerpt();
@@ -15,7 +15,7 @@
 	<div class="entry__content">
 		<?php
 		the_content();
-		Hybrid\View\render( 'partials', 'pagination-singular' );
+		Hybrid\View\display( 'partials', 'pagination-post' );
 		?>
 	</div>
 </article>

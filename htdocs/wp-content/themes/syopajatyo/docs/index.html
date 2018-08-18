@@ -321,15 +321,15 @@ enqueueing block related styles using <code>enqueue_block_editor_assets</code> h
 in the root folder. In fact, in root there is only <code>index.php</code> template file but that should never be loaded unless plugins do some weird<span class="widont">&nbsp;</span>things.</p>
 <p>Main fallback template file is found in <code>resources/views/index.php</code>.</p>
 <p>All the template files are also in <code>resources/views/</code> folder. In there template files are
-organized in sub-folder using <code>Hybrid\render_view()</code> and
+organized in sub-folder using <code>Hybrid\display_view()</code> and
 <code>Hybrid\get_template_hierarchy()</code> functions.</p>
 <p>You could have other top-level templates, like <code>page.php</code>, <code>archive.php</code>, etc. in the root of <code>resources/views/</code> folder and get used like they typically would in theme root. But we try to avoid that also by organizing template
 files in different<span class="widont">&nbsp;</span>folders.</p>
-<h3 id="hybrid-render_view-function">Hybrid\render_view() function</h3>
-<p><code>Hybrid\render_view()</code> is Hybrid Core function which is
+<h3 id="hybrid-display_view-function">Hybrid\display_view() function</h3>
+<p><code>Hybrid\display_view()</code> is Hybrid Core function which is
 more powerfull version of <code>get_template_part()</code> function. You can for example pass variables to<span class="widont">&nbsp;</span>it:</p>
-<pre><code class="lang-php">// Hybrid\render_view( $name, $slugs = [], $data = [] )
-Hybrid\render_view( 'menu', 'primary', [ 'name' =&gt; 'primary' ] );
+<pre><code class="lang-php">// Hybrid\display_view( $name, $slugs = [], $data = [] )
+Hybrid\display_view( 'menu', 'primary', [ 'name' =&gt; 'primary' ] );
 </code></pre>
 <ul>
 <li>Above code loads <code>resources/views/menu/primary.php</code> file.</li>
@@ -337,14 +337,14 @@ Hybrid\render_view( 'menu', 'primary', [ 'name' =&gt; 'primary' ] );
 <li>And if it doesn’t exists it fallbacks to <code>resources/views/menu.php</code> file.</li>
 </ul>
 <p>Hierarchy looks like<span class="widont">&nbsp;</span>this:</p>
-<pre><code class="lang-php">// Hybrid\render_view( 'menu', 'primary', [ 'name' =&gt; 'primary' ] ) hierarchy.
+<pre><code class="lang-php">// Hybrid\display_view( 'menu', 'primary', [ 'name' =&gt; 'primary' ] ) hierarchy.
 // 1. resources/views/menu/primary.php
 // 2. resources/views/menu/default.php
 // 3. resources/views/menu.php
 </code></pre>
 <p>The last parameter <code>[ 'name' =&gt; 'primary' ]</code> is for passing data in to template file. You can access the data like this <code>$data-&gt;name</code>.</p>
 <h3 id="hybrid-get_template_hierarchy-function">Hybrid\get_template_hierarchy() function</h3>
-<p>Let’s look at example line: <code>Hybrid\render_view( 'content', Hybrid\get_template_hierarchy() );</code></p>
+<p>Let’s look at example line: <code>Hybrid\display_view( 'content', Hybrid\get_template_hierarchy() );</code></p>
 <p>This loads template files from <code>resources/views/content</code> folder respecting the <a href="https://developer.wordpress.org/themes/basics/template-hierarchy/">template<span class="widont">&nbsp;</span>hierarchy</a>.</p>
 <pre><code class="lang-php">// Example hierarchy for single `download` post type.
 // 1. resources/views/content/single-download-{slug}.php

@@ -8,13 +8,13 @@
 // Get background image.
 $syopajatyo_bg = Syopajatyo\get_post_thumbnail_bg();
 ?>
-<article <?php Hybrid\Attr\render( 'entry', 'card' ); ?><?= wp_kses_post( $syopajatyo_bg ); ?>>
+<article <?php Hybrid\Attr\display( 'entry', 'card' ); ?><?= wp_kses_post( $syopajatyo_bg ); ?>>
 	<header class="entry__header">
 		<?php
 		if ( 'tribe_events' === get_post_type() || 'none' === $data->content ) :
 			echo '<span class="entry__terms"><a href="/tapahtumat/">' . esc_html__( 'Events', 'syopajatyo' ) . '</a></span>';
 		else :
-			Hybrid\Post\render_terms( [
+			Hybrid\Post\display_terms( [
 				'taxonomy' => 'category',
 			] );
 		endif;
