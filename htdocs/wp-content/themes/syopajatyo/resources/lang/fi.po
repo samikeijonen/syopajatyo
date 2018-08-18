@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Syopajatyo\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/style\n"
-"POT-Creation-Date: 2018-07-21 08:11:51+00:00\n"
-"PO-Revision-Date: 2018-07-21 11:15+0300\n"
+"POT-Creation-Date: 2018-08-18 09:16:47+00:00\n"
+"PO-Revision-Date: 2018-08-18 12:17+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fi\n"
@@ -38,19 +38,19 @@ msgstr "Valitse kategoria %s"
 msgid "Select page %s"
 msgstr "Valitse sivu %s"
 
-#: app/functions-setup.php:58
+#: app/functions-setup.php:56
 msgid "Main"
 msgstr ""
 
-#: app/functions-setup.php:63
+#: app/functions-setup.php:61
 msgid "Dark"
 msgstr ""
 
-#: app/functions-setup.php:68
+#: app/functions-setup.php:66
 msgid "White"
 msgstr ""
 
-#: app/functions-setup.php:73
+#: app/functions-setup.php:71
 msgid "Light"
 msgstr ""
 
@@ -79,11 +79,6 @@ msgstr "%1$s klo %2$s"
 #: resources/views/comment/default.php:36
 msgid "Your comment is awaiting moderation."
 msgstr "Kommenttisi odottaa moderointia."
-
-#. translators: %s how many days ago.
-#: resources/views/comment/ping.php:14
-msgid "%s ago"
-msgstr "%s sitten"
 
 #: resources/views/comments/default.php:42
 msgid "Comments are closed."
@@ -139,7 +134,7 @@ msgstr ""
 msgid "Illustrations: Milart"
 msgstr ""
 
-#: resources/views/header/default.php:26
+#: resources/views/header/default.php:22
 msgid "Skip to content"
 msgstr "Siirry sisältöön"
 
@@ -199,32 +194,32 @@ msgctxt "Titillium Web font: on or off"
 msgid "on"
 msgstr ""
 
-#: app/functions-setup.php:123
+#: app/functions-setup.php:121
 msgctxt "nav menu location"
 msgid "Primary"
 msgstr "Päävalikko"
 
-#: app/functions-setup.php:124
+#: app/functions-setup.php:122
 msgctxt "nav menu location"
 msgid "Social links"
 msgstr "Some-linkit"
 
-#: app/functions-setup.php:125
+#: app/functions-setup.php:123
 msgctxt "nav menu location"
 msgid "Social links in footer"
 msgstr "Some-linkit alapalkissa"
 
-#: app/functions-setup.php:126
+#: app/functions-setup.php:124
 msgctxt "nav menu location"
 msgid "Social links in front page"
 msgstr "Some-linkit etusivulla"
 
-#: app/functions-setup.php:127
+#: app/functions-setup.php:125
 msgctxt "nav menu location"
 msgid "Language"
 msgstr "Kieli"
 
-#: app/functions-setup.php:162
+#: app/functions-setup.php:160
 msgctxt "sidebar"
 msgid "Primary"
 msgstr "Vimpainalue"
@@ -234,12 +229,12 @@ msgctxt "meta separator"
 msgid "&middot;"
 msgstr ""
 
-#: resources/views/header/default.php:39
+#: resources/views/header/default.php:35
 msgctxt "nav menu label"
 msgid "Language"
 msgstr "Kieli"
 
-#: resources/views/header/default.php:52
+#: resources/views/header/default.php:48
 msgctxt "nav menu label"
 msgid "Primary"
 msgstr "Pää"
@@ -258,6 +253,9 @@ msgstr "Haku &hellip;"
 msgctxt "submit button"
 msgid "Search"
 msgstr "Hae"
+
+#~ msgid "%s ago"
+#~ msgstr "%s sitten"
 
 #~ msgid "Pages:"
 #~ msgstr "Sivut:"

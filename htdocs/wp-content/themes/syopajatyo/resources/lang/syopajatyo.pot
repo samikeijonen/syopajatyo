@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Syopajatyo 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/style\n"
-"POT-Creation-Date: 2018-07-21 08:11:51+00:00\n"
+"POT-Creation-Date: 2018-08-18 09:16:47+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -27,19 +27,19 @@ msgstr ""
 msgid "Select page %s"
 msgstr ""
 
-#: app/functions-setup.php:58
+#: app/functions-setup.php:56
 msgid "Main"
 msgstr ""
 
-#: app/functions-setup.php:63
+#: app/functions-setup.php:61
 msgid "Dark"
 msgstr ""
 
-#: app/functions-setup.php:68
+#: app/functions-setup.php:66
 msgid "White"
 msgstr ""
 
-#: app/functions-setup.php:73
+#: app/functions-setup.php:71
 msgid "Light"
 msgstr ""
 
@@ -67,11 +67,6 @@ msgstr ""
 
 #: resources/views/comment/default.php:36
 msgid "Your comment is awaiting moderation."
-msgstr ""
-
-#: resources/views/comment/ping.php:14
-#. translators: %s how many days ago.
-msgid "%s ago"
 msgstr ""
 
 #: resources/views/comments/default.php:42
@@ -127,7 +122,7 @@ msgstr ""
 msgid "Illustrations: Milart"
 msgstr ""
 
-#: resources/views/header/default.php:26
+#: resources/views/header/default.php:22
 msgid "Skip to content"
 msgstr ""
 
@@ -187,32 +182,32 @@ msgctxt "Titillium Web font: on or off"
 msgid "on"
 msgstr ""
 
-#: app/functions-setup.php:123
+#: app/functions-setup.php:121
 msgctxt "nav menu location"
 msgid "Primary"
 msgstr ""
 
-#: app/functions-setup.php:124
+#: app/functions-setup.php:122
 msgctxt "nav menu location"
 msgid "Social links"
 msgstr ""
 
-#: app/functions-setup.php:125
+#: app/functions-setup.php:123
 msgctxt "nav menu location"
 msgid "Social links in footer"
 msgstr ""
 
-#: app/functions-setup.php:126
+#: app/functions-setup.php:124
 msgctxt "nav menu location"
 msgid "Social links in front page"
 msgstr ""
 
-#: app/functions-setup.php:127
+#: app/functions-setup.php:125
 msgctxt "nav menu location"
 msgid "Language"
 msgstr ""
 
-#: app/functions-setup.php:162
+#: app/functions-setup.php:160
 msgctxt "sidebar"
 msgid "Primary"
 msgstr ""
@@ -222,12 +217,12 @@ msgctxt "meta separator"
 msgid "&middot;"
 msgstr ""
 
-#: resources/views/header/default.php:39
+#: resources/views/header/default.php:35
 msgctxt "nav menu label"
 msgid "Language"
 msgstr ""
 
-#: resources/views/header/default.php:52
+#: resources/views/header/default.php:48
 msgctxt "nav menu label"
 msgid "Primary"
 msgstr ""
