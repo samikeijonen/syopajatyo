@@ -92,23 +92,23 @@
         },
         {
             "name": "johnpbloch/wordpress-core",
-            "version": "4.9.7",
+            "version": "4.9.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress-core.git",
-                "reference": "1116e10f71f8fb811856df212af652c427bc6bd1"
+                "reference": "50323f9b91d7689d615b4af02caf9d80584b1cfc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress-core/zipball/1116e10f71f8fb811856df212af652c427bc6bd1",
-                "reference": "1116e10f71f8fb811856df212af652c427bc6bd1",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress-core/zipball/50323f9b91d7689d615b4af02caf9d80584b1cfc",
+                "reference": "50323f9b91d7689d615b4af02caf9d80584b1cfc",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.2"
             },
             "provide": {
-                "wordpress/core-implementation": "4.9.7"
+                "wordpress/core-implementation": "4.9.8"
             },
             "type": "wordpress-core",
             "notification-url": "https://packagist.org/downloads/",
@@ -128,7 +128,7 @@
                 "cms",
                 "wordpress"
             ],
-            "time": "2018-07-05T18:12:13+00:00"
+            "time": "2018-08-02T21:48:32+00:00"
         },
         {
             "name": "johnpbloch/wordpress-core-installer",
@@ -184,12 +184,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/justintadlock/hybrid-core.git",
-                "reference": "17bc0c80cc9b7bdfe74bdda4a49ef2e1619026eb"
+                "reference": "f6174457aa61a3283c3418f1cd64c475760312b5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/justintadlock/hybrid-core/zipball/17bc0c80cc9b7bdfe74bdda4a49ef2e1619026eb",
-                "reference": "17bc0c80cc9b7bdfe74bdda4a49ef2e1619026eb",
+                "url": "https://api.github.com/repos/justintadlock/hybrid-core/zipball/f6174457aa61a3283c3418f1cd64c475760312b5",
+                "reference": "f6174457aa61a3283c3418f1cd64c475760312b5",
                 "shasum": ""
             },
             "require": {
@@ -218,14 +218,14 @@
             "keywords": [
                 "wordpress"
             ],
-            "time": "2018-07-20T22:14:56+00:00"
+            "time": "2018-08-17T19:32:44+00:00"
         },
         {
             "name": "koodimonni-language/fi",
-            "version": "4.9.6",
+            "version": "4.9.8",
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/translation/core/4.9.6/fi.zip",
+                "url": "https://downloads.wordpress.org/translation/core/4.9.8/fi.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -255,10 +255,10 @@
         },
         {
             "name": "koodimonni-language/sv_se",
-            "version": "4.9.7",
+            "version": "4.9.8",
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/translation/core/4.9.7/sv_SE.zip",
+                "url": "https://downloads.wordpress.org/translation/core/4.9.8/sv_SE.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -372,10 +372,10 @@
         },
         {
             "name": "koodimonni-plugin-language/woocommerce-fi",
-            "version": "3.4.3",
+            "version": "3.4.4",
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/translation/plugin/woocommerce/3.4.3/fi.zip",
+                "url": "https://downloads.wordpress.org/translation/plugin/woocommerce/3.4.4/fi.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -393,10 +393,10 @@
         },
         {
             "name": "koodimonni-plugin-language/woocommerce-sv_se",
-            "version": "3.4.3",
+            "version": "3.4.4",
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/translation/plugin/woocommerce/3.4.3/sv_SE.zip",
+                "url": "https://downloads.wordpress.org/translation/plugin/woocommerce/3.4.4/sv_SE.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -892,15 +892,15 @@
         },
         {
             "name": "wpackagist-plugin/gutenberg",
-            "version": "3.3.0",
+            "version": "3.6.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/gutenberg/",
-                "reference": "tags/3.3.0"
+                "reference": "tags/3.6.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/gutenberg.3.3.0.zip",
+                "url": "https://downloads.wordpress.org/plugin/gutenberg.3.6.2.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -912,15 +912,15 @@
         },
         {
             "name": "wpackagist-plugin/imagify",
-            "version": "1.8.1",
+            "version": "1.8.1.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/imagify/",
-                "reference": "tags/1.8.1"
+                "reference": "tags/1.8.1.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/imagify.1.8.1.zip",
+                "url": "https://downloads.wordpress.org/plugin/imagify.1.8.1.1.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -932,15 +932,15 @@
         },
         {
             "name": "wpackagist-plugin/the-events-calendar",
-            "version": "4.6.20.1",
+            "version": "4.6.21",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/the-events-calendar/",
-                "reference": "tags/4.6.20.1"
+                "reference": "tags/4.6.21"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/the-events-calendar.4.6.20.1.zip",
+                "url": "https://downloads.wordpress.org/plugin/the-events-calendar.4.6.21.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -972,15 +972,15 @@
         },
         {
             "name": "wpackagist-theme/twentyseventeen",
-            "version": "1.6",
+            "version": "1.7",
             "source": {
                 "type": "svn",
                 "url": "https://themes.svn.wordpress.org/twentyseventeen/",
-                "reference": "1.6"
+                "reference": "1.7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/theme/twentyseventeen.1.6.zip",
+                "url": "https://downloads.wordpress.org/theme/twentyseventeen.1.7.zip",
                 "reference": null,
                 "shasum": null
             },
