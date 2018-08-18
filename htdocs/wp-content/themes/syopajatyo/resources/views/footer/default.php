@@ -48,9 +48,6 @@
 				<p>
 				Minä, syöpä ja työ &ndash; Vertaistukea, kannustusta, tietoa, verkostoja ja tapahtumia.
 				</p>
-				<p>
-				STEA tukee hanketta "Elossa ja osallisena, myös työelämässä!" (2017-2020)
-				</p>
 			</div>
 		</div>
 	</footer>
