@@ -9,8 +9,8 @@
     "hot": "cross-env NODE_ENV=development webpack-dev-server --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
     "build": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "lint": "npm run lint:styles && npm run lint:scripts",
-    "lint:styles": "stylelint './resources/styles/**/*.scss' --syntax scss",
-    "lint:scripts": "eslint './resources/scripts/**/*.js'",
+    "lint:styles": "stylelint './resources/scss/**/*.scss' --syntax scss",
+    "lint:scripts": "eslint './resources/js/**/*.js'",
     "phpcs": "phpcs *.php app resources",
     "docs": "sassdoc resources/styles --dest docs --theme herman ",
     "i18n": "npm run i18n:textdomain && npm run i18n:pot",
@@ -23,10 +23,10 @@
     }
   },
   "lint-staged": {
-    "htdocs/wp-content/themes/syopajatyo/resources/scripts/**/*.js": [
+    "htdocs/wp-content/themes/syopajatyo/resources/js/**/*.js": [
       "npm run lint:scripts"
     ],
-    "htdocs/wp-content/themes/syopajatyo/resources/styles/**/*.scss": [
+    "htdocs/wp-content/themes/syopajatyo/resources/scss/**/*.scss": [
       "npm run lint:styles"
     ]
   },

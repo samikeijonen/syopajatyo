@@ -205,8 +205,8 @@ class Customize implements Bootable {
 	}
 
 	/**
-	 * Register or enqueue scripts/styles for the controls that are output
-	 * in the controls frame. Note that if you have scripts/styles that are
+	 * Register or enqueue js/styles for the controls that are output
+	 * in the controls frame. Note that if you have js/styles that are
 	 * only needed for specific controls, you should register those here and
 	 * enqueue them via the `enqueue()` method of your custom control class.
 	 *
@@ -217,7 +217,7 @@ class Customize implements Bootable {
 	public function controls_enqueue() {}
 
 	/**
-	 * Register or enqueue scripts/styles for the live preview frame.
+	 * Register or enqueue js/styles for the live preview frame.
 	 *
 	 * @since  1.0.0
 	 * @access public
@@ -227,7 +227,7 @@ class Customize implements Bootable {
 
 		wp_enqueue_script(
 			'syopajatyo-customize-preview',
-			asset( 'scripts/customize-preview.js' ),
+			asset( 'js/customize-preview.js' ),
 			[ 'customize-preview' ],
 			false,
 			true

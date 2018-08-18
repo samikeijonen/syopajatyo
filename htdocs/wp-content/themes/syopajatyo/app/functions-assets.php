@@ -10,7 +10,7 @@ namespace Syopajatyo;
 use Hybrid\app;
 
 /**
- * Enqueue scripts/styles.
+ * Enqueue js/styles.
  *
  * @since  1.0.0
  * @access public
@@ -18,7 +18,7 @@ use Hybrid\app;
  */
 add_action( 'wp_enqueue_scripts', function() {
 	// Main scripts.
-	wp_enqueue_script( 'syopajatyo-app', asset( 'scripts/app.js' ), null, null, true );
+	wp_enqueue_script( 'syopajatyo-app', asset( 'js/app.js' ), null, null, true );
 
 	// Add SVG icon which we can use via JS.
 	wp_localize_script( 'syopajatyo-app', 'SyopaJaTyoText', array(
@@ -29,7 +29,7 @@ add_action( 'wp_enqueue_scripts', function() {
 	wp_enqueue_style( 'syopajatyo-fonts', fonts_url(), null, null );
 
 	// Main styles.
-	wp_enqueue_style( 'syopajatyo-style', asset( 'styles/style.css' ), null, null );
+	wp_enqueue_style( 'syopajatyo-style', asset( 'css/style.css' ), null, null );
 
 	// Comments JS.
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -41,7 +41,7 @@ add_action( 'wp_enqueue_scripts', function() {
 }, 10 );
 
 /**
- * Enqueue editor scripts/styles.
+ * Enqueue editor js/styles.
  *
  * @since  1.0.0
  * @access public
@@ -49,7 +49,7 @@ add_action( 'wp_enqueue_scripts', function() {
  */
 add_action( 'enqueue_block_editor_assets', function() {
 	// Main block styles.
-	wp_enqueue_style( 'syopajatyo-blocks', asset( 'styles/editor.css' ), null, null );
+	wp_enqueue_style( 'syopajatyo-blocks', asset( 'css/editor.css' ), null, null );
 
 	// Unregister core block and theme styles.
 	wp_deregister_style( 'wp-block-library' );
@@ -95,38 +95,4 @@ function asset( $path ) {
 	}
 
 	return get_theme_file_uri( 'dist' . $path );
-}
-
-/**
- * Returns the Laravel Mix manifest.
- *
- * Note that `file_get_contents()` is not allowed on WordPress.org. If building
- * a theme for the WP directory, you'll need to remove this function and the
- * reference to it in the `asset()` function.
- *
- * @link   https://github.com/WordPress/theme-check/issues/55
- * @link   https://wordpress.stackexchange.com/questions/166161/why-cant-the-wp-filesystem-api-read-googlefonts-json/166175
- *
- * @since  1.0.0
- * @access public
- * @return array|false
- */
-function mix() {
-	$manifest = app( 'syopajatyo/mix' );
-
-	// If there is no manifest saved yet, let's see if we can find one.
-	if ( ! $manifest ) {
-
-		$file = get_theme_file_path( 'dist/mix-manifest.json' );
-
-		if ( file_exists( $file ) ) {
-			$manifest = json_decode( file_get_contents( $file ), true );
-
-			if ( $manifest ) {
-				app()->add( 'syopajatyo/mix', $manifest );
-			}
-		}
-	}
-
-	return $manifest;
 }

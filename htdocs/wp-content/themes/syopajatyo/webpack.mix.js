@@ -17,6 +17,11 @@ const ImageminPlugin    = require( 'imagemin-webpack-plugin' ).default;
 const CopyWebpackPlugin = require( 'copy-webpack-plugin' );
 const imageminMozjpeg   = require( 'imagemin-mozjpeg' );
 
+
+// Sets the development path to assets. By default, this is the `/resources`
+// folder in the theme.
+const devPath  = 'resources';
+
 // Sets the path to the generated assets. By default, this is the `/dist` folder
 // in the theme. If doing something custom, make sure to change this everywhere.
 mix.setPublicPath( 'dist' );
@@ -43,8 +48,8 @@ mix.version();
 // Compile JavaScript.
 //
 // @link https://laravel.com/docs/5.6/mix#working-with-scripts
-mix.js( 'resources/scripts/app.js', 'scripts' )
-   .js( 'resources/scripts/customize-preview.js', 'scripts' );
+mix.js( `${devPath}/js/app.js`, 'js' )
+   .js( `${devPath}/js/customize-preview.js`, 'js' );
 
 // Compile SASS and CSS.
 //
@@ -60,9 +65,8 @@ var sassConfig = {
 };
 
 // Compile SASS/CSS.
-mix.sass( 'resources/styles/style.scss', 'styles', sassConfig )
-   .sass( 'resources/styles/editor.scss', 'styles', sassConfig )
-   .sass( 'resources/styles/theme.scss', 'styles', sassConfig );
+mix.sass( `${devPath}/scss/style.scss`, 'css', sassConfig )
+   .sass( `${devPath}/scss/editor.scss`, 'css', sassConfig );
 
 // Add custom Webpack configuration.
 //
@@ -80,9 +84,9 @@ mix.webpackConfig( {
 
 		// @link https://github.com/webpack-contrib/copy-webpack-plugin
 		new CopyWebpackPlugin( [
-			{ from: 'resources/img',   to: 'img' },
-			{ from: 'resources/svg',   to: 'svg' },
-			{ from: 'resources/fonts', to: 'fonts' }
+			{ from: `${devPath}/img`,   to: 'img' },
+			{ from: `${devPath}/svg`,   to: 'svg' },
+			{ from: `${devPath}/fonts`, to: 'fonts' }
 		] ),
 
 		// @link https://github.com/Klathmon/imagemin-webpack-plugin
@@ -133,9 +137,8 @@ mix.browserSync( {
 	proxy: 'https://syopajatyo.test/',
 	files: [
 		'**/*.{css,js,jpg,jpeg,png,gif,svg,eot,ttf,woff,woff2}',
-		'resources/views/**/*.php',
-		//'resources/styles/**/*.scss',
-		//'resources/scripts/**/*.js',
-		'app/**/*.php'
+		`${devPath}/views/**/*.php`,
+		'app/**/*.php',
+		'functions.php'
 	]
 } );
