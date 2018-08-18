@@ -12,8 +12,8 @@ Directory structure aims to be modern app-like, what ever that means :)
 
 - `resources` folder is for editing theme for your needs. This is where the most of the magic happens.
 	- `resources/views` have all the template structure and partials files.
-	- `resources/styles` have SASS files.
-	- `resources/scripts` have JS files.
+	- `resources/scss` have SASS files.
+	- `resources/js` have JS files.
 	- `resources/img` have all the images.
 	- `resources/svg` have SVG icons.
 	- `resources/lang` have language files.
@@ -101,9 +101,9 @@ SASS and CSS structure is probably one of
 the biggest aspects of the front-end and theming.
 It should have scalable and modular architecture.
 
-Styles are written in `resources/styles` folder.
+Styles are written in `resources/scss` folder.
 There are two separate stylesheets
-which are automatically compiled to `dist/styles`:
+which are automatically compiled to `dist/css`:
 
 - `style.scss` &ndash; Main stylesheet for the theme.
 - `editor.scss` &ndash; Stylesheet only for the new editor (Gutenberg).
@@ -146,7 +146,7 @@ At the moment support for new editor means these things:
 
 - Add support `editor-color-palette` to match theme colors.
 - Add support for `align-wide` blocks.
-- Dequeue Core block styles: `wp_dequeue_style( 'wp-blocks' )`.
+- Dequeue Core block styles.
 	- This is because I don't want to overwrite and add too spesific rules to main stylesheet.
 	- Core blocks have their own CSS layer as mentioned before. It can be found in `recources/scss/blocks`.
 - Get maximum WYSIWYG experience in the editor by
@@ -162,20 +162,19 @@ in the root folder. In fact, in root there is only `index.php` template file but
 Main fallback template file is found in `resources/views/index.php`.
 
 All the template files are also in `resources/views/` folder. In there template files are
-organized in sub-folder using `Hybrid\display_view()` and
-`Hybrid\get_template_hierarchy()` functions.
+organized in sub-folder using `Hybrid\View\display()` and
+`Hybrid\Template\hierarchy` functions.
 
-You could have other top-level templates, like `page.php`, `archive.php`, etc. in the root of `resources/views/` folder and get used like they typically would in theme root. But we try to avoid that also by organizing template
-files in different folders.
+You could have other top-level templates, like `page.php`, `archive.php`, etc. in the root of `resources/views/` folder and get used like they typically would in theme root. But we try to avoid that also by organizing template files in different folders.
 
-### Hybrid\display_view() function
+### Hybrid\View\display() function
 
-`Hybrid\display_view()` is Hybrid Core function which is
+`Hybrid\View\display()` is Hybrid Core function which is
 more powerfull version of `get_template_part()` function. You can for example pass variables to it:
 
 ```php
-// Hybrid\display_view( $name, $slugs = [], $data = [] )
-Hybrid\display_view( 'menu', 'primary', [ 'name' => 'primary' ] );
+// Hybrid\View\display( $name, $slugs = [], $data = [] )
+Hybrid\View\display( 'menu', 'primary', [ 'name' => 'primary' ] );
 ```
 
 - Above code loads `resources/views/menu/primary.php` file.
@@ -185,7 +184,7 @@ Hybrid\display_view( 'menu', 'primary', [ 'name' => 'primary' ] );
 Hierarchy looks like this:
 
 ```php
-// Hybrid\display_view( 'menu', 'primary', [ 'name' => 'primary' ] ) hierarchy.
+// Hybrid\View\display( 'menu', 'primary', [ 'name' => 'primary' ] ) hierarchy.
 // 1. resources/views/menu/primary.php
 // 2. resources/views/menu/default.php
 // 3. resources/views/menu.php
@@ -193,9 +192,9 @@ Hierarchy looks like this:
 
 The last parameter `[ 'name' => 'primary' ]` is for passing data in to template file. You can access the data like this `$data->name`.
 
-### Hybrid\get_template_hierarchy() function
+### Hybrid\Template\hierarchy() function
 
-Let's look at example line: `Hybrid\display_view( 'content', Hybrid\get_template_hierarchy() );`
+Let's look at example line: `Hybrid\View\display( 'content', Hybrid\Template\hierarchy() );`
 
 This loads template files from `resources/views/content` folder respecting the [template hierarchy](https://developer.wordpress.org/themes/basics/template-hierarchy/).
 
@@ -254,5 +253,5 @@ All the main SVG related functions can be found in the `app/functions-svg.php` f
 	- In the same cleans them up.
 	- Adds attributes and classes for using these icons as decorative only.
 - `Syopajatyo\get_svg()` function returns inline SVG icon markup by default.
-- For example `Uuups\get_svg( [ 'icon' => 'folder-open' ]`.
+- For example `Syopajatyo\get_svg( [ 'icon' => 'folder-open' ]`.
 - SVG icons are automatically used in Social links menu.
