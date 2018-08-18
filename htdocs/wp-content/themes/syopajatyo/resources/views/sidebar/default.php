@@ -17,7 +17,9 @@ endif
 		<?php
 			Syopajatyo\sub_pages_navigation();
 
-			dynamic_sidebar( esc_attr( $data->name ) );
+			if ( ! is_page() || is_page( 'ajankohtaista' ) ) :
+				dynamic_sidebar( esc_attr( $data->name ) );
+			endif;
 		?>
 	</div>
 </aside>
