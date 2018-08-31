@@ -65,6 +65,7 @@
     "wpackagist-plugin/the-events-calendar": "*",
     "wpackagist-plugin/gutenberg": "*",
     "wpackagist-plugin/imagify": "*",
+    "wpackagist-plugin/autodescription": "*",
 
     "wpackagist-theme/twentyseventeen": "*",
 
