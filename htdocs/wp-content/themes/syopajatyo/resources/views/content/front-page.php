@@ -39,6 +39,7 @@
 		if ( 1 === $k ) :
 			?>
 			<div class="fp-articles px-2 py-8 pos-rel">
+				<h2 class="fp-articles__title mx-auto max-width-1 fw-200 h1 uppercase color-white"><?= esc_html__( 'News', 'syopajatyo' ); ?></h2>
 				<div class="mx-auto max-width-1 grid pos-rel z-index-11">
 				<?php
 		endif;

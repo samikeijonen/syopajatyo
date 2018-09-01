@@ -1,5 +1,19 @@
 .app-footer {
 	background-color: rgba(var(--color-light-rgb), 0.3);
+	padding-bottom: $global-spacing-unit-1 * 8;
+	padding-top: $global-spacing-unit-1 * 8;
+
+	&__list {
+		line-height: 1;
+		margin-top: $global-spacing-unit-1 * 8;
+
+		& li:not(:last-child) {
+			border-right: 1px solid;
+			margin-bottom: $global-spacing-unit-1;
+			margin-right: $global-spacing-unit-1;
+			padding-right: $global-spacing-unit-1;
+		}
+	}
 }
 
 .svg-img {
@@ -13,5 +27,17 @@
 
 	&--potilaat {
 		max-width: 150px;
+	}
+}
+
+.partner-logo {
+	display: block;
+
+	&--veikkaus {
+		max-width: $global-spacing-unit-1 * 20;
+	}
+
+	&--toimintakyky {
+		max-width: $global-spacing-unit-1 * 30;
 	}
 }
