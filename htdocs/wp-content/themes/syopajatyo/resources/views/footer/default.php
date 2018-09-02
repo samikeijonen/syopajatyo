@@ -48,10 +48,6 @@
 					<li>Email: info@syopapotilaat.fi</li>
 					<li><a href="https://www.syopapotilaat.fi/">www.syopapotilaat.fi</a></li>
 				</ul>
-				<?php
-					echo '<p class="mb-0">' . esc_html__( 'Design: Kumu Communications &#38; Milart', 'syopajatyo' ) . '</p>';
-					echo '<p class="mb-0">' . esc_html__( 'Illustrations: Milart', 'syopajatyo' ) . '</p>';
-				?>
 			</div>
 
 			<div class="grid-footer__item grid-footer__info">
