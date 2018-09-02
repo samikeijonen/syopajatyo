@@ -57,9 +57,9 @@
 		</div>
 
 		<ul class="app-footer__list reset-list flex flex-wrap justify-center">
-			<li>&copy; Suomen syöpäpotilaan ry</li>
-			<li>Graafinensuunnittelu: Milart</li>
-			<li>Toteutus Kumu Communications</li>
+			<li>&copy; Suomen syöpäpotilaat ry</li>
+			<li>Graafinen suunnittelu: Milart</li>
+			<li>Toteutus: Kumu Communications</li>
 		</ul>
 	</footer>
 
