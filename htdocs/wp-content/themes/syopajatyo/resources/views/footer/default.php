@@ -11,26 +11,19 @@
 	<footer class="app-footer px-2 font-size-875">
 		<div class="grid-footer mx-auto max-width-1">
 			<div class="grid-footer__item grid-footer__logos mb-0">
-			<?php
-				Syopajatyo\display_svg_img( [
-					'icon'  => 'logo-text',
-					'class' => 'svg-img svg-img--site-logo',
-					'alt'   => get_bloginfo( 'name' ),
-				] );
-			?>
+				<?php
+					Syopajatyo\display_svg_img( [
+						'icon'  => 'logo-text',
+						'class' => 'svg-img svg-img--site-logo',
+						'alt'   => get_bloginfo( 'name' ),
+					] );
+				?>
 
-			<p class="uppercase fw-600 mb-2"><?php bloginfo( 'name' ); ?></p>
+				<p class="uppercase fw-600 mb-2"><?php bloginfo( 'name' ); ?></p>
 
-			<?php Syopajatyo\site_description(); ?>
+				<?php Syopajatyo\site_description(); ?>
 
-			<p><a href="https://syopajatyo.fi/suomen-syopapotilaat-ry/tietosuoja/">Tietosuoja ja rekisteriselosteet</a></p>
-
-			<?php
-				Hybrid\View\display( 'menu', 'social', [
-					'name'  => 'social-footer',
-					'label' => __( 'Social links', 'syopajatyo' ),
-				] );
-			?>
+				<p><a href="https://syopajatyo.fi/suomen-syopapotilaat-ry/tietosuoja/">Tietosuoja ja rekisteriselosteet</a></p>
 			</div>
 
 			<div class="grid-footer__item grid-footer__credit">
@@ -48,11 +41,18 @@
 					<li>Email: info@syopapotilaat.fi</li>
 					<li><a href="https://www.syopapotilaat.fi/">www.syopapotilaat.fi</a></li>
 				</ul>
+
+				<?php
+					Hybrid\View\display( 'menu', 'social', [
+						'name'  => 'social-footer',
+						'label' => __( 'Social links', 'syopajatyo' ),
+					] );
+				?>
 			</div>
 
 			<div class="grid-footer__item grid-footer__info">
-				<img class="partner-logo partner-logo--veikkaus mb-4" src="<?php echo get_parent_theme_file_uri( '/dist/img/tuettu_veikkauksen_tuotoilla.png' ) ?>" alt="<?php esc_html_e( 'Tuettu veikkauksen voitoilla', 'syopajatyo' ); ?>">
 				<img class="partner-logo partner-logo--toimintakyky mb-4" src="<?php echo get_parent_theme_file_uri( '/dist/img/toimintakyky_kuntoon.png' ) ?>" alt="<?php esc_html_e( 'Toimintakyky kuntoon', 'syopajatyo' ); ?>">
+				<img class="partner-logo partner-logo--veikkaus mb-4" src="<?php echo get_parent_theme_file_uri( '/dist/img/tuettu_veikkauksen_tuotoilla.png' ) ?>" alt="<?php esc_html_e( 'Tuettu veikkauksen voitoilla', 'syopajatyo' ); ?>">
 			</div>
 		</div>
 
