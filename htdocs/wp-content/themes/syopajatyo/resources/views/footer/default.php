@@ -35,7 +35,7 @@
 				?>
 
 				<ul class="reset-list pb-4">
-					<li class="fw-600 uppercase">Suomen syöpäpotilaat Ry</li>
+					<li class="fw-600 uppercase">Suomen Syöpäpotilaat ry</li>
 					<li>Malminkaari 5</li>
 					<li>00700 Helsinki</li>
 					<li>Email: info@syopapotilaat.fi</li>
@@ -57,7 +57,7 @@
 		</div>
 
 		<ul class="app-footer__list reset-list flex flex-wrap justify-center">
-			<li>&copy; Suomen syöpäpotilaat ry</li>
+			<li>&copy; Suomen Syöpäpotilaat ry</li>
 			<li>Graafinen suunnittelu: Milart</li>
 			<li>Toteutus: Kumu Communications</li>
 		</ul>
