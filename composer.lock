@@ -226,12 +226,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/justintadlock/hybrid-customize.git",
-                "reference": "4d5d18540e276849dd822b71a672cc8deed2b9de"
+                "reference": "9cf01c389a664d0a455e33fa9152f445eb67e914"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/justintadlock/hybrid-customize/zipball/4d5d18540e276849dd822b71a672cc8deed2b9de",
-                "reference": "4d5d18540e276849dd822b71a672cc8deed2b9de",
+                "url": "https://api.github.com/repos/justintadlock/hybrid-customize/zipball/9cf01c389a664d0a455e33fa9152f445eb67e914",
+                "reference": "9cf01c389a664d0a455e33fa9152f445eb67e914",
                 "shasum": ""
             },
             "require": {
@@ -261,7 +261,7 @@
             "keywords": [
                 "wordpress"
             ],
-            "time": "2018-09-05T17:03:00+00:00"
+            "time": "2018-09-05T18:48:12+00:00"
         },
         {
             "name": "koodimonni-language/fi",
