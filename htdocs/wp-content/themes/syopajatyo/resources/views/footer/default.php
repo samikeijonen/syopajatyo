@@ -61,6 +61,8 @@
 			<li>Graafinen suunnittelu: Milart</li>
 			<li>Toteutus: Kumu Communications</li>
 		</ul>
+
+		<p class="text-center mb-0">iStock.com/spukkato, CC0 Pexels/Pixabay, Canva ja Suomen Syöpäpotilaat ry</p>
 	</footer>
 
 </div><!-- .app -->
