@@ -215,7 +215,7 @@ function sub_pages_navigation() {
 	global $pretend_id;
 
 	if ( ! empty( $pretend_id ) && is_numeric( $pretend_id ) ) {
-		$post = get_post( $pretend_id ); // phpcs:ignore WordPress.Variables.GlobalVariables.OverrideProhibited
+		$post = get_post( $pretend_id ); // phpcs:ignore WordPress.WP.GlobalVariablesOverride.OverrideProhibited
 		setup_postdata( $post );
 	}
 

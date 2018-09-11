@@ -6,8 +6,7 @@
  *
  * Override this template in your own theme by creating a file at [your-theme]/tribe-events/default-template.php
  *
- * @package TribeEventsCalendar
- *
+ * @package Syopajatyo
  */
 
 // Load header/* template.

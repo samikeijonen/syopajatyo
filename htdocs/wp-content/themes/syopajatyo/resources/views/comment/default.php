@@ -33,7 +33,7 @@
 	<div class="comment__content">
 		<?php if ( ! Hybrid\Comment\is_approved() ) : ?>
 			<p class="comment__moderation">
-				<?php esc_html_e( 'Your comment is awaiting moderation.', 'syopajatyo' ) ?>
+				<?php esc_html_e( 'Your comment is awaiting moderation.', 'syopajatyo' ); ?>
 			</p>
 		<?php endif ?>
 

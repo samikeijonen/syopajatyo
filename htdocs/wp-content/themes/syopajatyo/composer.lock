@@ -180,12 +180,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/samikeijonen/phpcs-composer.git",
-                "reference": "7239954d8ece217a9d1402fd000b9b96d8eb1cae"
+                "reference": "3234dc2bac5e4e9d0da36321a0697bcd80490864"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/samikeijonen/phpcs-composer/zipball/7239954d8ece217a9d1402fd000b9b96d8eb1cae",
-                "reference": "7239954d8ece217a9d1402fd000b9b96d8eb1cae",
+                "url": "https://api.github.com/repos/samikeijonen/phpcs-composer/zipball/3234dc2bac5e4e9d0da36321a0697bcd80490864",
+                "reference": "3234dc2bac5e4e9d0da36321a0697bcd80490864",
                 "shasum": ""
             },
             "require": {
@@ -214,7 +214,7 @@
                 "standards",
                 "wordpress"
             ],
-            "time": "2018-09-09T10:04:14+00:00"
+            "time": "2018-09-11T20:41:35+00:00"
         },
         {
             "name": "squizlabs/php_codesniffer",

@@ -8,10 +8,10 @@
     "watch": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "hot": "cross-env NODE_ENV=development webpack-dev-server --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
     "build": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "lint": "npm run lint:styles && npm run lint:scripts",
-    "lint:styles": "stylelint './resources/scss/**/*.scss' --syntax scss",
-    "lint:scripts": "eslint './resources/js/**/*.js'",
-    "phpcs": "phpcs *.php app resources",
+    "lint": "npm run lint:styles && npm run lint:scripts && npm run lint:php",
+    "lint:styles": "cross-env stylelint './resources/scss/**/*.scss' --syntax scss",
+    "lint:scripts": "cross-env eslint './resources/js/**/*.js'",
+    "lint:php": "cross-env ./vendor/bin/phpcs .",
     "i18n": "npm run i18n:textdomain && npm run i18n:pot",
     "i18n:textdomain": "npx wpi18n addtextdomain --exclude=vendor,node_modules",
     "i18n:pot": "npx wpi18n makepot"
@@ -46,7 +46,7 @@
     "cross-env": "^5.2.0",
     "eslint": "^5.5.0",
     "eslint-config-wordpress": "^2.0.0",
-    "husky": "^1.0.0-rc.13",
+    "husky": "^1.0.0-rc.14",
     "imagemin-mozjpeg": "^7.0.0",
     "imagemin-webpack-plugin": "^2.2.0",
     "laravel-mix": "^2.1.14",
@@ -69,6 +69,5 @@
     "last 2 iOS versions",
     "last 2 Edge versions",
     "last 2 Opera versions"
-  ],
-  "dependencies": {}
+  ]
 }
