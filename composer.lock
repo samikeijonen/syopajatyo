@@ -184,12 +184,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/justintadlock/hybrid-core.git",
-                "reference": "130ba0a63f9b504e7fa882e6586ec23181489cac"
+                "reference": "63e6b68d6023bb1aecbf00104d9fdfe60190af00"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/justintadlock/hybrid-core/zipball/130ba0a63f9b504e7fa882e6586ec23181489cac",
-                "reference": "130ba0a63f9b504e7fa882e6586ec23181489cac",
+                "url": "https://api.github.com/repos/justintadlock/hybrid-core/zipball/63e6b68d6023bb1aecbf00104d9fdfe60190af00",
+                "reference": "63e6b68d6023bb1aecbf00104d9fdfe60190af00",
                 "shasum": ""
             },
             "require": {
@@ -197,6 +197,9 @@
             },
             "type": "library",
             "autoload": {
+                "psr-4": {
+                    "Hybrid\\": "src/"
+                },
                 "files": [
                     "src/bootstrap-hybrid.php"
                 ]
@@ -218,7 +221,7 @@
             "keywords": [
                 "wordpress"
             ],
-            "time": "2018-09-05T18:33:02+00:00"
+            "time": "2018-09-10T21:47:08+00:00"
         },
         {
             "name": "justintadlock/hybrid-customize",

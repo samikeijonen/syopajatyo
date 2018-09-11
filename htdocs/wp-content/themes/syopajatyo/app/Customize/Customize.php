@@ -9,7 +9,7 @@
  * @package   Syopajatyo
  */
 
-namespace Syopajatyo;
+namespace Syopajatyo\Customize;
 
 use WP_Customize_Manager;
 use Hybrid\Contracts\Bootable;

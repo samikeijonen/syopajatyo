@@ -11,27 +11,6 @@
 namespace Syopajatyo;
 
 // ------------------------------------------------------------------------------
-// Autoload classes.
-// ------------------------------------------------------------------------------
-//
-// Register an autoloader for handling class loading. We're using Hybrid Core's
-// built-in autoloader for simplicity. Class names should be in Pascal Case (e.g.,
-// `HelloWorld`) and file names prefixed with `class-` and hyphenated (e.g.,
-// `class-hello-world.php`). You can also build your own autoloader or utilize
-// the autoloader in Composer.
-spl_autoload_register(
-	function( $class ) {
-
-			\Hybrid\autoload(
-				$class, [
-					'namespace' => __NAMESPACE__,
-					'path'      => get_parent_theme_file_path( 'app' ),
-				]
-			);
-	}
-);
-
-// ------------------------------------------------------------------------------
 // Autoload functions files.
 // ------------------------------------------------------------------------------
 //

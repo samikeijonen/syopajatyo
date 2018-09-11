@@ -28,7 +28,10 @@
     "preferred-install": "dist"
   },
   "autoload": {
-    "psr-0": {"WordPress\\Installer": "scripts"}
+    "psr-0": {"WordPress\\Installer": "scripts"},
+    "psr-4" : {
+			"Syopajatyo\\" : "htdocs/wp-content/themes/syopajatyo/app/"
+		}
   },
   "scripts": {
     "post-install-cmd": [
