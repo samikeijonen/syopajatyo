@@ -1,0 +1,23 @@
+{
+	"name": "samikeijonen/syopajatyo",
+	"description": "Custom theme for syopajatyo.fi site.",
+	"homepage": "https://github.com/samikeijonen/syopajatyo",
+	"license": "GPL-2.0-or-later",
+	"authors": [
+		{
+			"name": "Sami Keijonen",
+			"email": "sami.keijonen@foxnet.fi",
+			"homepage": "https://foxland.fi",
+			"role": "Developer"
+		}
+	],
+	"support": {
+		"issues": "https://github.com/samikeijonen/syopajatyo/issues"
+	},
+	"require": {
+		"php": ">=5.6"
+	},
+	"require-dev": {
+		"samikeijonen/phpcs-composer": "dev-master"
+	}
+}
