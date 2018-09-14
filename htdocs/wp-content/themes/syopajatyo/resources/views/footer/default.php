@@ -58,8 +58,8 @@
 
 		<ul class="app-footer__list reset-list flex flex-wrap justify-center">
 			<li>&copy; Suomen Syöpäpotilaat ry</li>
-			<li>Graafinen suunnittelu: <a href="https://www.milart.fi/">Milart</a></li>
-			<li>Toteutus: <a href="https://kumucommunications.fi/">Kumu Communications</a></li>
+			<li>Graafinen suunnittelu: <a class="decoration-none" href="https://www.milart.fi/">Milart</a></li>
+			<li>Toteutus: <a class="decoration-none" href="https://kumucommunications.fi/">Kumu Communications</a></li>
 		</ul>
 
 		<p class="text-center mb-0">iStock.com/spukkato, CC0 Pexels/Pixabay, Canva ja Suomen Syöpäpotilaat ry</p>
