@@ -14,6 +14,7 @@ namespace Syopajatyo\Customize;
 use WP_Customize_Manager;
 use Hybrid\Contracts\Bootable;
 use Hybrid;
+use function Syopajatyo\asset;
 
 /**
  * Handles setting up everything we need for the customizer.
