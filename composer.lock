@@ -184,12 +184,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/justintadlock/hybrid-core.git",
-                "reference": "63e6b68d6023bb1aecbf00104d9fdfe60190af00"
+                "reference": "e3cbd33fec8bd2b23799410bf22a2522fbe0d80c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/justintadlock/hybrid-core/zipball/63e6b68d6023bb1aecbf00104d9fdfe60190af00",
-                "reference": "63e6b68d6023bb1aecbf00104d9fdfe60190af00",
+                "url": "https://api.github.com/repos/justintadlock/hybrid-core/zipball/e3cbd33fec8bd2b23799410bf22a2522fbe0d80c",
+                "reference": "e3cbd33fec8bd2b23799410bf22a2522fbe0d80c",
                 "shasum": ""
             },
             "require": {
@@ -216,12 +216,12 @@
                     "role": "Developer"
                 }
             ],
-            "description": "Hybrid Core WordPress theme framework",
+            "description": "Hybrid Core: A theme framework for developing modern WordPress themes.",
             "homepage": "https://themehybrid.com/hybrid-core",
             "keywords": [
                 "wordpress"
             ],
-            "time": "2018-09-10T21:47:08+00:00"
+            "time": "2018-09-13T21:11:17+00:00"
         },
         {
             "name": "justintadlock/hybrid-customize",
@@ -229,12 +229,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/justintadlock/hybrid-customize.git",
-                "reference": "9cf01c389a664d0a455e33fa9152f445eb67e914"
+                "reference": "41425f7929d1e3d9a31473526f781069531890db"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/justintadlock/hybrid-customize/zipball/9cf01c389a664d0a455e33fa9152f445eb67e914",
-                "reference": "9cf01c389a664d0a455e33fa9152f445eb67e914",
+                "url": "https://api.github.com/repos/justintadlock/hybrid-customize/zipball/41425f7929d1e3d9a31473526f781069531890db",
+                "reference": "41425f7929d1e3d9a31473526f781069531890db",
                 "shasum": ""
             },
             "require": {
@@ -264,7 +264,7 @@
             "keywords": [
                 "wordpress"
             ],
-            "time": "2018-09-05T18:48:12+00:00"
+            "time": "2018-09-13T20:25:22+00:00"
         },
         {
             "name": "koodimonni-language/fi",
@@ -978,15 +978,15 @@
         },
         {
             "name": "wpackagist-plugin/gutenberg",
-            "version": "3.7.0",
+            "version": "3.8.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/gutenberg/",
-                "reference": "tags/3.7.0"
+                "reference": "tags/3.8.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/gutenberg.3.7.0.zip",
+                "url": "https://downloads.wordpress.org/plugin/gutenberg.3.8.0.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -998,15 +998,15 @@
         },
         {
             "name": "wpackagist-plugin/imagify",
-            "version": "1.8.1.1",
+            "version": "1.8.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/imagify/",
-                "reference": "tags/1.8.1.1"
+                "reference": "tags/1.8.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/imagify.1.8.1.1.zip",
+                "url": "https://downloads.wordpress.org/plugin/imagify.1.8.2.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -1018,15 +1018,15 @@
         },
         {
             "name": "wpackagist-plugin/the-events-calendar",
-            "version": "4.6.22.1",
+            "version": "4.6.23",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/the-events-calendar/",
-                "reference": "tags/4.6.22.1"
+                "reference": "tags/4.6.23"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/the-events-calendar.4.6.22.1.zip",
+                "url": "https://downloads.wordpress.org/plugin/the-events-calendar.4.6.23.zip",
                 "reference": null,
                 "shasum": null
             },
