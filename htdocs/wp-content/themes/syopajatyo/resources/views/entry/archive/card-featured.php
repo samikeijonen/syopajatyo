@@ -12,7 +12,7 @@
 		Syopajatyo\display_svg_img(
 			[
 				'icon'  => esc_attr( $data->page_slug ) . '-icon',
-				'class' => 'entry__icon',
+				'class' => 'entry__icon entry__icon--' . esc_attr( $data->page_slug ),
 				'alt'   => '',
 			]
 		);
