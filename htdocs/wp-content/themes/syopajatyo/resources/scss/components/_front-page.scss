@@ -15,13 +15,15 @@
 	}
 
 	&__title {
-		padding: $global-spacing-unit-1 * 6;
+		padding: $global-spacing-unit-1 * 4 0;
 
 		@media screen and (min-width: $breakpoint-1) {
 			background-image: url("/wp-content/themes/syopajatyo/dist/img/suttu1.svg");
 			background-position: center center;
 			background-repeat: no-repeat;
 			background-size: cover;
+			padding: $global-spacing-unit-1 * 6;
+
 		}
 	}
 }

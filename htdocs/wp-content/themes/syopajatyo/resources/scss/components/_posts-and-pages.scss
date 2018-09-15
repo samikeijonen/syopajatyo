@@ -91,6 +91,11 @@
 			text-transform: uppercase;
 		}
 	}
+
+	&__icon {
+		margin-bottom: $global-spacing-unit-1 * 2;
+		max-width: $global-spacing-unit-1 * 15;
+	}
 }
 
 .terms-wrapper {

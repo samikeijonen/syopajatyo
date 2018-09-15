@@ -84,7 +84,7 @@
 				<?php
 				while ( $syopajatyo_pages_content->have_posts() ) :
 					$syopajatyo_pages_content->the_post();
-					Hybrid\View\display( 'entry/archive', 'card', [ 'content' => 'ok' ] );
+					Hybrid\View\display( 'entry/archive', 'card-featured', [ 'page_slug' => get_post_field( 'post_name', get_the_ID() ) ] );
 				endwhile;
 				?>
 			</div>
