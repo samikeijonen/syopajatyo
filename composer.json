@@ -73,8 +73,8 @@
 
     "wpackagist-theme/twentyseventeen": "*",
 
-    "justintadlock/hybrid-core": "5.0.x-dev",
-    "justintadlock/hybrid-customize": "dev-master" 
+    "justintadlock/hybrid-core": "^5.0.0",
+    "justintadlock/hybrid-customize": "^1.0.0" 
   },
   "extra": {
     "installer-paths": {

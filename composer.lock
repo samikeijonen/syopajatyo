@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9945afe6578dc5fcab44871e411f4c14",
+    "content-hash": "df0d58165c6cb1c16794e935515078ab",
     "packages": [
         {
             "name": "composer/installers",
@@ -180,7 +180,7 @@
         },
         {
             "name": "justintadlock/hybrid-core",
-            "version": "5.0.x-dev",
+            "version": "5.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/justintadlock/hybrid-core.git",
@@ -225,20 +225,20 @@
         },
         {
             "name": "justintadlock/hybrid-customize",
-            "version": "dev-master",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/justintadlock/hybrid-customize.git",
-                "reference": "41425f7929d1e3d9a31473526f781069531890db"
+                "reference": "d5746b18b5b51628e8dc0ce2e03ad1f7e21e9ae3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/justintadlock/hybrid-customize/zipball/41425f7929d1e3d9a31473526f781069531890db",
-                "reference": "41425f7929d1e3d9a31473526f781069531890db",
+                "url": "https://api.github.com/repos/justintadlock/hybrid-customize/zipball/d5746b18b5b51628e8dc0ce2e03ad1f7e21e9ae3",
+                "reference": "d5746b18b5b51628e8dc0ce2e03ad1f7e21e9ae3",
                 "shasum": ""
             },
             "require": {
-                "justintadlock/hybrid-core": "5.0.x-dev",
+                "justintadlock/hybrid-core": "^5.0.0",
                 "php": ">=5.6"
             },
             "type": "library",
@@ -264,7 +264,7 @@
             "keywords": [
                 "wordpress"
             ],
-            "time": "2018-09-13T20:25:22+00:00"
+            "time": "2018-09-14T21:07:13+00:00"
         },
         {
             "name": "koodimonni-language/fi",
@@ -1080,10 +1080,7 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "justintadlock/hybrid-core": 20,
-        "justintadlock/hybrid-customize": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
