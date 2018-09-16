@@ -938,7 +938,7 @@
         },
         {
             "name": "wpackagist-plugin/autodescription",
-            "version": "3.0.6",
+            "version": "3.1.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/autodescription/",
@@ -946,7 +946,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/autodescription.zip?timestamp=1525625897",
+                "url": "https://downloads.wordpress.org/plugin/autodescription.zip?timestamp=1537015468",
                 "reference": null,
                 "shasum": null
             },
