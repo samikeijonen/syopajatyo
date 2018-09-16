@@ -26,12 +26,16 @@
 		grid-template-columns: repeat(4, 1fr);
 
 		&__logos,
-		&__credit {
-			grid-column: span 2;
-		}
-
+		&__credit,
 		&__info {
 			grid-column: span 4;
+		}
+
+		@media screen and (min-width: $breakpoint-small) {
+			&__logos,
+			&__credit {
+				grid-column: span 2;
+			}
 		}
 	}
 
