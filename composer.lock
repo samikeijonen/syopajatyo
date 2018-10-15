@@ -418,10 +418,10 @@
         },
         {
             "name": "koodimonni-plugin-language/woocommerce-fi",
-            "version": "3.4.5",
+            "version": "3.4.6",
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/translation/plugin/woocommerce/3.4.5/fi.zip",
+                "url": "https://downloads.wordpress.org/translation/plugin/woocommerce/3.4.6/fi.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -439,10 +439,10 @@
         },
         {
             "name": "koodimonni-plugin-language/woocommerce-sv_se",
-            "version": "3.4.5",
+            "version": "3.4.6",
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/translation/plugin/woocommerce/3.4.5/sv_SE.zip",
+                "url": "https://downloads.wordpress.org/translation/plugin/woocommerce/3.4.6/sv_SE.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -839,16 +839,16 @@
         },
         {
             "name": "seravo/seravo-plugin",
-            "version": "1.9.2",
+            "version": "1.9.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seravo/seravo-plugin.git",
-                "reference": "3558ab1a99b80812d567707e084f4919d26a27c2"
+                "reference": "f065e5122913a1cc3e201879aedb7851fee70d6b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seravo/seravo-plugin/zipball/3558ab1a99b80812d567707e084f4919d26a27c2",
-                "reference": "3558ab1a99b80812d567707e084f4919d26a27c2",
+                "url": "https://api.github.com/repos/Seravo/seravo-plugin/zipball/f065e5122913a1cc3e201879aedb7851fee70d6b",
+                "reference": "f065e5122913a1cc3e201879aedb7851fee70d6b",
                 "shasum": ""
             },
             "require": {
@@ -883,7 +883,7 @@
                 "wp",
                 "wp-palvelu"
             ],
-            "time": "2018-08-28T08:04:15+00:00"
+            "time": "2018-10-08T07:53:33+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
@@ -938,15 +938,15 @@
         },
         {
             "name": "wpackagist-plugin/autodescription",
-            "version": "3.1.1",
+            "version": "3.1.4",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/autodescription/",
-                "reference": "trunk"
+                "reference": "tags/3.1.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/autodescription.zip?timestamp=1537015468",
+                "url": "https://downloads.wordpress.org/plugin/autodescription.3.1.4.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -978,15 +978,15 @@
         },
         {
             "name": "wpackagist-plugin/gutenberg",
-            "version": "3.8.0",
+            "version": "3.9.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/gutenberg/",
-                "reference": "tags/3.8.0"
+                "reference": "tags/3.9.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/gutenberg.3.8.0.zip",
+                "url": "https://downloads.wordpress.org/plugin/gutenberg.3.9.0.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -1018,15 +1018,15 @@
         },
         {
             "name": "wpackagist-plugin/the-events-calendar",
-            "version": "4.6.23",
+            "version": "4.6.24.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/the-events-calendar/",
-                "reference": "tags/4.6.23"
+                "reference": "tags/4.6.24.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/the-events-calendar.4.6.23.zip",
+                "url": "https://downloads.wordpress.org/plugin/the-events-calendar.4.6.24.1.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -1038,15 +1038,15 @@
         },
         {
             "name": "wpackagist-plugin/wp-libre-form",
-            "version": "1.4.3",
+            "version": "1.5.0.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wp-libre-form/",
-                "reference": "tags/1.4.3"
+                "reference": "tags/1.5.0.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wp-libre-form.1.4.3.zip",
+                "url": "https://downloads.wordpress.org/plugin/wp-libre-form.1.5.0.1.zip",
                 "reference": null,
                 "shasum": null
             },
