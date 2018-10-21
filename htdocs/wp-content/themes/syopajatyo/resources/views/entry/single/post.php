@@ -11,6 +11,11 @@
 		<?php Hybrid\View\display( 'partials', 'byline', [ 'class' => 'pb-2' ] ); ?>
 	</header>
 
+	<?php
+		Syopajatyo\post_thumbnail();
+		Syopajatyo\display_excerpt();
+	?>
+
 	<div class="entry__content">
 		<?php
 		the_content();

@@ -182,7 +182,7 @@ add_filter( 'excerpt_more', __NAMESPACE__ . '\excerpt_more' );
 function get_the_excerpt( $excerpt ) {
 	$link = '';
 
-	if ( has_excerpt() && ( ! is_page() || is_front_page() ) ) {
+	if ( has_excerpt() && ( ! is_singular() || is_front_page() ) ) {
 		$link = more_link();
 	}
 
