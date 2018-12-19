@@ -66,7 +66,6 @@
 
     "wpackagist-plugin/wp-libre-form": "*",
     "wpackagist-plugin/the-events-calendar": "*",
-    "wpackagist-plugin/gutenberg": "*",
     "wpackagist-plugin/imagify": "*",
     "wpackagist-plugin/autodescription": "*",
     "wpackagist-plugin/google-analytics-dashboard-for-wp": "*",
