@@ -18,7 +18,7 @@
 @import "tools/font-size";
 
 // Editor styles.
-.edit-post-visual-editor {
+.editor-styles-wrapper {
 
 	/*--------------------------------------------------------------
 	# Elements - Unclassed HTML elements (type selectors).
@@ -67,12 +67,11 @@
 		}
 	}
 
-	.editor-block-list__block,
-	.editor-default-block-appender {
+	.wp-block {
 		max-width: $max-width-2;
 	}
 
-	.editor-rich-text__tinymce.mce-content-body:not(.wp-block-cover-image-text):not(.wp-block-subhead):not(h2):not(h3) {
+	.editor-rich-text__tinymce:not(.wp-block-cover-text):not(.wp-block-subhead):not(h2):not(h3) {
 		line-height: $global-line-height;
 	}
 
