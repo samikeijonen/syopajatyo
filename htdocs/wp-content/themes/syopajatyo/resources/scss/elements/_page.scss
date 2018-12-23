@@ -1,15 +1,10 @@
-html {
-	@include typography;
-}
-
+body,
 button,
 input,
 optgroup,
 select,
 textarea {
-	font-family: inherit;
-	font-size: inherit;
-	line-height: inherit;
+	@include typography;
 }
 
 // Fallback for when there is no custom background color defined.
