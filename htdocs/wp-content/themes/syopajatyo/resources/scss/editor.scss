@@ -70,10 +70,12 @@
 		}
 	}
 
+	/* Main column width. */
 	.wp-block {
 		max-width: $max-width-2;
 	}
 
+	/* For now we need this for overwriting Core line-height. */
 	.editor-rich-text__tinymce:not(.wp-block-cover-text):not(.wp-block-subhead):not(h2):not(h3) {
 		line-height: $global-line-height;
 	}
