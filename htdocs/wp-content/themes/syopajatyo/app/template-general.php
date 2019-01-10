@@ -219,6 +219,11 @@ function sub_pages_navigation() {
 		setup_postdata( $post );
 	}
 
+	// Bail if we can't count $post->ancestors.
+	if ( ! is_countable( $post->ancestors ) ) {
+		return;
+	}
+
 	$hierarchy_pos = count( $post->ancestors );
 
 	if ( $hierarchy_pos > 3 ) {
