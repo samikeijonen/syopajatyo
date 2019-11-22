@@ -54,13 +54,13 @@
   "require": {
     "php": ">=5.6",
     "johnpbloch/wordpress-core-installer": "^0.2.1",
-    "johnpbloch/wordpress-core": "^5.0.3",
+    "johnpbloch/wordpress-core": "^5.3.0",
     "composer/installers": "v1.0.12",
     "koodimonni/composer-dropin-installer": ">=0.2.4",
     "vlucas/phpdotenv": "1.0.9",
 
     "koodimonni-language/fi": "^5.0",
-    "koodimonni-language/sv_SE": "*",
+    "koodimonni-language/sv_se": "*",
 
     "seravo/seravo-plugin": ">=1.4.0",
 
@@ -72,7 +72,7 @@
 
     "wpackagist-theme/twentyseventeen": "*",
 
-    "justintadlock/hybrid-core": "^5.0.1",
+    "justintadlock/hybrid-core": "^5.2.0",
     "justintadlock/hybrid-customize": "^1.0.0" 
   },
   "extra": {
