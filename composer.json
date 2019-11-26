@@ -64,7 +64,6 @@
 
     "seravo/seravo-plugin": ">=1.4.0",
 
-    "wpackagist-plugin/wp-libre-form": "*",
     "wpackagist-plugin/the-events-calendar": "*",
     "wpackagist-plugin/imagify": "*",
     "wpackagist-plugin/autodescription": "*",
@@ -73,7 +72,8 @@
     "wpackagist-theme/twentyseventeen": "*",
 
     "justintadlock/hybrid-core": "^5.2.0",
-    "justintadlock/hybrid-customize": "^1.0.0" 
+    "justintadlock/hybrid-customize": "^1.0.0",
+    "anttiviljami/wp-libre-form": "dev-master" 
   },
   "extra": {
     "installer-paths": {
