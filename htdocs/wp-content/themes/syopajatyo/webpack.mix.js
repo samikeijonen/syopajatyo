@@ -61,9 +61,12 @@ mix.js( `${devPath}/js/app.js`, 'js' )
 
 // Sass configuration.
 var sassConfig = {
-	outputStyle: 'expanded',
-	indentType: 'tab',
-	indentWidth: 1
+	implementation: require( 'sass' ),
+	sassOptions: {
+		outputStyle: 'expanded',
+		indentType: 'tab',
+		indentWidth: 1
+	}
 };
 
 // Compile SASS/CSS.
