@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c0e9dfad681d0f378619252ab2dc849d",
+    "content-hash": "791f471db8f881e24c5ebe722b0a6132",
     "packages": [
         {
             "name": "anttiviljami/wp-libre-form",
@@ -872,6 +872,40 @@
             ],
             "description": "Install packages or a few files from packages into custom paths without overwriting existing stuff.",
             "time": "2018-02-04T10:52:01+00:00"
+        },
+        {
+            "name": "samikeijonen/wplf-block",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/samikeijonen/wplf-block.git",
+                "reference": "2302d82fcbc01802c0455bf919dccdfea3eaeab2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/samikeijonen/wplf-block/zipball/2302d82fcbc01802c0455bf919dccdfea3eaeab2",
+                "reference": "2302d82fcbc01802c0455bf919dccdfea3eaeab2",
+                "shasum": ""
+            },
+            "type": "wordpress-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sami Keijonen",
+                    "email": "sami.keijonen@foxnet.fi"
+                }
+            ],
+            "description": "WP Libre Form Block",
+            "homepage": "https://github.com/samikeijonen/wplf-block",
+            "keywords": [
+                "block",
+                "form",
+                "wordpress"
+            ],
+            "time": "2019-11-25T20:10:49+00:00"
         },
         {
             "name": "seravo/seravo-plugin",

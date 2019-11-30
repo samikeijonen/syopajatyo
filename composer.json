@@ -73,7 +73,8 @@
 
     "justintadlock/hybrid-core": "^5.2.0",
     "justintadlock/hybrid-customize": "^1.0.0",
-    "anttiviljami/wp-libre-form": "dev-master" 
+    "anttiviljami/wp-libre-form": "dev-master",
+    "samikeijonen/wplf-block": "^1.0" 
   },
   "extra": {
     "installer-paths": {
