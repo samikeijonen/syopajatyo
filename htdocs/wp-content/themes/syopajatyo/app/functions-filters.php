@@ -223,3 +223,25 @@ add_filter( 'get_search_form', function( $form ) {
 
 	return $form;
 }, 0 );
+
+/**
+ * Prevent automatic optimization for PDF.
+ *
+ * @author Grégory Viguier
+ * @author Caspar Hübinger
+ *
+ * @param  bool  $optimize      True to optimize, false otherwise.
+ * @param  int   $attachment_id Attachment ID.
+ * @param  array $metadata      An array of attachment meta data.
+ * @return bool
+ */
+function no_optimize_pdf( $optimize, $attachment_id, $metadata ) {
+	if ( ! $optimize ) {
+		return false;
+	}
+
+	$mime_type = get_post_mime_type( $attachment_id );
+
+	return 'application/pdf' !== $mime_type;
+}
+add_filter( 'imagify_auto_optimize_attachment', __NAMESPACE__ . '\no_optimize_pdf', 10, 3 );
