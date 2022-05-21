@@ -36,8 +36,6 @@
 
 				<ul class="reset-list pb-4">
 					<li class="fw-600 uppercase">Suomen Syöpäpotilaat ry</li>
-					<li>Malminkaari 5</li>
-					<li>00700 Helsinki</li>
 					<li>Email: info@syopapotilaat.fi</li>
 					<li><a href="https://www.syopapotilaat.fi/">www.syopapotilaat.fi</a></li>
 				</ul>
@@ -51,8 +49,7 @@
 			</div>
 
 			<div class="grid-footer__item grid-footer__info">
-				<img class="partner-logo partner-logo--toimintakyky mb-4" src="<?php echo esc_url( get_parent_theme_file_uri( '/dist/img/toimintakyky_kuntoon.png' ) ); ?>" alt="<?php esc_html_e( 'Toimintakyky kuntoon', 'syopajatyo' ); ?>">
-				<img class="partner-logo partner-logo--veikkaus mb-4" src="<?php echo esc_url( get_parent_theme_file_uri( '/dist/img/tuettu_veikkauksen_tuotoilla.png' ) ); ?>" alt="<?php esc_html_e( 'Tuettu veikkauksen voitoilla', 'syopajatyo' ); ?>">
+				<img width="600" height="600" class="partner-logo partner-logo--veikkaus mb-4" src="<?php echo esc_url( get_parent_theme_file_uri( '/dist/img/tuettu_veikkauksen_tuotoilla.png' ) ); ?>" alt="<?php esc_html_e( 'Tuettu veikkauksen voitoilla', 'syopajatyo' ); ?>">
 			</div>
 		</div>
 
@@ -62,7 +59,7 @@
 			<li>Toteutus: <a class="decoration-none" href="https://kumucommunications.fi/">Kumu Communications</a></li>
 		</ul>
 
-		<p class="text-center mb-0">iStock.com/spukkato, CC0 Pexels/Pixabay, Canva ja Suomen Syöpäpotilaat ry</p>
+		<p class="text-center mb-0">Kuvat: iStock.com/spukkato, CC0 Pexels/Pixabay, Canva ja Suomen Syöpäpotilaat ry</p>
 	</footer>
 
 </div><!-- .app -->
