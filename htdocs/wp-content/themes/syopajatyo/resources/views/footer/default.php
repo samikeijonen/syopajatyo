@@ -36,7 +36,7 @@
 
 				<ul class="reset-list pb-4">
 					<li class="fw-600 uppercase">Suomen Syöpäpotilaat ry</li>
-					<li>Email: info@syopapotilaat.fi</li>
+					<li class="mb-2">Email: info@syopapotilaat.fi</li>
 					<li><a href="https://www.syopapotilaat.fi/">www.syopapotilaat.fi</a></li>
 				</ul>
 
