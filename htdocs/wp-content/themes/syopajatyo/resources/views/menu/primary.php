@@ -8,19 +8,6 @@
 if ( ! has_nav_menu( $args['name'] ) ) :
 	return;
 endif;
-
-$syopajatyo_social_links = wp_nav_menu(
-	[
-		'theme_location' => 'social',
-		'container'      => '',
-		'depth'          => 1,
-		'link_before'    => '<span class="screen-reader-text">',
-		'link_after'     => '</span>' . Syopajatyo\get_svg( array( 'icon' => 'chain' ) ),
-		'items_wrap'     => '%3$s',
-		'fallback_cb'    => '',
-		'echo'           => false,
-	]
-);
 ?>
 
 <nav class="menu menu--<?= esc_attr( $args['name'] ) ?> px-2" id="js-menu--<?= esc_attr( $args['name'] ) ?>" aria-label="<?= esc_attr( $args['label'] ) ?>">
