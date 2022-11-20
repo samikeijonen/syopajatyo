@@ -8,11 +8,7 @@
  * Navigation.
  */
 function siteNav() {
-	const test = document.querySelector('.app');
-	console.log(test);
-
 	const container = document.querySelector('.menu--primary');
-	console.log(container);
 
 	// Bail if there is no menu.
 	if (!container) {
