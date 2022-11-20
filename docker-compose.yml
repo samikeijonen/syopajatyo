@@ -26,9 +26,9 @@ services:
     hostname: ${SITE:-wordpress}
     image: seravo/wordpress:development
     ports:
-    - 80
-    - 443
-    - 22
+    - 80:80
+    - 443:443
+    - 22:22
     - 3306
     - 1337
     - 1338
