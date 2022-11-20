@@ -1,10 +1,27 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
+# VAGRANTFILE 2022-08-08
+
 require 'yaml'
 require 'mkmf'
 require 'fileutils'
 require 'socket'
+
+if Vagrant.has_plugin? 'vagrant-hostsupdater'
+  puts ''
+  puts 'Your Vagrant environment seems to be from an older version of Seravo Vagrant box.'
+  puts 'To use the latest Seravo Vagrant box, take the following steps to clean up the old one:'
+  puts ''
+  puts '- Remove plugin "vagrant-hostsupdater", it\'s no longer supported:'
+  puts '    * `vagrant plugin uninstall vagrant-hostsupdater`'
+  puts '    * `vagrant plugin --local uninstall vagrant-hostsupdater`'
+  puts ''
+  puts '- Also be sure to destroy any old machines. You can view the existing machines:'
+  puts '    * `vagrant status`'
+  puts '    * `vagrant global-status`'
+  exit 1
+end
 
 # Prevent logs from mkmf
 module MakeMakefile::Logging
@@ -33,52 +50,26 @@ site_config = YAML.load_file(config_file)
 # Create private ip address in file
 private_ip_file = File.join(DIR,'.vagrant','private.ip')
 
-unless File.exists?(private_ip_file)
-  private_ip = "192.168.#{rand(255)}.#{rand(2..255)}"
-  File.write(private_ip_file, private_ip)
-else
+private_ip = nil
+if File.exists?(private_ip_file)
   private_ip = File.open(private_ip_file, 'rb') { |file| file.read }
 end
 
-# Multiple public_network mappings need at least 1.7.4
-Vagrant.require_version '>= 1.7.4'
-
-# Try to use the vagrant-triggers plugin when using a vagrant version below 2.1.0 or
-# if the user has self chosen to do so by setting the VAGRANT_USE_VAGRANT_TRIGGERS
-# environment variable.
-use_triggers_plugin = false
-triggers_plugin_installed = Vagrant.has_plugin? 'vagrant-triggers'
-if Gem::Version.new(Vagrant::VERSION) >= Gem::Version.new('2.1.0')
-  # Vagrant core triggers are available, but the user can also opt-in to
-  # use the plugin if it is installed
-  if triggers_plugin_installed
-    use_triggers_plugin = true
-    if ENV['VAGRANT_USE_VAGRANT_TRIGGERS'].nil?
-      # Exit here because starting Vagrant will not work if VAGRANT_USE_VAGRANT_TRIGGERS is
-      # not defined but at the same time the vagrant-triggers plugin is installed.
-      STDERR.puts 'ERROR: can not use the Vagrant trigger functionality'
-      STDERR.puts 'Please uninstall the vagrant-triggers plugin to fix the problem:'
-      STDERR.puts '$ vagrant plugin uninstall vagrant-triggers'
-      exit 1
-    end
-  end
-else
-  # No choice but to use the plugin, but we need to ensure that it is installed
-  use_triggers_plugin = true
-  if !triggers_plugin_installed
-    STDERR.puts 'ERROR: can not use the Vagrant trigger functionality'
-    STDERR.puts 'Please update Vagrant to version 2.1.0 or newer to fix the problem'
-    exit 1
-  end
+if private_ip.nil? || !private_ip.start_with?('192.168.56.')
+  private_ip = "192.168.56.#{rand(2..254)}"
+  File.write(private_ip_file, private_ip)
 end
 
+Vagrant.require_version '>= 2.2.0'
+
 Vagrant.configure('2') do |config|
+  config.vagrant.plugins = ['vagrant-goodhosts']
 
   # Use host-machine ssh-key so we can log into production
   config.ssh.forward_agent = true
 
   # Minimum box version requirement for this Vagrantfile revision
-  config.vm.box_version = ">= 20190513.0.0"
+  config.vm.box_version = ">= 20220800.0.0"
 
   # Use precompiled box
   config.vm.box = 'seravo/wordpress'
@@ -92,6 +83,8 @@ Vagrant.configure('2') do |config|
   if site_config['development']['avahi'] && has_internet? and is_osx?
     # The box uses avahi-daemon to make itself available to local network
     config.vm.network "public_network", bridge: [
+      "en0: Wi-Fi (Wireless)",
+      "en1: Wi-Fi (Wireless)",
       "en0: Wi-Fi (AirPort)",
       "en1: Wi-Fi (AirPort)",
       "wlan0"
@@ -104,17 +97,9 @@ Vagrant.configure('2') do |config|
 
   config.vm.define "#{site_config['name']}-box"
 
-  if Vagrant.has_plugin? 'vagrant-hostsupdater'
-    # Remove hosts when suspending too
-    config.hostsupdater.remove_on_suspend = true
-
-    domains = get_domains(site_config)
-    config.hostsupdater.aliases = domains - [config.vm.hostname]
-  else
-    puts 'vagrant-hostsupdater missing, please install the plugin:'
-    puts 'vagrant plugin install vagrant-hostsupdater'
-    exit 1
-  end
+  domains = get_domains(site_config)
+  config.goodhosts.remove_on_suspend = true
+  config.goodhosts.aliases = domains - [config.vm.hostname]
 
   # Disable default vagrant share
   config.vm.synced_folder ".", "/vagrant", disabled: true
@@ -136,79 +121,41 @@ Vagrant.configure('2') do |config|
     config.vm.provision :shell, :inline => "echo '#{id_rsa_ssh_key_pub }' >> /home/vagrant/.ssh/authorized_keys && chmod 600 /home/vagrant/.ssh/authorized_keys"
   end
 
-  if use_triggers_plugin
-    vagrant_triggers_plugin_triggers(config, site_config)
-  else
-    vagrant_triggers(config, site_config)
-  end
+  vagrant_triggers(config, site_config)
 
   config.vm.provider 'virtualbox' do |vb|
-    # Give VM access to all cpu cores on the host
-    cpus = case RbConfig::CONFIG['host_os']
-      when /darwin/ then `sysctl -n hw.physicalcpu`.to_i
-      when /linux/ then `nproc`.to_i
-      else 2
-    end
-
-    # Customize memory in MB
-    vb.customize ['modifyvm', :id, '--memory', 1536]
-    vb.customize ['modifyvm', :id, '--cpus', cpus]
+    vb.memory = 1536
+    vb.cpus = 2
 
     # Fix for slow external network connections
     vb.customize ['modifyvm', :id, '--natdnshostresolver1', 'on']
     vb.customize ['modifyvm', :id, '--natdnsproxy1', 'on']
+    vb.customize ['modifyvm', :id, '--uartmode1', 'file', File::NULL]
   end
-
 end
 
 ##
-# Run Vagrant triggers using the vagrant core trigger feature
+# Run native Vagrant triggers
+# https://www.vagrantup.com/docs/triggers/usage
 ##
 def vagrant_triggers(vagrant_config, site_config)
   vagrant_config.trigger.after :up do |trigger|
     trigger.ruby do |env, machine|
-      #Run all system commands inside project root
+
+      # Run all system commands inside project root
       Dir.chdir(DIR)
 
-      # Install packages with Composer
-      # run it locally if possible
-      if find_executable 'composer' and system "composer validate &>/dev/null"
-        system "composer install"
-      else # run in vagrant
-        run_command("composer install --working-dir=/data/wordpress", machine)
-      end
+      # Always wait a couple of seconds before running triggers so that the
+      # machine internals have time to bootstrap
+      sleep 3
 
-      # Sync plugin files from production is so configured to do
-      if site_config['production'] != nil && site_config['production']['ssh_port'] != nil and site_config['development']['pull_production_plugins'] == 'always'
-        run_command("wp-pull-production-plugins", machine)
-      end
-
-      # Sync theme files from production is so configured to do
-      if site_config['production'] != nil && site_config['production']['ssh_port'] != nil and site_config['development']['pull_production_themes'] == 'always'
-        run_command("wp-pull-production-themes", machine)
-      end
-
-      # Database imports
-      if site_config['production'] != nil && site_config['production']['ssh_port'] != nil && site_config['development']['pull_production_db'] != 'never' && (site_config['development']['pull_production_db'] == 'always' or confirm("Pull database from production?", false))
-        # Seravo customers are asked if they want to pull the production database here
-
-        # Install WordPress with defaults first so the database is not empty. Will automatically skip if WP was already installed.
-        run_command("wp core install --url=https://#{site_config['name']}.local --title=#{site_config['name'].capitalize}\
-          --admin_email=vagrant@#{site_config['name']}.local --admin_user=vagrant --admin_password=vagrant", machine)
-        # Pull production DB
-        run_command("wp-pull-production-db", machine)
-      elsif File.exists?(File.join(DIR,'.vagrant','shutdown-dump.sql'))
-        # Return the state where we last left if WordPress isn't currently installed
-        # First part in the command prevents overriding existing database
-        run_command("wp core is-installed --quiet &>/dev/null || wp-vagrant-import-db", machine)
-      elsif File.exists?(File.join(DIR,'vagrant-base.sql'))
-        run_command("wp db import /data/wordpress/vagrant-base.sql", machine)
-      else
-        # If nothing else was specified just install basic WordPress
-        run_command("wp core install --url=https://#{site_config['name']}.local --title=#{site_config['name'].capitalize}\
-          --admin_email=vagrant@#{site_config['name']}.local --admin_user=vagrant --admin_password=vagrant", machine)
-        notice "Installed default WordPress with user:vagrant password:vagrant"
-      end
+      # Since neither communicate.sudo nor trigger.run_remote supports interactive
+      # mode (on other than some special Windows admin mode), call out to system
+      # to call back to Vagrant as a hacky way to get interactive mode, and thus
+      # wp-development-up can ask the various "pull x, y and z" questions.
+      # https://www.rubydoc.info/github/mitchellh/vagrant/Vagrant/Plugin/V2/Communicator#execute-instance_method
+      # https://www.vagrantup.com/docs/provisioning/shell
+      system "vagrant ssh -c wp-development-up"
 
       # Don't activate git hooks, just notify them
       if File.exists?( File.join(DIR,'.git', 'hooks', 'pre-commit') )
@@ -232,12 +179,6 @@ def vagrant_triggers(vagrant_config, site_config)
         # Do linux specific things
       end
 
-      # Attempt to use the asset proxy for production url defined in config.yml
-      run_command("wp-use-asset-proxy", machine)
-
-      # Restart nginx because the file system might not have been ready when the certificate was created
-      run_command("wp-restart-nginx", machine)
-
       # Run 'vagrant up' customizer script if it exists
       if File.exist?(File.join(DIR, 'vagrant-up-customizer.sh'))
         notice 'Found vagrant-up-customizer.sh and running it ...'
@@ -245,18 +186,15 @@ def vagrant_triggers(vagrant_config, site_config)
         system 'sh ./vagrant-up-customizer.sh'
       end
 
-      puts "\n"
-      notice "Documentation available at https://seravo.com/docs/"
-      notice "Visit your site: https://#{site_config['name']}.local"
     end
   end
 
   vagrant_config.trigger.before [:halt, :destroy] do |trigger|
-    trigger.info = "Dump WordPress database into: .vagrant/shutdown-dump.sql"
     trigger.ruby do |env, machine|
       # dump database when closing vagrant
       if vagrant_running?
         begin
+          # Note! This will run as root
           run_command("wp-vagrant-dump-db", machine)
         rescue => e
           notice "Couldn't dump database. Skipping..."
@@ -288,111 +226,6 @@ def run_command(cmd, machine)
 end
 
 ##
-# Run Vagrant triggers in a vagrant-triggers plugin compatible format
-##
-def vagrant_triggers_plugin_triggers(vagrant_config, site_config)
-  # Some useful triggers for better workflow
-  vagrant_config.trigger.after :up do
-    #Run all system commands inside project root
-    Dir.chdir(DIR)
-
-    # Install packages with Composer
-    # run it locally if possible
-    if find_executable 'composer' and system "composer validate &>/dev/null"
-      system "composer install"
-    else # run in vagrant
-      run_remote "composer install --working-dir=/data/wordpress"
-    end
-
-    # Sync plugin files from production is so configured to do
-    if site_config['production'] != nil && site_config['production']['ssh_port'] != nil and site_config['development']['pull_production_plugins'] == 'always'
-      run_remote "wp-pull-production-plugins"
-    end
-
-    # Sync theme files from production is so configured to do
-    if site_config['production'] != nil && site_config['production']['ssh_port'] != nil and site_config['development']['pull_production_themes'] == 'always'
-      run_remote "wp-pull-production-themes"
-    end
-
-    # Database imports
-    if site_config['production'] != nil && site_config['production']['ssh_port'] != nil && site_config['development']['pull_production_db'] != 'never' && (site_config['development']['pull_production_db'] == 'always' or confirm("Pull database from production?", false))
-      # Seravo customers are asked if they want to pull the production database here
-
-      # Install WordPress with defaults first so the database is not empty. Will automatically skip if WP was already installed.
-      run_remote("wp core install --url=https://#{site_config['name']}.local --title=#{site_config['name'].capitalize}\
-        --admin_email=vagrant@#{site_config['name']}.local --admin_user=vagrant --admin_password=vagrant")
-      # Pull production DB
-      run_remote "wp-pull-production-db"
-    elsif File.exists?(File.join(DIR,'.vagrant','shutdown-dump.sql'))
-      # Return the state where we last left if WordPress isn't currently installed
-      # First part in the command prevents overriding existing database
-      run_remote "wp core is-installed --quiet &>/dev/null || wp-vagrant-import-db"
-    elsif File.exists?(File.join(DIR,'vagrant-base.sql'))
-      run_remote "wp db import /data/wordpress/vagrant-base.sql"
-    else
-      # If nothing else was specified just install basic WordPress
-      run_remote("wp core install --url=https://#{site_config['name']}.local --title=#{site_config['name'].capitalize}\
-        --admin_email=vagrant@#{site_config['name']}.local --admin_user=vagrant --admin_password=vagrant")
-      notice "Installed default WordPress with user:vagrant password:vagrant"
-    end
-
-    # Init git if it doesn't exist
-    if not File.exists?( File.join(DIR,".git") ) and confirm "There's no git repository. Should we create one?"
-      system "git init ."
-    end
-
-    # Don't activate git hooks, just notify them
-    if File.exists?( File.join(DIR,'.git', 'hooks', 'pre-commit') )
-      puts "If you want to use a git pre-commit hook please run 'wp-activate-git-hooks' inside the Vagrant box."
-    end
-
-    case RbConfig::CONFIG['host_os']
-    when /darwin/
-      # Do OS X specific things
-
-      # Trust the self-signed cert in keychain
-      ssl_cert_path = File.join(DIR,'.vagrant','ssl')
-      unless File.exists?(File.join(ssl_cert_path,'trust.lock'))
-        if File.exists?(File.join(ssl_cert_path,'development.crt')) and confirm "Trust the generated ssl-certificate in OS-X keychain?"
-          system "sudo security add-trusted-cert -d -r trustRoot -k '/Library/Keychains/System.keychain' '#{ssl_cert_path}/development.crt'"
-          # Write lock file so we can remove it too
-          touch_file File.join(ssl_cert_path,'trust.lock')
-        end
-      end
-    when /linux/
-      # Do linux specific things
-    end
-
-    # Attempt to use the asset proxy for production url defined in config.yml
-    run_remote "wp-use-asset-proxy"
-
-    # Restart nginx because the file system might not have been ready when the certificate was created
-    run_remote "wp-restart-nginx"
-
-    # Run 'vagrant up' customizer script if it exists
-    if File.exist?(File.join(DIR, 'vagrant-up-customizer.sh'))
-      notice 'Found vagrant-up-customizer.sh and running it ...'
-      Dir.chdir(DIR)
-      system 'sh ./vagrant-up-customizer.sh'
-    end
-
-    puts "\n"
-    notice "Documentation available at https://seravo.com/docs/"
-    notice "Visit your site: https://#{site_config['name']}.local"
-  end
-
-  vagrant_config.trigger.before :halt do
-    # dump database when closing vagrant
-    dump_wordpress_database
-  end
-
-  vagrant_config.trigger.before :destroy do
-    # dump database when closing vagrant
-    dump_wordpress_database
-  end
-end
-
-##
 # Custom helpers
 ##
 def notice(text)
@@ -405,7 +238,6 @@ end
 def dump_wordpress_database
   if vagrant_running?
     begin
-      notice "dumping the database into: .vagrant/shutdown-dump.sql"
       run_remote "wp-vagrant-dump-db"
     rescue => e
       notice "Couldn't dump database. Skipping..."

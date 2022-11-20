@@ -1,0 +1,46 @@
+# Docker Compose for Seravo WordPress project template
+#
+# Start:
+#   echo "SITE=wordpress" > .env
+#   docker-compose up
+#
+# Access:
+#   ssh wordpress.local -F .vagrant/ssh/config
+#
+# Clean up:
+#   docker-compose down -v --remove-orphans
+#   rm -rf .vagrant
+#
+# If container is not visible on your network, expose it with port
+# bindings like:
+#   - 80:80
+#   - 443:443
+#   - 22:22
+# ...
+#
+version: '3'
+
+services:
+  wordpress:
+    container_name: ${SITE:-wordpress}
+    hostname: ${SITE:-wordpress}
+    image: seravo/wordpress:development
+    ports:
+    - 80
+    - 443
+    - 22
+    - 3306
+    - 1337
+    - 1338
+    - 8080
+    - 9000
+    volumes:
+    - wordpress:/data
+    - .:/data/wordpress
+    environment:
+    - WP_USER_UID=${WP_USER_UID:-1000}
+    - DEBUG=${DEBUG}
+    entrypoint: /sbin/swd_init
+
+volumes:
+  wordpress:

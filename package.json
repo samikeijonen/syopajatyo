@@ -43,9 +43,8 @@
     "npm": ">=2.1.5"
   },
   "devDependencies": {
-    "@wordpress/browserslist-config": "^2.2.2",
-    "browser-sync": "^2.7.1",
-    "gulp": "^3.8.11",
-    "gulp-sass": "^2.0.0"
+    "browser-sync": "^2.26.7",
+    "gulp": "^4.0.2",
+    "gulp-sass": "^4.0.2"
   }
 }
