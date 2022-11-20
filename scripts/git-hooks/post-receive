@@ -5,6 +5,9 @@
 # actions when doing a 'git push production'.
 #
 # $ cd .git/hooks; ln -s ../../scripts/git-hooks/post-receive .
+#
+# To also trigger on `git pull` define `post-merge` as well:
+# $ ln -s ../../scripts/git-hooks/post-receive post-merge
 ##
 
 # This file prepends output with "Seravo:" so that people running 'git push'
@@ -16,43 +19,70 @@ echo "Seravo: running post-receive git hook"
 # This script can be called from any path so it's good to be in the correct location.
 # This can also be called in .git/hooks dir and we need to get into project root.
 ##
-cd "$( dirname "${BASH_SOURCE[0]}" )"/../..
+cd "$( dirname "${BASH_SOURCE[0]}" )"/../.. || exit
 
-# Hack: Somehow this script won't understand that git is in current directory
+# When GIT_DIR is defined, git uses it instead of PWD.
+# The git dir needs to be defined as the 'cd' is not enough.
+# shellcheck disable=SC2034
 GIT_DIR="$(pwd)/.git"
 
-# Loop through all changed files, only take pushes to master into consideration.
-# If you use some other branch for production, change "refs/heads/master" to
-# something else like "refs/heads/yourbranch".
-changed_files=""
-while read oldrev newrev refname; do
-  if [ "$refname" = "refs/heads/master" ]; then
-    changed_files=$(git diff-tree --name-only -r $oldrev $newrev)
-  fi
-done
+# Check if something was piped to this script, which typically happens when the
+# git hook is triggered. If not, then just run hook on HEAD.
+if [ -t 0 ]
+then
+  echo "*** Seems the stdin is empty, executing git hook as if all files changed ***"
+  changed_files=$(find -- *)
+else
+  # Loop through all changed files, only take pushes to master into consideration.
+  # If you use some other branch for production, change "refs/heads/master" to
+  # something else like "refs/heads/yourbranch".
+  changed_files=""
+  while read -r oldrev newrev refname
+  do
+    echo "Branch: $refname"
+    echo "Previous commit: $oldrev"
+    echo "New commit: $newrev"
+    if [ "$refname" = "refs/heads/master" ]
+    then
+      changed_files=$(git diff-tree --name-only -r "$oldrev" "$newrev")
+    fi
+  done
+fi
 
 # Check files which have triggers
 COMPOSER_CHANGED=false
 NGINX_CHANGED=false
+SCSS_CHANGED=false
 while read -r line; do
-    if [ "$line" = "composer.json" ] || [ "$line" = "composer.lock" ]; then
+    if [ "$line" = "composer.json" ] || [ "$line" = "composer.lock" ]
+    then
       COMPOSER_CHANGED=true
-    elif [ "$line" = "nginx/*.conf" ]; then
+    elif [ "$line" = "nginx/*.conf" ]
+    then
       NGINX_CHANGED=true
+    elif [[ "$line" =~ \.scss ]]
+    then
+      SCSS_CHANGED=true
     fi
 done <<< "$changed_files"
 
 # Do stuff with the triggers
-if $COMPOSER_CHANGED; then
+if $COMPOSER_CHANGED
+then
   echo "Seravo: composer.json was updated, installing..."
   composer install --no-dev
 fi
 
-if $NGINX_CHANGED; then
+if $NGINX_CHANGED
+then
   echo "Seravo: Nginx configs were changed, reloading nginx..."
   wp-restart-nginx
 fi
 
+if $SCSS_CHANGED; then
+  echo "Seravo: SASS files changed, running Gulp..."
+  gulp
+fi
 
 # If there is a Tideways key set, use it to trigger a release event
 if [ -f /data/wordpress/.tideways.key ] && [ ! -z "$(cat /data/wordpress/.tideways.key)" ]
@@ -63,13 +93,17 @@ then
   COMMIT_ID=$(git log -n 1 --oneline | cut -d ' ' -f 1)
 
   PAYLOAD='{"apiKey": "'$APIKEY'", "name": "'$COMMIT_ID'", "type": "release", "environment": "'$WP_ENV'", "service": "web", "compareAfterMinutes":90}'
-  echo $PAYLOAD
+  echo "$PAYLOAD"
 
-  TIDEWAYS_API_RESULT=$(curl -d "$PAYLOAD"  -X POST https://app.tideways.io/api/events)
-  if echo $TIDEWAYS_API_RESULT | grep '"ok":true'
+  TIDEWAYS_API_RESULT=$(curl --silent -d "$PAYLOAD"  -X POST https://app.tideways.io/api/events)
+  if echo "$TIDEWAYS_API_RESULT" | grep --quiet '"ok":true'
   then
     echo "==> Tideways event registered successfully!"
   else
-    echo "==> Tideways event registeration failed!"
+    echo "==> Tideways event registration failed!"
   fi
 fi
+
+# On every git push, always flush caches so the server will serve fresh contents
+echo "Seravo: Flushing all caches..."
+/usr/local/bin/wp-purge-cache

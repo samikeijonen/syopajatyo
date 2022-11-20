@@ -1,3 +1,7 @@
+# Lock files are not relevant in WordPress as there is little versioning options anyway
+composer.lock
+package-lock.json
+
 # WordPress core is installed by Composer
 htdocs/wordpress
 htdocs/.htaccess
@@ -26,6 +30,18 @@ htdocs/wp-content/themes/twenty*
 htdocs/wp-content/languages/*
 !htdocs/wp-content/languages/.gitkeep
 
+# Various plugin generated files and directories
+htdocs/wp-content/cache
+htdocs/wp-content/*cache
+htdocs/wp-content/*backups
+htdocs/wp-content/backup*
+htdocs/wp-content/blogs.dir
+htdocs/wp-content/ewww
+htdocs/wp-content/ngg
+htdocs/wp-content/w3tc-config
+htdocs/wp-content/wflogs
+htdocs/wp-content/wp-rocket-config
+
 # WordPress content directories filled with user data
 # not to be tracked in git
 htdocs/wp-content/upgrade
@@ -45,14 +61,11 @@ node_modules
 # Vagrant run-time output, not need to track in git
 bin
 .vagrant
-mkmf.log
 myrecording
+
+# Don't store any logs in version control
+*.log
 
 # OSX Desktop Services Store files.
 .DS_Store
-
-# Query Monitor files.
-db.php
-
-# VS Code files.
-.vscode
+.idea
