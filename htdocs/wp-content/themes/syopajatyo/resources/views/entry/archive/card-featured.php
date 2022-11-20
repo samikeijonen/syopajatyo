@@ -5,14 +5,15 @@
  * @package Syopajatyo
  */
 
+$page_slug = ! empty( $args['page_slug'] ) ? $args['page_slug'] : '';
 ?>
-<article <?php Hybrid\Attr\display( 'entry', 'card' ); ?>>
+<article <?php post_class( 'entry entry--card' ); ?>>
 	<header class="entry__header">
 		<?php
 		Syopajatyo\display_svg_img(
 			[
-				'icon'  => esc_attr( $data->page_slug ) . '-icon',
-				'class' => 'entry__icon entry__icon--' . esc_attr( $data->page_slug ),
+				'icon'  => esc_attr( $page_slug ) . '-icon',
+				'class' => 'entry__icon entry__icon--' . esc_attr( $page_slug ),
 				'alt'   => '',
 			]
 		);

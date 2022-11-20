@@ -14,18 +14,19 @@
 			while ( have_posts() ) :
 				the_post();
 
-				Hybrid\View\display( 'entry/single', Hybrid\Post\hierarchy() );
+				if ( is_single() ) :
+					get_template_part( 'resources/views/entry/single/post' );
+				else :
+					get_template_part( 'resources/views/entry/single/default' );
+				endif;
 				endwhile;
-
-			comments_template();
-
 			endif;
 		?>
 		</main>
 
 		<?php
 		// Load sidebar/* template.
-		Hybrid\View\display( 'sidebar', 'primary', [ 'name' => 'primary' ] );
+		get_template_part( 'resources/views/sidebar/default', '', [ 'name' => 'primary' ] );
 		?>
 	</div>
 </div>

@@ -26,14 +26,14 @@
 	// Articles section.
 	$k = 1;
 	while ( $k <= 3 ) :
-		$syopajatyo_articles_args_{$k} = [
+		$syopajatyo_articles_args_[$k] = [
 			'post_type'      => $k <= 2 ? 'post' : 'tribe_events',
 			'cat'            => $k <= 2 ? absint( get_theme_mod( 'featured_category_' . $k ) ) : '',
 			'posts_per_page' => 1,
 			'no_found_rows'  => true,
 		];
 
-		$syopajatyo_articles_content_{$k} = new WP_Query( $syopajatyo_articles_args_{$k} );
+		$syopajatyo_articles_content_[$k] = new WP_Query( $syopajatyo_articles_args_[$k] );
 
 		// Open section.
 		if ( 1 === $k ) :
@@ -44,13 +44,13 @@
 				<?php
 		endif;
 
-		if ( $syopajatyo_articles_content_{$k}->have_posts() ) :
-			while ( $syopajatyo_articles_content_{$k}->have_posts() ) :
-				$syopajatyo_articles_content_{$k}->the_post();
-				Hybrid\View\display( 'entry/archive', 'card', [ 'content' => 'ok' ] );
+		if ( $syopajatyo_articles_content_[$k]->have_posts() ) :
+			while ( $syopajatyo_articles_content_[$k]->have_posts() ) :
+				$syopajatyo_articles_content_[$k]->the_post();
+				get_template_part( 'resources/views/entry/archive/card', '', [ 'content' => 'ok' ] );
 			endwhile;
 		else :
-			Hybrid\View\display( 'entry/archive', 'card', [ 'content' => 'none' ] );
+			get_template_part( 'resources/views/entry/archive/card', '', [ 'content' => 'none' ] );
 		endif;
 
 		// Close section.
@@ -84,7 +84,7 @@
 				<?php
 				while ( $syopajatyo_pages_content->have_posts() ) :
 					$syopajatyo_pages_content->the_post();
-					Hybrid\View\display( 'entry/archive', 'card-featured', [ 'page_slug' => get_post_field( 'post_name', get_the_ID() ) ] );
+					get_template_part( 'resources/views/entry/archive/card-featured', '', [ 'page_slug' => get_post_field( 'post_name', get_the_ID() ) ] );
 				endwhile;
 				?>
 			</div>
@@ -99,7 +99,7 @@
 		<div class="mx-auto max-width-2 text-center">
 		<h2 class="fp-social-links__title fw-200 h1 uppercase"><?= esc_html__( 'Follow us', 'syopajatyo' ); ?></h2>
 		<?php
-			Hybrid\View\display( 'menu', 'social', [
+			get_template_part( 'resources/views/menu/social', '', [
 				'name'  => 'social-front-page',
 				'label' => esc_html__( 'Social links', 'syopajatyo' ),
 			] );

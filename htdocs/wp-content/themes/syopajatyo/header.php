@@ -15,7 +15,8 @@
 	<?php wp_head(); ?>
 </head>
 
-<body <?php Hybrid\Attr\display( 'body' ); ?>>
+<body <?php body_class(); ?>>
+<?php wp_body_open(); ?>
 
 <div class="app">
 	<header class="app-header items-center px-2 py-2">
@@ -30,23 +31,23 @@
 
 			<div class="app-header__search">
 			<?php
-				Hybrid\View\display( 'menu', 'language', [
+				get_template_part( 'resources/views/menu/language', '', [
 					'name'  => 'language',
 					'label' => esc_html_x( 'Language', 'nav menu label', 'syopajatyo' ),
 				] );
 
-				get_search_form();
+				get_template_part( 'resources/views/partials/searchform' );
 			?>
 			</div>
 		</div>
 	</header>
 
 	<?php
-		Hybrid\View\display( 'menu', 'primary', [
+		get_template_part( 'resources/views/menu/primary', '', [
 			'name'         => 'primary',
 			'social_links' => 'social',
 			'label'        => _x( 'Primary', 'nav menu label', 'syopajatyo' ),
 		] );
 
-		Hybrid\View\display( 'partials', 'title-header' );
+		get_template_part( 'resources/views/partials/title-header' );
 	?>

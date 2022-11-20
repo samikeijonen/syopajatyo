@@ -7,8 +7,6 @@
 
 namespace Syopajatyo;
 
-use Hybrid\app;
-
 /**
  * Enqueue js/styles.
  *
@@ -18,7 +16,14 @@ use Hybrid\app;
  */
 add_action( 'wp_enqueue_scripts', function() {
 	// Main scripts.
-	wp_enqueue_script( 'syopajatyo-app', asset( 'js/app.js' ), null, null, true );
+	//wp_enqueue_script( 'syopajatyo-app', asset( 'js/app.js' ), null, null, true );
+
+	wp_enqueue_script(
+        'syopajatyo-app',
+        get_theme_file_uri( 'dist/js/app.js' ),
+        [],
+        filemtime( get_theme_file_path( 'dist/js/app.js' ) )
+    );
 
 	// Add SVG icon which we can use via JS.
 	wp_localize_script( 'syopajatyo-app', 'SyopaJaTyoText', array(
@@ -29,7 +34,14 @@ add_action( 'wp_enqueue_scripts', function() {
 	wp_enqueue_style( 'syopajatyo-fonts', fonts_url(), null, null );
 
 	// Main styles.
-	wp_enqueue_style( 'syopajatyo-style', asset( 'css/style.css' ), null, null );
+	//wp_enqueue_style( 'syopajatyo-style', asset( 'css/style.css' ), null, null );
+
+	wp_enqueue_style(
+        'syopajatyo-style',
+        get_theme_file_uri( 'dist/css/style.css' ),
+        [],
+        filemtime( get_theme_file_path( 'dist/css/style.css' ) )
+    );
 
 	// Comments JS.
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -49,7 +61,14 @@ add_action( 'wp_enqueue_scripts', function() {
  */
 add_action( 'enqueue_block_editor_assets', function() {
 	// Main block styles.
-	wp_enqueue_style( 'syopajatyo-blocks', asset( 'css/editor.css' ), null, null );
+	// wp_enqueue_style( 'syopajatyo-blocks', asset( 'css/editor.css' ), null, null );
+
+	wp_enqueue_style(
+        'syopajatyo-blocks',
+        get_theme_file_uri( 'dist/css/editor.css' ),
+        [],
+        filemtime( get_theme_file_path( 'dist/css/editor.css' ) )
+    );
 
 	// Unregister core block and theme styles.
 	wp_deregister_style( 'wp-block-library' );
@@ -71,28 +90,3 @@ add_action( 'enqueue_block_editor_assets', function() {
 add_action( 'wp_head', function() {
 	echo "<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>\n";
 }, 0 );
-
-/**
- * Helper function for outputting an asset URL in the theme. This integrates
- * with Laravel Mix for handling cache busting. If used when you enqueue a script
- * or style, it'll append an ID to the filename.
- *
- * @link   https://laravel.com/docs/5.6/mix#versioning-and-cache-busting
- * @since  1.0.0
- * @access public
- * @param  string $path Path to assets.
- * @return string
- */
-function asset( $path ) {
-	// Get the Laravel Mix manifest.
-	$manifest = App::resolve( 'syopajatyo/mix' );
-
-	// Make sure to trim any slashes from the front of the path.
-	$path = '/' . ltrim( $path, '/' );
-
-	if ( $manifest && isset( $manifest[ $path ] ) ) {
-		$path = $manifest[ $path ];
-	}
-
-	return get_theme_file_uri( 'dist' . $path );
-}

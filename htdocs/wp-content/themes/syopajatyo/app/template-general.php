@@ -201,6 +201,157 @@ function more_link() {
 }
 
 /**
+ * Outputs the post date HTML.
+ *
+ * @since  1.0.0
+ * @access public
+ * @param  array  $args
+ * @return void
+ */
+function display_date( array $args = [] ) {
+	echo render_date( $args );
+}
+
+/**
+ * Returns the post date HTML.
+ *
+ * @since  1.0.0
+ * @access public
+ * @param  array  $args
+ * @return string
+ */
+function render_date( array $args = [] ) {
+
+	$args = wp_parse_args( $args, [
+		'text'   => '%s',
+		'class'  => 'entry__published',
+		'format' => '',
+		'before' => '',
+		'after'  => ''
+	] );
+
+	$html = sprintf(
+		'<time class="%s" datetime="%s">%s</time>',
+		esc_attr( $args['class'] ),
+		esc_attr( get_the_date( DATE_W3C ) ),
+		sprintf( $args['text'], get_the_date( $args['format'] ) )
+	);
+
+	return apply_filters(
+		'hybrid/theme/post/date',
+		$args['before'] . $html . $args['after']
+	);
+}
+
+/**
+ * Outputs the post comments link HTML.
+ *
+ * @since  1.0.0
+ * @access public
+ * @param  array  $args
+ * @return void
+ */
+function display_comments_link( array $args = [] ) {
+	echo render_comments_link( $args );
+}
+
+/**
+ * Returns the post comments link HTML.
+ *
+ * @since  1.0.0
+ * @access public
+ * @param  array  $args
+ * @return string
+ */
+function render_comments_link( array $args = [] ) {
+
+	$args = wp_parse_args( $args, [
+		'zero'   => false,
+		'one'    => false,
+		'more'   => false,
+		'class'  => 'entry__comments',
+		'before' => '',
+		'after'  => ''
+	] );
+
+	$number = get_comments_number();
+
+	if ( 0 == $number && ! comments_open() && ! pings_open() ) {
+		return '';
+	}
+
+	$url  = get_comments_link();
+	$text = get_comments_number_text( $args['zero'], $args['one'], $args['more'] );
+
+	$html = sprintf(
+		'<a class="%s" href="%s">%s</a>',
+		esc_attr( $args['class'] ),
+		esc_url( $url ),
+		$text
+	);
+
+	return apply_filters(
+		'hybrid/theme/post/comments',
+		$args['before'] . $html . $args['after']
+	);
+}
+
+/**
+ * Outputs the post terms HTML.
+ *
+ * @since  1.0.0
+ * @access public
+ * @param  array  $args
+ * @return void
+ */
+function display_terms( array $args = [] ) {
+	echo render_terms( $args );
+}
+
+/**
+ * Returns the post terms HTML.
+ *
+ * @since  1.0.0
+ * @access public
+ * @param  array  $args
+ * @return string
+ */
+function render_terms( array $args = [] ) {
+
+	$html = '';
+
+	$args = wp_parse_args( $args, [
+		'taxonomy' => 'category',
+		'text'     => '%s',
+		'class'    => '',
+		// Translators: Separates tags, categories, etc. when displaying a post.
+		'sep'      => _x( ', ', 'taxonomy terms separator', 'hybrid-core' ),
+		'before'   => '',
+		'after'    => ''
+	] );
+
+	// Append taxonomy to class name.
+	if ( ! $args['class'] ) {
+		$args['class'] = "entry__terms entry__terms--{$args['taxonomy']}";
+	}
+
+	$terms = get_the_term_list( get_the_ID(), $args['taxonomy'], '', $args['sep'], '' );
+
+	if ( $terms ) {
+
+		$html = sprintf(
+			'<span class="%s">%s</span>',
+			esc_attr( $args['class'] ),
+			sprintf( $args['text'], $terms )
+		);
+
+		$html = $args['before'] . $html . $args['after'];
+	}
+
+	return apply_filters( 'hybrid/theme/post/terms', $html );
+}
+
+/**
  * Sub pages navigation
  *
  * Show hierarchial pages of current page.
