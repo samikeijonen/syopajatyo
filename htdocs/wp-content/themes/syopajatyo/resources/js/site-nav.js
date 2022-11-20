@@ -102,9 +102,9 @@ function siteNav() {
 	 * @return {boolean} True or false.
 	 */
 	function isMenuOpen() {
-		const isMenuOpen =
+		const opened =
 			'false' === button.getAttribute('aria-expanded') ? false : true;
-		return isMenuOpen;
+		return opened;
 	}
 
 	/**
