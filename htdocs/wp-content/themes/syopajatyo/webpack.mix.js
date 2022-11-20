@@ -6,39 +6,36 @@
  * simplifies much of the complexity of Webpack's configuration, and is well
  * suited for projects like WordPress themes.
  *
- * @link https://laravel.com/docs/5.6/mix
+ * link: https://laravel.com/docs/5.6/mix
  *
- * @package Syopajatyo
+ * @package
  */
 
 // Import required packages.
-const mix               = require( 'laravel-mix' );
-const ImageminPlugin    = require( 'imagemin-webpack-plugin' ).default;
-const CopyWebpackPlugin = require( 'copy-webpack-plugin' );
-const imageminMozjpeg   = require( 'imagemin-mozjpeg' );
-
+const mix = require('laravel-mix');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 // Sets the development path to assets. By default, this is the `/resources`
 // folder in the theme.
-const devPath  = 'resources';
+const devPath = 'resources';
 
 // Sets the path to the generated assets. By default, this is the `/dist` folder
 // in the theme. If doing something custom, make sure to change this everywhere.
-mix.setPublicPath( 'dist' );
+mix.setPublicPath('dist');
 
 // Set Laravel Mix options.
 //
 // @link https://laravel.com/docs/5.6/mix#postcss
 // @link https://laravel.com/docs/5.6/mix#url-processing
-mix.options( {
-	postCss: [ require( 'postcss-preset-env' )() ],
-	processCssUrls: false
-} );
+mix.options({
+	postCss: [require('postcss-preset-env')()],
+	processCssUrls: false,
+});
 
 // Builds sources maps for assets.
 //
 // @link https://laravel.com/docs/5.6/mix#css-source-maps
-if ( ! mix.inProduction() ) {
+if (!mix.inProduction()) {
 	mix.sourceMaps();
 }
 
@@ -50,8 +47,7 @@ mix.version();
 // Compile JavaScript.
 //
 // @link https://laravel.com/docs/5.6/mix#working-with-scripts
-mix.js( `${devPath}/js/app.js`, 'js' )
-   .js( `${devPath}/js/customize-preview.js`, 'js' );
+mix.js(`${devPath}/js/app.js`, 'js');
 
 // Compile SASS and CSS.
 //
@@ -60,18 +56,21 @@ mix.js( `${devPath}/js/app.js`, 'js' )
 // @link https://github.com/sass/node-sass#options
 
 // Sass configuration.
-var sassConfig = {
-	implementation: require( 'sass' ),
+const sassConfig = {
+	implementation: require('sass'),
 	sassOptions: {
 		outputStyle: 'expanded',
 		indentType: 'tab',
-		indentWidth: 1
-	}
+		indentWidth: 1,
+	},
 };
 
 // Compile SASS/CSS.
-mix.sass( `${devPath}/scss/style.scss`, 'css', sassConfig )
-   .sass( `${devPath}/scss/editor.scss`, 'css', sassConfig );
+mix.sass(`${devPath}/scss/style.scss`, 'css', sassConfig).sass(
+	`${devPath}/scss/editor.scss`,
+	'css',
+	sassConfig
+);
 
 // Add custom Webpack configuration.
 //
@@ -80,70 +79,32 @@ mix.sass( `${devPath}/scss/style.scss`, 'css', sassConfig )
 // processing and copying our images over to their distribution folder.
 //
 // @link https://laravel.com/docs/5.6/mix#custom-webpack-configuration
-mix.webpackConfig( {
+mix.webpackConfig({
 	stats: 'minimal',
 	devtool: mix.inProduction() ? false : 'source-map',
-	performance: { hints: false    },
+	performance: { hints: false },
 	externals: { jquery: 'jQuery' },
 	plugins: [
-
 		// @link https://github.com/webpack-contrib/copy-webpack-plugin
-		new CopyWebpackPlugin( [
-			{ from: `${devPath}/img`,   to: 'img' },
-			{ from: `${devPath}/svg`,   to: 'svg' },
-			{ from: `${devPath}/fonts`, to: 'fonts' }
-		] ),
-
-		// @link https://github.com/Klathmon/imagemin-webpack-plugin
-		new ImageminPlugin( {
-			test: /\.(jpe?g|png|gif|svg)$/i,
-
-			//disable: process.env.NODE_ENV !== 'production',
-			optipng: { optimizationLevel: 3 },
-			gifsicle: { optimizationLevel: 3 },
-			pngquant: {
-				quality: '65-90',
-				speed: 4
-			},
-			svgo: {
-				plugins: [
-					{ removeUnknownsAndDefaults: false },
-					{ cleanupIDs: false },
-					{ removeViewBox: false },
-					{
-						addAttributesToSVGElement: {
-							attributes: [
-								{ 'focusable': 'false' },
-								{ 'aria-hidden': 'true' },
-								{ 'role': 'img' }
-							]
-						},
-					},
-					{
-						addClassesToSVGElement: {
-							classNames: [ 'svg' ]
-						}
-					}
-				]
-			},
-			plugins: [
-
-				// @link https://github.com/imagemin/imagemin-mozjpeg
-				imageminMozjpeg( { quality: 75 } )
-			]
-		} )
-	]
-} );
+		new CopyWebpackPlugin({
+			patterns: [
+				{ from: `${devPath}/img`, to: 'img' },
+				{ from: `${devPath}/svg`, to: 'svg' },
+				{ from: `${devPath}/fonts`, to: 'fonts' },
+			],
+		}),
+	],
+});
 
 // Monitor files for changes and inject your changes into the browser.
 //
 // @link https://laravel.com/docs/5.6/mix#browsersync-reloading
-mix.browserSync( {
-	proxy: 'https://syopajatyo.test/',
+mix.browserSync({
+	proxy: 'https://syopajatyo.local',
 	files: [
 		'dist/**/*',
 		`${devPath}/views/**/*.php`,
 		'app/**/*.php',
-		'functions.php'
-	]
-} );
+		'functions.php',
+	],
+});

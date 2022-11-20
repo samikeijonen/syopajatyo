@@ -25,7 +25,7 @@ $syopajatyo_social_links = wp_nav_menu(
 
 <nav class="menu menu--<?= esc_attr( $args['name'] ) ?> px-2" id="js-menu--<?= esc_attr( $args['name'] ) ?>" aria-label="<?= esc_attr( $args['label'] ) ?>">
 	<div class="menu__wrapper mx-auto max-width-1">
-		<button class="menu-toggle flex items-center justify-center" aria-expanded="false" aria-controls="menu__items--<?= esc_attr( $args['name'] ) ?>">
+		<button type="button" class="menu-toggle flex items-center justify-center js-menu-toggle" aria-expanded="false" aria-controls="menu__items--<?= esc_attr( $args['name'] ) ?>">
 			<svg class="menu-toggle__icon" aria-hidden="true" focusable="false" viewBox="0 0 40 40">
 				<line class="menu-toggle__line menu-toggle__line--1" x1="0" y1="12" x2="40" y2="12"></line>
 				<line class="menu-toggle__line menu-toggle__line--2" x1="0" y1="20" x2="40" y2="20"></line>
