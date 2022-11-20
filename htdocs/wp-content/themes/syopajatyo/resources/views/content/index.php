@@ -16,17 +16,17 @@
 			while ( have_posts() ) :
 				the_post();
 
-				Hybrid\View\display( 'entry/archive', Hybrid\Post\hierarchy() );
+				get_template_part( 'resources/views/entry/archive/default' );
 			endwhile;
 
-			Hybrid\View\display( 'partials', 'pagination-posts' );
+			get_template_part( 'resources/views/partials/pagination-posts' );
 		endif;
 		?>
 		</main>
 
 		<?php
 		// Load sidebar/* template.
-		Hybrid\View\display( 'sidebar', 'primary', [ 'name' => 'primary' ] );
+		get_template_part( 'resources/views/sidebar/default', '', [ 'name' => 'primary' ] );
 		?>
 	</div>
 </div>

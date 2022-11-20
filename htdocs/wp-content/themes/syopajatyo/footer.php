@@ -41,7 +41,7 @@
 				</ul>
 
 				<?php
-					Hybrid\View\display( 'menu', 'social', [
+					get_template_part( 'resources/views/menu', 'social', '', [
 						'name'  => 'social-footer',
 						'label' => __( 'Social links', 'syopajatyo' ),
 					] );

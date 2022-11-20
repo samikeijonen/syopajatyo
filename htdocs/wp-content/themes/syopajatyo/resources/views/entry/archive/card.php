@@ -8,18 +8,18 @@
 // Get background image.
 $syopajatyo_bg = Syopajatyo\get_post_thumbnail_bg();
 ?>
-<article <?php Hybrid\Attr\display( 'entry', 'card' ); ?><?= wp_kses_post( $syopajatyo_bg ); ?>>
+<article <?php post_class( 'entry entry--card' ); ?><?= wp_kses_post( $syopajatyo_bg ); ?>>
 	<header class="entry__header">
 		<?php
-		if ( 'tribe_events' === get_post_type() || 'none' === $data->content ) :
+		if ( 'tribe_events' === get_post_type() || 'none' === $args['content'] ) :
 			echo '<span class="entry__terms"><a href="/tapahtumat/">' . esc_html__( 'Events', 'syopajatyo' ) . '</a></span>';
 		else :
-			Hybrid\Post\display_terms( [
+			Syopajatyo\display_terms( [
 				'taxonomy' => 'category',
 			] );
 		endif;
 
-		if ( 'none' === $data->content ) :
+		if ( 'none' === $args['content'] ) :
 		?>
 			<h2 class="entry__title h3"><?= esc_html__( 'There are no upcoming events', 'syopajatyo' ); ?></h2>
 		<?php else : ?>
@@ -29,7 +29,7 @@ $syopajatyo_bg = Syopajatyo\get_post_thumbnail_bg();
 
 	<div class="entry__summary font-size-875">
 		<?php
-		if ( 'none' === $data->content ) :
+		if ( 'none' === $args['content'] ) :
 			esc_html_e( 'Unfortunately there was no upcoming events found.', 'syopajatyo' );
 		else :
 			the_excerpt();

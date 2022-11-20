@@ -15,4 +15,3 @@
  * any classes/functions are available that we might need.
  */
 require_once get_parent_theme_file_path( 'app/bootstrap-autoload.php' );
-require_once get_parent_theme_file_path( 'app/bootstrap-app.php' );

@@ -22,6 +22,7 @@ array_map(
 	},
 	[
 		'functions-assets',
+		'functions-customizer',
 		'functions-filters',
 		'functions-fonts',
 		'functions-helpers',
