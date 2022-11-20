@@ -15,14 +15,12 @@ namespace Syopajatyo;
  * @return void
  */
 add_action( 'wp_enqueue_scripts', function() {
-	// Main scripts.
-	//wp_enqueue_script( 'syopajatyo-app', asset( 'js/app.js' ), null, null, true );
-
 	wp_enqueue_script(
         'syopajatyo-app',
         get_theme_file_uri( 'dist/js/app.js' ),
         [],
-        filemtime( get_theme_file_path( 'dist/js/app.js' ) )
+        filemtime( get_theme_file_path( 'dist/js/app.js' ) ),
+		true
     );
 
 	// Add SVG icon which we can use via JS.
