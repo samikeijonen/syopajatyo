@@ -22,10 +22,6 @@ Directory structure aims to be modern app-like, what ever that means :)
 
 ## Installation and setup
 
-Theme uses [Composer](https://getcomposer.org/) and [NPM](https://www.npmjs.com/) to manage its dependencies. Install both on your machine before using this starter theme.
-
-Note that theme has [Hybrid Core 5.0](https://github.com/justintadlock/hybrid-core/tree/5.0) as a must have dependency. This is loaded in the root of the project with `composer install` as other dependencies.
-
 ### Install dependencies
 
 Theme lives in the `wp-content/theme/syopajatyo` folder.
@@ -42,10 +38,6 @@ cd wp-content/themes/syopajatyo
 npm install
 ```
 
-**Yarn command:**
-```
-yarn install
-```
 
 ## Build process
 
@@ -154,59 +146,6 @@ enqueueing block related styles using `enqueue_block_editor_assets` hook.
 
 See previous chapter [styles for the editor](#styles-for-the-editor).
 
-## Template files
-
-We try to avoid having lot's of similar template files
-in the root folder. In fact, in root there is only `index.php` template file but that should never be loaded unless plugins do some weird things.
-
-Main fallback template file is found in `resources/views/index.php`.
-
-All the template files are also in `resources/views/` folder. In there template files are
-organized in sub-folder using `Hybrid\View\display()` and
-`Hybrid\Template\hierarchy` functions.
-
-You could have other top-level templates, like `page.php`, `archive.php`, etc. in the root of `resources/views/` folder and get used like they typically would in theme root. But we try to avoid that also by organizing template files in different folders.
-
-### Hybrid\View\display() function
-
-`Hybrid\View\display()` is Hybrid Core function which is
-more powerfull version of `get_template_part()` function. You can for example pass variables to it:
-
-```php
-// Hybrid\View\display( $name, $slugs = [], $data = [] )
-Hybrid\View\display( 'menu', 'primary', [ 'name' => 'primary' ] );
-```
-
-- Above code loads `resources/views/menu/primary.php` file.
-- If it doesn't exists it fallbacks to `resources/views/menu/default.php` file.
-- And if it doesn't exists it fallbacks to `resources/views/menu.php` file.
-
-Hierarchy looks like this:
-
-```php
-// Hybrid\View\display( 'menu', 'primary', [ 'name' => 'primary' ] ) hierarchy.
-// 1. resources/views/menu/primary.php
-// 2. resources/views/menu/default.php
-// 3. resources/views/menu.php
-```
-
-The last parameter `[ 'name' => 'primary' ]` is for passing data in to template file. You can access the data like this `$data->name`.
-
-### Hybrid\Template\hierarchy() function
-
-Let's look at example line: `Hybrid\View\display( 'content', Hybrid\Template\hierarchy() );`
-
-This loads template files from `resources/views/content` folder respecting the [template hierarchy](https://developer.wordpress.org/themes/basics/template-hierarchy/).
-
-```php
-// Example hierarchy for single `download` post type.
-// 1. resources/views/content/single-download-{slug}.php
-// 2. resources/views/content/single-download.php
-// 3. resources/views/content/single.php
-// 4. resources/views/content/singular.php
-// 5. resources/views/content/index.php
-// 6. resources/views/index.php
-```
 
 ## Coding standards and linting
 
