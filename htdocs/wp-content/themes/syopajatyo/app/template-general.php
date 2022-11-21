@@ -238,7 +238,7 @@ function render_date( array $args = [] ) {
 	);
 
 	return apply_filters(
-		'hybrid/theme/post/date',
+		'syopajatyo/theme/post/date',
 		$args['before'] . $html . $args['after']
 	);
 }
@@ -291,7 +291,7 @@ function render_comments_link( array $args = [] ) {
 	);
 
 	return apply_filters(
-		'hybrid/theme/post/comments',
+		'syopajatyo/theme/post/comments',
 		$args['before'] . $html . $args['after']
 	);
 }
@@ -325,7 +325,7 @@ function render_terms( array $args = [] ) {
 		'text'     => '%s',
 		'class'    => '',
 		// Translators: Separates tags, categories, etc. when displaying a post.
-		'sep'      => _x( ', ', 'taxonomy terms separator', 'hybrid-core' ),
+		'sep'      => _x( ', ', 'taxonomy terms separator', 'syopajatyo' ),
 		'before'   => '',
 		'after'    => ''
 	] );
@@ -348,7 +348,7 @@ function render_terms( array $args = [] ) {
 		$html = $args['before'] . $html . $args['after'];
 	}
 
-	return apply_filters( 'hybrid/theme/post/terms', $html );
+	return apply_filters( 'syopajatyo/theme/post/terms', $html );
 }
 
 /**
