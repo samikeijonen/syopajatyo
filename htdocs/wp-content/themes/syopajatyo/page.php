@@ -1,4 +1,5 @@
-<?php get_header();
+<?php
+get_header();
 
 get_template_part( 'resources/views/content/single' );
 

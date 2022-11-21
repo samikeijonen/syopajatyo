@@ -1,10 +1,11 @@
 <?php
 /**
- * Content template.
+ * 404 template.
  *
  * @package Syopajatyo
  */
 
+get_header();
 ?>
 <main id="main" class="app-main px-2 py-8">
 	<section class="entry entry--error mx-auto max-width-2">
@@ -14,7 +15,10 @@
 
 		<div class="entry__content">
 			<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try search?', 'syopajatyo' ); ?></p>
-			<?php get_search_form(); ?>
+			<?php get_template_part( 'resources/views/partials/searchform' ); ?>
 		</div>
 	</section>
 </main>
+
+<?php
+get_footer();

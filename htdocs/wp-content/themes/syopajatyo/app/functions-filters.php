@@ -13,9 +13,6 @@
 
 namespace Syopajatyo;
 
-use Hybrid;
-use function Hybrid\Template\locate as locate_template;
-
 /**
  * Filters the WP nav menu link attributes.
  *
@@ -204,25 +201,6 @@ function excerpt_length( $length ) {
 	return is_front_page() ? 20 : 55;
 }
 add_filter( 'excerpt_length', __NAMESPACE__ . '\excerpt_length' );
-
-/**
- * Filters the HTML output of the search form.
- *
- * Look searchform.php in resources/views folder.
- *
- * @param string $form The search form HTML output.
- */
-add_filter( 'get_search_form', function( $form ) {
-	$template = locate_template( 'searchform.php' );
-
-	if ( $template ) {
-		ob_start();
-		include $template;
-		$form = ob_get_clean();
-	}
-
-	return $form;
-}, 0 );
 
 /**
  * Prevent automatic optimization for PDF.
